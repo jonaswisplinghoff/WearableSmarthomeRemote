@@ -18,13 +18,13 @@ namespace WearableSmarthomeRemote.Core
 		{
 			HttpClient client = new HttpClient();
 			client.BaseAddress = new Uri("http://192.168.128.102:8080/");
-			//client.BaseAddress = new Uri("http://google.com/");
 			try
 			{
 				var response = await client.GetAsync("rest/items/Toggle_1/state");
 				if (response.IsSuccessStatusCode)
 				{
 					Debug.WriteLine("Success");
+					return await response.Content.ReadAsStringAsync();
 				}
 				else 
 				{

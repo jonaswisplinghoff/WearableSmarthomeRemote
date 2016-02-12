@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.UI.iOS", "WearableSmarthomeRemote.UI.iOS\WearableSmarthomeRemote.UI.iOS.csproj", "{98105484-B485-431D-A7F7-4CBF5836D51C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.UI.Droid", "WearableSmarthomeRemote.UI.Droid\WearableSmarthomeRemote.UI.Droid.csproj", "{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,17 @@ Global
 		{98105484-B485-431D-A7F7-4CBF5836D51C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{98105484-B485-431D-A7F7-4CBF5836D51C}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{98105484-B485-431D-A7F7-4CBF5836D51C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Release|iPhone.Build.0 = Release|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0D65E475-FAB5-4BF1-9E01-C5AE80BF4DD6}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
