@@ -2,10 +2,10 @@
 using UIKit;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
-namespace WearableSmarthomeRemote.UI.iOS
+namespace WearableSmarthomeRemote.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
 	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.

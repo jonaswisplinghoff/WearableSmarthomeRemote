@@ -1,13 +1,14 @@
-﻿using MvvmCross.iOS.Platform;
+﻿using System;
+using WearableSmarthomeRemote.Core;
+using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Core.ViewModels;
-using WearableSmarthomeRemote.Core;
 
-namespace WearableSmarthomeRemote.UI.iOS
+namespace WearableSmarthomeRemote.iOS
 {
 	public class Setup : MvxIosSetup
 	{
-		public Setup(MvxApplicationDelegate appDelegate, IMvxIosViewPresenter presenter)
+		public Setup (MvxApplicationDelegate appDelegate, IMvxIosViewPresenter presenter)
 			: base(appDelegate, presenter)
 		{
 		}
@@ -18,3 +19,4 @@ namespace WearableSmarthomeRemote.UI.iOS
 		}
 	}
 }
+

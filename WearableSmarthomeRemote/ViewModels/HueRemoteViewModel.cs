@@ -14,11 +14,11 @@ namespace WearableSmarthomeRemote.Core
 
 		public override void Start()
 		{
-			_lampOn = true;
+			_lampOn = "Lamp on";
 		}
 
-		private bool _lampOn;
-		public bool LampOn
+		private string _lampOn;
+		public string LampOn
 		{
 			get { return _lampOn; }
 			set { _lampOn = value; RaisePropertyChanged(() => LampOn); }
@@ -34,19 +34,11 @@ namespace WearableSmarthomeRemote.Core
 			}
 		}
 
-		private void Update()
+		async void Update()
 		{
-			
 			System.Diagnostics.Debug.WriteLine("update");
-			string lampState = _openHab.GetLampState();
-			if (lampState == "ON")
-			{
-				LampOn = true;
-			}
-			else 
-			{
-				LampOn = false;
-			}
+			string lampState = await _openHab.GetLampState();
+			LampOn = lampState;
 		}
 	}
 }

@@ -9,28 +9,28 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace WearableSmarthomeRemote.UI.iOS
+namespace WearableSmarthomeRemote.iOS
 {
     [Register ("HueRemoteView")]
     partial class HueRemoteView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton RefreshButton { get; set; }
+        UIKit.UISwitch LightSwitch { get; set; }
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel StateLabel { get; set; }
+        UIKit.UIButton UpdateButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (RefreshButton != null) {
-                RefreshButton.Dispose ();
-                RefreshButton = null;
+            if (LightSwitch != null) {
+                LightSwitch.Dispose ();
+                LightSwitch = null;
             }
 
-            if (StateLabel != null) {
-                StateLabel.Dispose ();
-                StateLabel = null;
+            if (UpdateButton != null) {
+                UpdateButton.Dispose ();
+                UpdateButton = null;
             }
         }
     }

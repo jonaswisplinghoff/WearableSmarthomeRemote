@@ -5,7 +5,7 @@ namespace WearableSmarthomeRemote.Core
 {
 	public interface IOpenHab
 	{
-		string GetLampState();
+		Task<string> GetLampState();
 	}
 }
 

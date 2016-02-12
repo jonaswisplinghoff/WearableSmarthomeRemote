@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>WearableSmarthomeRemote.UI.iOS</string>
+	<string>WearableSmarthomeRemote.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>de.jonaswisplinghoff.wearablesmarthomeremote-ui-ios</string>
+	<string>de.jonaswisplinghoff.wearablesmarthomeremote-ios</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
