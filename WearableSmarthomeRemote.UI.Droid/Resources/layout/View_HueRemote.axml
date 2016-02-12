@@ -4,10 +4,61 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Lamp 1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+        <Switch
+            local:MvxBind="Checked Lamp1On"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/switch1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Lamp 2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+        <Switch
+            local:MvxBind="Checked Lamp2On"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/switch1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Lamp 3"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+        <Switch
+            local:MvxBind="Checked Lamp3On"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/switch1" />
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Text LampOn" />
+        local:MvxBind="Text LampState" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

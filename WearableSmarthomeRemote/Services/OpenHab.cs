@@ -14,13 +14,13 @@ namespace WearableSmarthomeRemote.Core
 		{
 		}
 
-		async public Task<string> GetLampState()
+		async public Task<string> GetLampState(int lampId)
 		{
 			HttpClient client = new HttpClient();
 			client.BaseAddress = new Uri("http://192.168.128.102:8080/");
 			try
 			{
-				var response = await client.GetAsync("rest/items/Toggle_1/state");
+				var response = await client.GetAsync("rest/items/Toggle_" + lampId + "/state");
 				if (response.IsSuccessStatusCode)
 				{
 					Debug.WriteLine("Success");
@@ -43,5 +43,31 @@ namespace WearableSmarthomeRemote.Core
 			return "OFF";
 		}
 
+		async public void SetLampState(int lampId, bool state)
+		{
+			HttpClient client = new HttpClient();
+			client.BaseAddress = new Uri("http://192.168.128.102:8080/");
+			try
+			{
+				StringContent content = state ? new StringContent("ON") : new StringContent("OFF");
+				var response = await client.PutAsync("rest/items/Toggle_" + lampId + "/state", content);
+				if (response.IsSuccessStatusCode)
+				{
+					Debug.WriteLine("Success");
+				}
+				else 
+				{
+					Debug.WriteLine(response.RequestMessage);
+					Debug.WriteLine(response.StatusCode);
+				}
+			}
+			catch (HttpRequestException e)
+			{
+				Debug.WriteLine(e.Message);
+				Debug.WriteLine(e.StackTrace);
+				Debug.WriteLine(e.InnerException.Message);
+				Debug.WriteLine(e.InnerException.StackTrace);
+			}
+		}
 	}
 }
