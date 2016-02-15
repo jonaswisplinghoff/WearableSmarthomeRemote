@@ -12,14 +12,17 @@ namespace WearableSmarthomeRemote.Core
 	public class OpenHab : IOpenHab
 	{
 
+		static string baseURL = "http://192.168.128.102:8080/";
+		HttpClient client;
+
 		public OpenHab()
 		{
+			client = new HttpClient();
+			client.BaseAddress = new Uri(baseURL);
 		}
 
 		async public Task<Item[]> GetItems()
 		{
-			HttpClient client = new HttpClient();
-			client.BaseAddress = new Uri("http://192.168.128.102:8080/");
 			try
 			{
 				var response = await client.GetAsync("rest/items");
@@ -47,8 +50,6 @@ namespace WearableSmarthomeRemote.Core
 
 		async public Task<string> GetLampState(int lampId)
 		{
-			HttpClient client = new HttpClient();
-			client.BaseAddress = new Uri("http://192.168.128.102:8080/");
 			try
 			{
 				var response = await client.GetAsync("rest/items/Toggle_" + lampId + "/state");
@@ -75,8 +76,6 @@ namespace WearableSmarthomeRemote.Core
 
 		async public void SetLampState(int lampId, bool state)
 		{
-			HttpClient client = new HttpClient();
-			client.BaseAddress = new Uri("http://192.168.128.102:8080/");
 			try
 			{
 				StringContent content = state ? new StringContent("ON") : new StringContent("OFF");
