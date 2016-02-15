@@ -115,7 +115,10 @@ namespace WearableSmarthomeRemote.UI.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int View_HueRemote = 2130903040;
+			public const int Item_Item = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int View_HueRemote = 2130903041;
 			
 			static Layout()
 			{

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace WearableSmarthomeRemote.Core
 {
@@ -15,6 +17,26 @@ namespace WearableSmarthomeRemote.Core
 		public override void Start()
 		{
 			Update();
+		}
+
+		private List<Item> _items;
+		public List<Item> Items 
+		{
+			get { return _items; }
+			set 
+			{
+				_items = new List<Item>();
+				foreach (Item item in value) 
+				{
+					if (item.type != "GroupItem") 
+					{
+						_items.Add(item);
+					}
+				}
+
+				RaisePropertyChanged(() => Items); 
+				Debug.WriteLine("Items updated: " + _items.Count.ToString());
+			}
 		}
 
 		private bool _lamp1On;
@@ -59,13 +81,6 @@ namespace WearableSmarthomeRemote.Core
 			}
 		}
 
-		private string _lampState;
-		public string LampState
-		{
-			get { return _lampState; }
-			set { _lampState = value; RaisePropertyChanged(() => LampState); }
-		}
-
 		private MvxCommand _updateCommand;
 		public ICommand UpdateCommand
 		{
@@ -78,20 +93,26 @@ namespace WearableSmarthomeRemote.Core
 
 		async void Update()
 		{
-			System.Diagnostics.Debug.WriteLine("update");
+			var items = await _openHab.GetItems();
+			Items = new List<Item>(items);
 
-			var lamp1 = await _openHab.GetLampState(1);
-			var lamp2 = await _openHab.GetLampState(2);
-			var lamp3 = await _openHab.GetLampState(3);
-
-			Lamp1On = lamp1 == "ON" ? true : false;
-			Lamp2On = lamp2 == "ON" ? true : false;
-			Lamp3On = lamp3 == "ON" ? true : false;
-
-			string lampState = "Lamp 1: " + lamp1;
-				lampState += " - Lamp 2: " + lamp2;
-				lampState += " - Lamp 3: " + lamp3;
-			LampState = lampState;
+			foreach (Item item in items)
+			{
+				switch (item.name)
+				{
+					case "Toggle_1":
+						Lamp1On = item.state == "ON";
+					break;
+					case "Toggle_2":
+						Lamp2On = item.state == "ON";
+					break;
+					case "Toggle_3":
+						Lamp3On = item.state == "ON";
+					break;
+					default:
+					break;
+				}
+			}
 		}
 	}
 }
