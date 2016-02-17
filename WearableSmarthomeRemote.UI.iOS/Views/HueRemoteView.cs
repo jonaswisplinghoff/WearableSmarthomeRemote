@@ -14,7 +14,7 @@ namespace WearableSmarthomeRemote.UI.iOS
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			this.CreateBinding(StateLabel).To((HueRemoteViewModel vm) => vm.LampState).Apply();
+			//this.CreateBinding(StateLabel).To((HueRemoteViewModel vm) => vm.LampState).Apply();
 			this.CreateBinding(RefreshButton).To((HueRemoteViewModel vm) => vm.UpdateCommand).Apply();
 
 		}
