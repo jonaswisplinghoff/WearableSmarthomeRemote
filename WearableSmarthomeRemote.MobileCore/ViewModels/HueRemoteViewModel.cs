@@ -3,8 +3,9 @@ using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using System.Diagnostics;
 using System.Collections.Generic;
+using WearableSmarthomeRemote.Core;
 
-namespace WearableSmarthomeRemote.Core
+namespace WearableSmarthomeRemote.MobileCore
 {
 	public class HueRemoteViewModel : MvxViewModel
 	{
@@ -20,21 +21,21 @@ namespace WearableSmarthomeRemote.Core
 		}
 
 		private List<Item> _items;
-		public List<Item> Items 
+		public List<Item> Items
 		{
 			get { return _items; }
-			set 
+			set
 			{
 				_items = new List<Item>();
-				foreach (Item item in value) 
+				foreach (Item item in value)
 				{
-					if (item.type != "GroupItem") 
+					if (item.type != "GroupItem")
 					{
 						_items.Add(item);
 					}
 				}
 
-				RaisePropertyChanged(() => Items); 
+				RaisePropertyChanged(() => Items);
 				Debug.WriteLine("Items updated: " + _items.Count.ToString());
 			}
 		}
@@ -43,12 +44,13 @@ namespace WearableSmarthomeRemote.Core
 		public bool Lamp1On
 		{
 			get { return _lamp1On; }
-			set { 
+			set
+			{
 				if (value != _lamp1On)
 				{
 					_openHab.SetLampState(1, value);
 				}
-				_lamp1On = value; 
+				_lamp1On = value;
 				RaisePropertyChanged(() => Lamp1On);
 			}
 		}
@@ -57,12 +59,13 @@ namespace WearableSmarthomeRemote.Core
 		public bool Lamp2On
 		{
 			get { return _lamp2On; }
-			set {
+			set
+			{
 				if (value != _lamp2On)
 				{
 					_openHab.SetLampState(2, value);
 				}
-				_lamp2On = value; 
+				_lamp2On = value;
 				RaisePropertyChanged(() => Lamp2On);
 			}
 		}
@@ -71,12 +74,13 @@ namespace WearableSmarthomeRemote.Core
 		public bool Lamp3On
 		{
 			get { return _lamp3On; }
-			set { 
+			set
+			{
 				if (value != _lamp3On)
 				{
 					_openHab.SetLampState(3, value);
 				}
-				_lamp3On = value; 
+				_lamp3On = value;
 				RaisePropertyChanged(() => Lamp3On);
 			}
 		}
@@ -84,7 +88,7 @@ namespace WearableSmarthomeRemote.Core
 		private MvxCommand _updateCommand;
 		public ICommand UpdateCommand
 		{
-			get 
+			get
 			{
 				_updateCommand = _updateCommand ?? new MvxCommand(() => Update());
 				return _updateCommand;
@@ -102,15 +106,15 @@ namespace WearableSmarthomeRemote.Core
 				{
 					case "Toggle_1":
 						Lamp1On = item.state == "ON";
-					break;
+						break;
 					case "Toggle_2":
 						Lamp2On = item.state == "ON";
-					break;
+						break;
 					case "Toggle_3":
 						Lamp3On = item.state == "ON";
-					break;
+						break;
 					default:
-					break;
+						break;
 				}
 			}
 		}

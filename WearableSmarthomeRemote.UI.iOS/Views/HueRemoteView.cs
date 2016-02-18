@@ -1,6 +1,6 @@
 ﻿using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
-using WearableSmarthomeRemote.Core;
+using WearableSmarthomeRemote.MobileCore;
 
 namespace WearableSmarthomeRemote.UI.iOS
 {

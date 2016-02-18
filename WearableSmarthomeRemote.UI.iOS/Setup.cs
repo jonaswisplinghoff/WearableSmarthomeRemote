@@ -1,7 +1,7 @@
 ﻿using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Core.ViewModels;
-using WearableSmarthomeRemote.Core;
+using WearableSmarthomeRemote.MobileCore;
 
 namespace WearableSmarthomeRemote.UI.iOS
 {
@@ -12,7 +12,7 @@ namespace WearableSmarthomeRemote.UI.iOS
 		{
 		}
 
-		protected override IMvxApplication CreateApp ()
+		protected override IMvxApplication CreateApp()
 		{
 			return new App();
 		}

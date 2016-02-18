@@ -92,9 +92,9 @@
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WearableSmarthomeRemote\WearableSmarthomeRemote.core.csproj">
-      <Project>{3D005060-B116-4F81-91D6-44D64F9B91AC}</Project>
-      <Name>WearableSmarthomeRemote.core</Name>
+    <ProjectReference Include="..\WearableSmarthomeRemote.MobileCore\WearableSmarthomeRemote.MobileCore.csproj">
+      <Project>{65826E6F-A4DF-4613-BF3E-54C1F834CA66}</Project>
+      <Name>WearableSmarthomeRemote.MobileCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

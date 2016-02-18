@@ -1,16 +1,16 @@
 ﻿using System;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using WearableSmarthomeRemote.Core;
 
-namespace WearableSmarthomeRemote.Core
+namespace WearableSmarthomeRemote.MobileCore
 {
 	public class App : MvxApplication
 	{
 		public App()
 		{
-			Mvx.RegisterType<IOpenHab,OpenHab>();
+			Mvx.RegisterType<IOpenHab, OpenHab>();
 			Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<HueRemoteViewModel>());
 		}
 	}
 }
-
