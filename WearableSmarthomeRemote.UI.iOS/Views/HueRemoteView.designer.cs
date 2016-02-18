@@ -19,7 +19,13 @@ namespace WearableSmarthomeRemote.UI.iOS
         UIKit.UIButton RefreshButton { get; set; }
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel StateLabel { get; set; }
+        UIKit.UISwitch Switch1 { get; set; }
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch Switch2 { get; set; }
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch Switch3 { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -28,9 +34,19 @@ namespace WearableSmarthomeRemote.UI.iOS
                 RefreshButton = null;
             }
 
-            if (StateLabel != null) {
-                StateLabel.Dispose ();
-                StateLabel = null;
+            if (Switch1 != null) {
+                Switch1.Dispose ();
+                Switch1 = null;
+            }
+
+            if (Switch2 != null) {
+                Switch2.Dispose ();
+                Switch2 = null;
+            }
+
+            if (Switch3 != null) {
+                Switch3.Dispose ();
+                Switch3 = null;
             }
         }
     }

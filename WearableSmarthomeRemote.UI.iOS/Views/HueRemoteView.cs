@@ -14,9 +14,10 @@ namespace WearableSmarthomeRemote.UI.iOS
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			//this.CreateBinding(StateLabel).To((HueRemoteViewModel vm) => vm.LampState).Apply();
 			this.CreateBinding(RefreshButton).To((HueRemoteViewModel vm) => vm.UpdateCommand).Apply();
-
+			this.CreateBinding(Switch1).To((HueRemoteViewModel vm) => vm.Lamp1On).Apply();
+			this.CreateBinding(Switch2).To((HueRemoteViewModel vm) => vm.Lamp2On).Apply();
+			this.CreateBinding(Switch3).To((HueRemoteViewModel vm) => vm.Lamp3On).Apply();
 		}
 
 		public override void DidReceiveMemoryWarning()
