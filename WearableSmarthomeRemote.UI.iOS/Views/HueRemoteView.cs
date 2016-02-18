@@ -26,5 +26,3 @@ namespace WearableSmarthomeRemote.UI.iOS
 		}
 	}
 }
-
-
