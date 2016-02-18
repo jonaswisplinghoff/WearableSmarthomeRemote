@@ -647,7 +647,10 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			public const int View_HueRemote = 2130968580;
 			
 			// aapt resource value: 0x7f040005
-			public const int watch_card_content = 2130968581;
+			public const int View_Overview = 2130968581;
+			
+			// aapt resource value: 0x7f040006
+			public const int watch_card_content = 2130968582;
 			
 			static Layout()
 			{

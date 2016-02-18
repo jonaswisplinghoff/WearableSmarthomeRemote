@@ -1,7 +1,7 @@
 ﻿using Android.Content;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
-using WearableSmarthomeRemote.Core;
+using WearableSmarthomeRemote.WatchCore;
 
 namespace WearableSmarthomeRemote.UI.WearDroid
 {

@@ -60,9 +60,9 @@
         android:layout_height="wrap_content"
         android:text="Update"
         local:MvxBind="Click UpdateCommand" />
-    <Mvx.MvxListView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        local:MvxBind="ItemsSource Items"
-        local:MvxItemTemplate="@layout/item_item" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Overview"
+        local:MvxBind="Click NextPageCommand" />
 </LinearLayout>
