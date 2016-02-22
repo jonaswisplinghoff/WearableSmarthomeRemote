@@ -29,6 +29,7 @@ namespace WearableSmarthomeRemote.Core
 				if (response.IsSuccessStatusCode)
 				{
 					var content = await response.Content.ReadAsStringAsync();
+					Debug.WriteLine("success: " + content);
 					return JsonConvert.DeserializeObject<Item[]>(content);
 				}
 				else
@@ -40,9 +41,10 @@ namespace WearableSmarthomeRemote.Core
 			catch (HttpRequestException e)
 			{
 				Debug.WriteLine(e.Message);
-				Debug.WriteLine(e.StackTrace);
-				Debug.WriteLine(e.InnerException.Message);
-				Debug.WriteLine(e.InnerException.StackTrace);
+			}
+			catch (WebException e)
+			{
+				Debug.WriteLine(e.Message);
 			}
 
 			return new Item[0];
@@ -66,9 +68,10 @@ namespace WearableSmarthomeRemote.Core
 			catch (HttpRequestException e)
 			{
 				Debug.WriteLine(e.Message);
-				Debug.WriteLine(e.StackTrace);
-				Debug.WriteLine(e.InnerException.Message);
-				Debug.WriteLine(e.InnerException.StackTrace);
+			}
+			catch (WebException e)
+			{
+				Debug.WriteLine(e.Message);
 			}
 
 			return "OFF";
@@ -93,9 +96,10 @@ namespace WearableSmarthomeRemote.Core
 			catch (HttpRequestException e)
 			{
 				Debug.WriteLine(e.Message);
-				Debug.WriteLine(e.StackTrace);
-				Debug.WriteLine(e.InnerException.Message);
-				Debug.WriteLine(e.InnerException.StackTrace);
+			}
+			catch (WebException e)
+			{
+				Debug.WriteLine(e.Message);
 			}
 		}
 	}
