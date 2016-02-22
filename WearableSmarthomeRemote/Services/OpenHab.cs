@@ -29,7 +29,6 @@ namespace WearableSmarthomeRemote.Core
 				if (response.IsSuccessStatusCode)
 				{
 					var content = await response.Content.ReadAsStringAsync();
-					Debug.WriteLine("success: " + content);
 					return JsonConvert.DeserializeObject<Item[]>(content);
 				}
 				else
@@ -83,11 +82,7 @@ namespace WearableSmarthomeRemote.Core
 			{
 				StringContent content = state ? new StringContent("ON") : new StringContent("OFF");
 				var response = await client.PutAsync("rest/items/Toggle_" + lampId + "/state", content);
-				if (response.IsSuccessStatusCode)
-				{
-					Debug.WriteLine("Success");
-				}
-				else
+				if (!response.IsSuccessStatusCode)
 				{
 					Debug.WriteLine(response.RequestMessage);
 					Debug.WriteLine(response.StatusCode);

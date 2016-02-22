@@ -16,19 +16,31 @@ namespace WearableSmarthomeRemote.UI.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView ItemList { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton RefreshButton { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch Switch1 { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch Switch2 { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch Switch3 { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (ItemList != null) {
+                ItemList.Dispose ();
+                ItemList = null;
+            }
+
             if (RefreshButton != null) {
                 RefreshButton.Dispose ();
                 RefreshButton = null;

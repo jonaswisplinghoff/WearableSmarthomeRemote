@@ -116,6 +116,7 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\HueRemoteView.xib" />
+    <InterfaceDefinition Include="Views\ItemCellView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -135,11 +136,19 @@
     <Compile Include="Views\HueRemoteView.designer.cs">
       <DependentUpon>HueRemoteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ItemCellView.cs" />
+    <Compile Include="Views\ItemCellView.designer.cs">
+      <DependentUpon>ItemCellView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WearableSmarthomeRemote.MobileCore\WearableSmarthomeRemote.MobileCore.csproj">
       <Project>{65826E6F-A4DF-4613-BF3E-54C1F834CA66}</Project>
       <Name>WearableSmarthomeRemote.MobileCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WearableSmarthomeRemote\WearableSmarthomeRemote.core.csproj">
+      <Project>{3D005060-B116-4F81-91D6-44D64F9B91AC}</Project>
+      <Name>WearableSmarthomeRemote.core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
