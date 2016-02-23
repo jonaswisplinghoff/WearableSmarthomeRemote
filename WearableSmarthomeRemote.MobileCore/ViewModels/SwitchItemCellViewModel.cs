@@ -7,34 +7,10 @@ namespace WearableSmarthomeRemote.MobileCore
 	public class SwitchItemCellViewModel : ItemCellViewModel
 	{
 		protected readonly IOpenHab _openHab;
-		public SwitchItemCellViewModel(IOpenHab openHab, string name, string state)
+		public SwitchItemCellViewModel(IOpenHab openHab, string name, string state) : base(name, state)
 		{
 			_openHab = openHab;
-			_itemName = name;
-			_state = state;
 			_on = state == "ON";
-		}
-
-		private string _itemName;
-		public string ItemName
-		{
-			get { return _itemName; }
-			set
-			{
-				_itemName = value;
-				RaisePropertyChanged(() => ItemName);
-			}
-		}
-
-		private string _state;
-		public string State
-		{
-			get { return _state; }
-			set
-			{
-				_state = value;
-				RaisePropertyChanged(() => State);
-			}
 		}
 
 		private bool _on;

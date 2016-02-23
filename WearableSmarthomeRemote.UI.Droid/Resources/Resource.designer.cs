@@ -92,15 +92,6 @@ namespace WearableSmarthomeRemote.UI.Droid
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
 			
-			// aapt resource value: 0x7f040002
-			public const int linearLayout1 = 2130968578;
-			
-			// aapt resource value: 0x7f040004
-			public const int switch1 = 2130968580;
-			
-			// aapt resource value: 0x7f040003
-			public const int textView1 = 2130968579;
-			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

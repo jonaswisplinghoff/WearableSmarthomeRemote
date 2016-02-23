@@ -6,10 +6,8 @@ namespace WearableSmarthomeRemote.MobileCore
 {
 	public class ColorItemCellViewModel : ItemCellViewModel
 	{
-		public ColorItemCellViewModel(string name, string state)
+		public ColorItemCellViewModel(string name, string state) : base(name, state)
 		{
-			_itemName = name;
-			_state = state;
 			var colors = state.Replace(" ", "").Split(',');
 
 			int h = 0;
@@ -29,28 +27,6 @@ namespace WearableSmarthomeRemote.MobileCore
 
 				HsvToRgb(hDouble, sDouble, vDouble, out r, out g, out b);
 				_color = new MvxColor(r, g, b);
-			}
-		}
-
-		private string _itemName;
-		public string ItemName
-		{
-			get { return _itemName; }
-			set
-			{
-				_itemName = value;
-				RaisePropertyChanged(() => ItemName);
-			}
-		}
-
-		private string _state;
-		public string State
-		{
-			get { return _state; }
-			set
-			{
-				_state = value;
-				RaisePropertyChanged(() => State);
 			}
 		}
 
