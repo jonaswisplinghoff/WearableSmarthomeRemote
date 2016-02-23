@@ -107,6 +107,12 @@
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Color">
+      <HintPath>..\packages\MvvmCross.Plugin.Color.4.0.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Color.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.Color.4.0.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Color.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
@@ -118,6 +124,7 @@
     <InterfaceDefinition Include="Views\HueRemoteView.xib" />
     <InterfaceDefinition Include="Views\SwitchItemCellView.xib" />
     <InterfaceDefinition Include="Views\StateItemCellView.xib" />
+    <InterfaceDefinition Include="Views\ColorItemCellView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -146,6 +153,11 @@
     <Compile Include="Views\StateItemCellView.designer.cs">
       <DependentUpon>StateItemCellView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ColorItemCellView.cs" />
+    <Compile Include="Views\ColorItemCellView.designer.cs">
+      <DependentUpon>ColorItemCellView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WearableSmarthomeRemote.MobileCore\WearableSmarthomeRemote.MobileCore.csproj">

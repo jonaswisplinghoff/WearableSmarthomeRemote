@@ -3,6 +3,7 @@ using Foundation;
 using MvvmCross.Binding.iOS.Views;
 using UIKit;
 using WearableSmarthomeRemote.MobileCore;
+using MvvmCross.Binding.BindingContext;
 
 namespace WearableSmarthomeRemote.UI.iOS
 {
@@ -10,12 +11,13 @@ namespace WearableSmarthomeRemote.UI.iOS
 	{
 		private static readonly NSString SwitchItemCellIdentifier = new NSString("SwitchItemCellView");
 		private static readonly NSString StateItemCellIdentifier = new NSString("StateItemCellView");
-
+		private static readonly NSString ColorItemCellIdentifier = new NSString("ColorItemCellView");
 		public TableSource(UITableView tableView)
 			: base(tableView)
 		{
 			tableView.RegisterNibForCellReuse(UINib.FromName("SwitchItemCellView", NSBundle.MainBundle), SwitchItemCellIdentifier);
 			tableView.RegisterNibForCellReuse(UINib.FromName("StateItemCellView", NSBundle.MainBundle), StateItemCellIdentifier);
+			tableView.RegisterNibForCellReuse(UINib.FromName("ColorItemCellView", NSBundle.MainBundle), ColorItemCellIdentifier);
 		}
 
 		public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
@@ -34,6 +36,10 @@ namespace WearableSmarthomeRemote.UI.iOS
 			else if (item is StateItemCellViewModel)
 			{
 				cellIdentifier = StateItemCellIdentifier;
+			}
+			else if (item is ColorItemCellViewModel)
+			{
+				cellIdentifier = ColorItemCellIdentifier;
 			}
 			else
 			{
