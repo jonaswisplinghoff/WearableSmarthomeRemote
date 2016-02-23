@@ -17,13 +17,10 @@ namespace WearableSmarthomeRemote.UI.iOS
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
 			this.CreateBinding(RefreshButton).To((HueRemoteViewModel vm) => vm.UpdateCommand).Apply();
-			this.CreateBinding(Switch1).To((HueRemoteViewModel vm) => vm.Lamp1On).Apply();
-			this.CreateBinding(Switch2).To((HueRemoteViewModel vm) => vm.Lamp2On).Apply();
-			this.CreateBinding(Switch3).To((HueRemoteViewModel vm) => vm.Lamp3On).Apply();
 
-			var Source = new MvxSimpleTableViewSource(ItemList, ItemCellView.Key, ItemCellView.Key);
+			var Source = new MvxSimpleTableViewSource(ItemList, SwitchItemCellView.Key, SwitchItemCellView.Key);
 			ItemList.Source = Source;
-
+			ItemList.RowHeight = 60;
 			var set = this.CreateBindingSet<HueRemoteView, HueRemoteViewModel>();
 			set.Bind(Source).To((HueRemoteViewModel vm) => vm.Items);
 			set.Apply();

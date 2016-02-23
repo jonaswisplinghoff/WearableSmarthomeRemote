@@ -11,8 +11,8 @@ using UIKit;
 
 namespace WearableSmarthomeRemote.UI.iOS
 {
-    [Register ("ItemCellView")]
-    partial class ItemCellView
+    [Register ("SwitchItemCellView")]
+    partial class SwitchItemCellView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -21,6 +21,10 @@ namespace WearableSmarthomeRemote.UI.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel StateLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch SwitchItem { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -32,6 +36,11 @@ namespace WearableSmarthomeRemote.UI.iOS
             if (StateLabel != null) {
                 StateLabel.Dispose ();
                 StateLabel = null;
+            }
+
+            if (SwitchItem != null) {
+                SwitchItem.Dispose ();
+                SwitchItem = null;
             }
         }
     }

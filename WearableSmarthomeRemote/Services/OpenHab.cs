@@ -49,39 +49,12 @@ namespace WearableSmarthomeRemote.Core
 			return new Item[0];
 		}
 
-		async public Task<string> GetLampState(int lampId)
-		{
-			try
-			{
-				var response = await client.GetAsync("rest/items/Toggle_" + lampId + "/state");
-				if (response.IsSuccessStatusCode)
-				{
-					return await response.Content.ReadAsStringAsync();
-				}
-				else
-				{
-					Debug.WriteLine(response.RequestMessage);
-					Debug.WriteLine(response.StatusCode);
-				}
-			}
-			catch (HttpRequestException e)
-			{
-				Debug.WriteLine(e.Message);
-			}
-			catch (WebException e)
-			{
-				Debug.WriteLine(e.Message);
-			}
-
-			return "OFF";
-		}
-
-		async public void SetLampState(int lampId, bool state)
+		async public void SetSwitchState(string switchName, bool state)
 		{
 			try
 			{
 				StringContent content = state ? new StringContent("ON") : new StringContent("OFF");
-				var response = await client.PutAsync("rest/items/Toggle_" + lampId + "/state", content);
+				var response = await client.PutAsync("rest/items/" + switchName + "/state", content);
 				if (!response.IsSuccessStatusCode)
 				{
 					Debug.WriteLine(response.RequestMessage);
