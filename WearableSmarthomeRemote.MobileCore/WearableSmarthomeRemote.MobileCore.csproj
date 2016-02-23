@@ -34,6 +34,8 @@
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\HueRemoteViewModel.cs" />
     <Compile Include="ViewModels\SwitchItemCellViewModel.cs" />
+    <Compile Include="ViewModels\StateItemCellViewModel.cs" />
+    <Compile Include="ViewModels\ItemCellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WearableSmarthomeRemote\WearableSmarthomeRemote.core.csproj">

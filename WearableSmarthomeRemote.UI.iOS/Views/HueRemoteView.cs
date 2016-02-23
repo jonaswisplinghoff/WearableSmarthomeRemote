@@ -3,6 +3,7 @@ using MvvmCross.iOS.Views;
 using WearableSmarthomeRemote.MobileCore;
 using MvvmCross.Binding.iOS.Views;
 using WearableSmarthomeRemote.Core;
+using System.Collections.Generic;
 
 namespace WearableSmarthomeRemote.UI.iOS
 {
@@ -18,12 +19,14 @@ namespace WearableSmarthomeRemote.UI.iOS
 			// Perform any additional setup after loading the view, typically from a nib.
 			this.CreateBinding(RefreshButton).To((HueRemoteViewModel vm) => vm.UpdateCommand).Apply();
 
-			var Source = new MvxSimpleTableViewSource(ItemList, SwitchItemCellView.Key, SwitchItemCellView.Key);
+			//var Source = new MvxSimpleTableViewSource(ItemList, SwitchItemCellView.Key, SwitchItemCellView.Key);
+			var Source = new TableSource(ItemList);
 			ItemList.Source = Source;
-			ItemList.RowHeight = 60;
-			var set = this.CreateBindingSet<HueRemoteView, HueRemoteViewModel>();
-			set.Bind(Source).To((HueRemoteViewModel vm) => vm.Items);
-			set.Apply();
+
+			this.AddBindings(new Dictionary<object, string>
+			{
+				{Source, "ItemsSource Items"}
+			});
 
 			ItemList.ReloadData();
 		}

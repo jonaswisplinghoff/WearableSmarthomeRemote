@@ -20,19 +20,16 @@ namespace WearableSmarthomeRemote.MobileCore
 			Update();
 		}
 
-		private List<SwitchItemCellViewModel> _items;
-		public List<SwitchItemCellViewModel> Items
+		private List<ItemCellViewModel> _items;
+		public List<ItemCellViewModel> Items
 		{
 			get { return _items; }
 			set
 			{
-				_items = new List<SwitchItemCellViewModel>();
-				foreach (SwitchItemCellViewModel item in value)
+				_items = new List<ItemCellViewModel>();
+				foreach (ItemCellViewModel item in value)
 				{
-					if (item.Type != "GroupItem")
-					{
-						_items.Add(item);
-					}
+					_items.Add(item);
 				}
 
 				RaisePropertyChanged(() => Items);
@@ -53,13 +50,22 @@ namespace WearableSmarthomeRemote.MobileCore
 		{
 			var items = await _openHab.GetItems();
 
-			var viewModels = new List<SwitchItemCellViewModel>();
+			var viewModels = new List<ItemCellViewModel>();
 			foreach (Item item in items)
 			{
-				var itemVM = new SwitchItemCellViewModel(_openHab, item.name, item.state, item.type);
+				ItemCellViewModel itemVM;
+				switch (item.type)
+				{
+					case "SwitchItem":
+						itemVM = new SwitchItemCellViewModel(_openHab, item.name, item.state);
+						break;
+					default:
+						itemVM = new StateItemCellViewModel(item.name, item.state);
+						break;
+				}
 				viewModels.Add(itemVM);
 			}
-			Items = new List<SwitchItemCellViewModel>(viewModels);
+			Items = new List<ItemCellViewModel>(viewModels);
 		}
 	}
 }

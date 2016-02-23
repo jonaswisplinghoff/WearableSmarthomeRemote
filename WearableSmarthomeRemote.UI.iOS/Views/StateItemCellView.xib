@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="cxk-wN-pdQ" customClass="StateItemCellView" reuseIdentifier="StateItemCellView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA4-gD-cvW" misplaced="YES">
+                        <rect key="frame" x="8" y="11" width="200" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mt-rx-KXT">
+                        <rect key="frame" x="216" y="11" width="96" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="pu3-pz-ZQE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8mt-rx-KXT" firstAttribute="bottom" secondItem="YTl-1W-gDM" secondAttribute="bottomMargin" id="CVc-cJ-m64"/>
+                    <constraint firstItem="dA4-gD-cvW" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leadingMargin" id="Le0-Bs-9sC"/>
+                    <constraint firstItem="8mt-rx-KXT" firstAttribute="leading" secondItem="dA4-gD-cvW" secondAttribute="trailing" constant="8" symbolic="YES" id="MUg-PN-XQk"/>
+                    <constraint firstItem="dA4-gD-cvW" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="topMargin" constant="3" id="NgO-JS-XBa"/>
+                    <constraint firstItem="8mt-rx-KXT" firstAttribute="trailing" secondItem="YTl-1W-gDM" secondAttribute="trailingMargin" id="TRc-zM-fnv"/>
+                    <constraint firstItem="dA4-gD-cvW" firstAttribute="bottom" secondItem="8mt-rx-KXT" secondAttribute="bottom" id="Xpd-x3-Rbl"/>
+                    <constraint firstItem="8mt-rx-KXT" firstAttribute="top" secondItem="dA4-gD-cvW" secondAttribute="top" id="b4d-YS-4gC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="NameLabel" destination="dA4-gD-cvW" id="name-outlet-dA4-gD-cvW"/>
+                <outlet property="StateLabel" destination="8mt-rx-KXT" id="name-outlet-8mt-rx-KXT"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

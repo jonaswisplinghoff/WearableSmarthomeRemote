@@ -4,15 +4,12 @@ using WearableSmarthomeRemote.Core;
 
 namespace WearableSmarthomeRemote.MobileCore
 {
-	public class SwitchItemCellViewModel : ItemCellViewModel
+	public class StateItemCellViewModel : ItemCellViewModel
 	{
-		protected readonly IOpenHab _openHab;
-		public SwitchItemCellViewModel(IOpenHab openHab, string name, string state)
+		public StateItemCellViewModel(string name, string state)
 		{
-			_openHab = openHab;
 			_itemName = name;
 			_state = state;
-			_on = state == "ON";
 		}
 
 		private string _itemName;
@@ -34,18 +31,6 @@ namespace WearableSmarthomeRemote.MobileCore
 			{
 				_state = value;
 				RaisePropertyChanged(() => State);
-			}
-		}
-
-		private bool _on;
-		public bool On
-		{
-			get { return _on; }
-			set
-			{
-				_openHab.SetSwitchState(ItemName, value);
-				_on = value;
-				RaisePropertyChanged(() => On);
 			}
 		}
 	}
