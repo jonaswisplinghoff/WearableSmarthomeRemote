@@ -12,6 +12,6 @@
     <Mvx.MvxListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        local:MvxBind="ItemsSource Items"
-        local:MvxItemTemplate="@layout/item_item" />
+        android:id="@+id/ItemListView"
+        local:MvxBind="ItemsSource Items" />
 </LinearLayout>
