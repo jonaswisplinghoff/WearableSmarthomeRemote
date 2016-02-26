@@ -7,10 +7,10 @@ using System.Windows.Input;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
-	public class OverviewViewModel : MvxViewModel
+	public class ItemListViewModel : MvxViewModel
 	{
 		private readonly IOpenHab _openHab;
-		public OverviewViewModel(IOpenHab openHab)
+		public ItemListViewModel(IOpenHab openHab)
 		{
 			_openHab = openHab;
 		}

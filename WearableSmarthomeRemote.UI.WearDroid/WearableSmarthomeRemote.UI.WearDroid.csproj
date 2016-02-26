@@ -92,7 +92,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Views\HueRemoteView.cs" />
+    <Compile Include="Views\SmarthomeRemoteView.cs" />
     <Compile Include="Views\OverviewView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,8 +108,8 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\layout\View_HueRemote.axml" />
-    <AndroidResource Include="Resources\layout\View_Overview.axml" />
+    <AndroidResource Include="Resources\layout\View_SmarthomeRemote.axml" />
+    <AndroidResource Include="Resources\layout\View_ItemList.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Color.axml" />
     <AndroidResource Include="Resources\layout\ListItem_State.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Switch.axml" />

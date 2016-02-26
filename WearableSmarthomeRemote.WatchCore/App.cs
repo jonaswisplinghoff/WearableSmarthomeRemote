@@ -10,7 +10,7 @@ namespace WearableSmarthomeRemote.WatchCore
 		public App()
 		{
 			Mvx.RegisterType<IOpenHab, OpenHab>();
-			Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<HueRemoteViewModel>());
+			Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<SmarthomeRemoteViewModel>());
 		}
 	}
 }

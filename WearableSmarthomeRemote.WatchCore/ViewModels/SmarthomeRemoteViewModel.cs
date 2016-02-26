@@ -8,10 +8,10 @@ using MvvmCross.Binding.Bindings;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
-	public class HueRemoteViewModel : MvxViewModel
+	public class SmarthomeRemoteViewModel : MvxViewModel
 	{
 		private readonly IOpenHab _openHab;
-		public HueRemoteViewModel(IOpenHab openHab)
+		public SmarthomeRemoteViewModel(IOpenHab openHab)
 		{
 			_openHab = openHab;
 		}
@@ -47,7 +47,7 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		void NextPage()
 		{
-			this.ShowViewModel<OverviewViewModel>();
+			this.ShowViewModel<ItemListViewModel>();
 		}
 
 		async void Update()

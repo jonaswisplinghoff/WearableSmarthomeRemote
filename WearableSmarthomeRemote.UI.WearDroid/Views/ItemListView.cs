@@ -8,12 +8,12 @@ using WearableSmarthomeRemote.WatchCore;
 
 namespace WearableSmarthomeRemote.UI.WearDroid
 {
-	[Activity(Label = "OverviewView")]
-	public class OverviewView : MvxActivity
+	[Activity(Label = "ItemListView")]
+	public class ItemListView : MvxActivity
 	{
 		protected override void OnViewModelSet()
 		{
-			SetContentView(Resource.Layout.View_Overview);
+			SetContentView(Resource.Layout.View_ItemList);
 
 			var list = FindViewById<MvxListView>(Resource.Id.ItemListView);
 			list.Adapter = new CustomAdapter(this, (IMvxAndroidBindingContext)BindingContext);

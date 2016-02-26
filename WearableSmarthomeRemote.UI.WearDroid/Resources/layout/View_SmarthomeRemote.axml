@@ -7,7 +7,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Overview"
+        android:text="All Items"
         local:MvxBind="Click NextPageCommand" />
     <TextView
         android:layout_width="match_parent"

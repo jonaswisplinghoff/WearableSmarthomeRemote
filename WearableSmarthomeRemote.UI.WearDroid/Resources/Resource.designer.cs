@@ -663,10 +663,10 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			public const int ListItem_Switch = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int View_HueRemote = 2130968582;
+			public const int View_ItemList = 2130968582;
 			
 			// aapt resource value: 0x7f040007
-			public const int View_Overview = 2130968583;
+			public const int View_SmarthomeRemote = 2130968583;
 			
 			// aapt resource value: 0x7f040008
 			public const int watch_card_content = 2130968584;
