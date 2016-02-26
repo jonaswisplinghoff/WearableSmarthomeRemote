@@ -3,7 +3,7 @@ using MvvmCross.Core.ViewModels;
 using WearableSmarthomeRemote.Core;
 using System.Diagnostics;
 using System.Collections.Generic;
-
+using System.Windows.Input;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
@@ -20,31 +20,49 @@ namespace WearableSmarthomeRemote.WatchCore
 			Update();
 		}
 
-		private List<Item> _items;
-		public List<Item> Items
+
+		private List<ItemCellViewModel> _items;
+		public List<ItemCellViewModel> Items
 		{
 			get { return _items; }
 			set
 			{
-				_items = new List<Item>();
-				foreach (Item item in value)
+				_items = new List<ItemCellViewModel>();
+				foreach (ItemCellViewModel item in value)
 				{
-					if (item.type != "GroupItem")
-					{
-						_items.Add(item);
-					}
+					_items.Add(item);
 				}
 
 				RaisePropertyChanged(() => Items);
-				Debug.WriteLine("Items updated: " + _items.Count.ToString());
 			}
 		}
 
 		async void Update()
 		{
 			var items = await _openHab.GetItems();
-			Items = new List<Item>(items);
+
+			var viewModels = new List<ItemCellViewModel>();
+			foreach (Item item in items)
+			{
+				Debug.WriteLine("Item: " + item.name + ", state: " + item.state);
+				switch (item.type)
+				{
+					case "SwitchItem":
+						viewModels.Add(new SwitchItemCellViewModel(_openHab, item.name, item.state));
+						break;
+					case "GroupItem":
+						break;
+					case "ColorItem":
+						viewModels.Add(new ColorItemCellViewModel(item.name, item.state));
+						break;
+					default:
+						viewModels.Add(new StateItemCellViewModel(item.name, item.state));
+						break;
+				}
+			}
+			Items = new List<ItemCellViewModel>(viewModels);
 		}
+
 	}
 }
 

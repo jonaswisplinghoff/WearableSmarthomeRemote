@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using ModernHttpClient;
 
 namespace WearableSmarthomeRemote.Core
 {
@@ -17,7 +18,7 @@ namespace WearableSmarthomeRemote.Core
 
 		public OpenHab()
 		{
-			client = new HttpClient();
+			client = new HttpClient(new NativeMessageHandler());
 			client.BaseAddress = new Uri(baseURL);
 		}
 

@@ -47,6 +47,7 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::WearableSmarthomeRemote.UI.WearDroid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::WearableSmarthomeRemote.UI.WearDroid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::WearableSmarthomeRemote.UI.WearDroid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::ModernHttpClient.Resource.String.library_name = global::WearableSmarthomeRemote.UI.WearDroid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -672,17 +673,20 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f0b0003
-			public const int app_name = 2131427331;
+			// aapt resource value: 0x7f0b0004
+			public const int app_name = 2131427332;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int dismiss_overlay_button_label = 2131427328;
 			
-			// aapt resource value: 0x7f0b0001
-			public const int hello_rect = 2131427329;
-			
 			// aapt resource value: 0x7f0b0002
-			public const int hello_round = 2131427330;
+			public const int hello_rect = 2131427330;
+			
+			// aapt resource value: 0x7f0b0003
+			public const int hello_round = 2131427331;
+			
+			// aapt resource value: 0x7f0b0001
+			public const int library_name = 2131427329;
 			
 			static String()
 			{

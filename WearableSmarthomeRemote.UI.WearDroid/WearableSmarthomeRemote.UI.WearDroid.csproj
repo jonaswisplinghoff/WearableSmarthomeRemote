@@ -74,6 +74,12 @@
     <Reference Include="MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.Binding.4.0.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="OkHttp">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\OkHttp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -98,6 +104,9 @@
     <AndroidResource Include="Resources\layout\Item_Item.axml" />
     <AndroidResource Include="Resources\layout\View_HueRemote.axml" />
     <AndroidResource Include="Resources\layout\View_Overview.axml" />
+    <AndroidResource Include="Resources\layout\ListItem_Color.axml" />
+    <AndroidResource Include="Resources\layout\ListItem_State.axml" />
+    <AndroidResource Include="Resources\layout\ListItem_Switch.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
