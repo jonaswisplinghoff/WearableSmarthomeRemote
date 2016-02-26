@@ -17,26 +17,6 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		public override void Start()
 		{
-			Update();
-		}
-
-		private MvxCommand _updateCommand;
-		public ICommand UpdateCommand
-		{
-			get
-			{
-				_updateCommand = _updateCommand ?? new MvxCommand(() => Update());
-				return _updateCommand;
-			}
-		}
-
-		async void Update()
-		{
-			var items = await _openHab.GetItems();
-			foreach (Item item in items)
-			{
-
-			}
 		}
 
 		private MvxCommand _nextPageCommand;

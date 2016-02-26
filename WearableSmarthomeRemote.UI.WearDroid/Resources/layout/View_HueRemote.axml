@@ -7,11 +7,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update"
-        local:MvxBind="Click UpdateCommand" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="Overview"
         local:MvxBind="Click NextPageCommand" />
 </LinearLayout>

@@ -495,6 +495,9 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f0d0020
+			public const int ItemListView = 2131558432;
+			
 			// aapt resource value: 0x7f0d0001
 			public const int MvvmCrossTagId = 2131558401;
 			
@@ -558,6 +561,12 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			// aapt resource value: 0x7f0d0005
 			public const int left = 2131558405;
 			
+			// aapt resource value: 0x7f0d001a
+			public const int linearLayout1 = 2131558426;
+			
+			// aapt resource value: 0x7f0d001b
+			public const int linearLayout2 = 2131558427;
+			
 			// aapt resource value: 0x7f0d0019
 			public const int message = 2131558425;
 			
@@ -570,14 +579,26 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			// aapt resource value: 0x7f0d0012
 			public const int start = 2131558418;
 			
-			// aapt resource value: 0x7f0d001b
-			public const int text = 2131558427;
+			// aapt resource value: 0x7f0d0022
+			public const int text = 2131558434;
 			
-			// aapt resource value: 0x7f0d001a
-			public const int title = 2131558426;
+			// aapt resource value: 0x7f0d001c
+			public const int textView1 = 2131558428;
+			
+			// aapt resource value: 0x7f0d001d
+			public const int textView2 = 2131558429;
+			
+			// aapt resource value: 0x7f0d0021
+			public const int title = 2131558433;
+			
+			// aapt resource value: 0x7f0d001f
+			public const int toggleButton1 = 2131558431;
 			
 			// aapt resource value: 0x7f0d0007
 			public const int top = 2131558407;
+			
+			// aapt resource value: 0x7f0d001e
+			public const int view1 = 2131558430;
 			
 			static Id()
 			{
@@ -633,16 +654,22 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			public const int error_layout = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int Item_Item = 2130968579;
+			public const int ListItem_Color = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int View_HueRemote = 2130968580;
+			public const int ListItem_State = 2130968580;
 			
 			// aapt resource value: 0x7f040005
-			public const int View_Overview = 2130968581;
+			public const int ListItem_Switch = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int watch_card_content = 2130968582;
+			public const int View_HueRemote = 2130968582;
+			
+			// aapt resource value: 0x7f040007
+			public const int View_Overview = 2130968583;
+			
+			// aapt resource value: 0x7f040008
+			public const int watch_card_content = 2130968584;
 			
 			static Layout()
 			{
