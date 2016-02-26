@@ -9,4 +9,9 @@
         android:layout_height="wrap_content"
         android:text="Overview"
         local:MvxBind="Click NextPageCommand" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sitemap"
+        local:MvxBind="Text Sitemap" />
 </LinearLayout>

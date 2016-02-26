@@ -4,6 +4,7 @@ using MvvmCross.Core.ViewModels;
 using System.Diagnostics;
 using System.Collections.Generic;
 using WearableSmarthomeRemote.Core;
+using MvvmCross.Binding.Bindings;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
@@ -17,6 +18,21 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		public override void Start()
 		{
+			Update();
+		}
+
+		private string _sitemap;
+		public string Sitemap
+		{
+			get
+			{
+				return _sitemap;
+			}
+			set
+			{
+				_sitemap = value;
+				RaisePropertyChanged(() => Sitemap);
+			}
 		}
 
 		private MvxCommand _nextPageCommand;
@@ -34,6 +50,10 @@ namespace WearableSmarthomeRemote.WatchCore
 			this.ShowViewModel<OverviewViewModel>();
 		}
 
+		async void Update()
+		{
+			var sitemap = await _openHab.GetSitemapWithName();
+			Sitemap = sitemap.name;
+		}
 	}
 }
-

@@ -33,6 +33,9 @@
     <Compile Include="Services\IOpenHab.cs" />
     <Compile Include="Services\OpenHab.cs" />
     <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Sitemap.cs" />
+    <Compile Include="Model\Homepage.cs" />
+    <Compile Include="Model\Widget.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

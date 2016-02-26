@@ -50,6 +50,35 @@ namespace WearableSmarthomeRemote.Core
 			return new Item[0];
 		}
 
+		async public Task<Sitemap> GetSitemapWithName(string name = "default")
+		{
+			try
+			{
+				var response = await client.GetAsync("rest/sitemaps/" + name);
+				if (response.IsSuccessStatusCode)
+				{
+					var content = await response.Content.ReadAsStringAsync();
+					Debug.WriteLine(content);
+					return JsonConvert.DeserializeObject<Sitemap>(content);
+				}
+				else
+				{
+					Debug.WriteLine(response.RequestMessage);
+					Debug.WriteLine(response.StatusCode);
+				}
+			}
+			catch (HttpRequestException e)
+			{
+				Debug.WriteLine(e.Message);
+			}
+			catch (WebException e)
+			{
+				Debug.WriteLine(e.Message);
+			}
+
+			return new Sitemap();
+		}
+
 		async public void SetSwitchState(string switchName, bool state)
 		{
 			try
