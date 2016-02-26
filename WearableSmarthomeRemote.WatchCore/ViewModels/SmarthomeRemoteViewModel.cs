@@ -21,17 +21,17 @@ namespace WearableSmarthomeRemote.WatchCore
 			Update();
 		}
 
-		private string _sitemap;
-		public string Sitemap
+		private List<WidgetCellViewModel> _widgets;
+		public List<WidgetCellViewModel> Widgets
 		{
 			get
 			{
-				return _sitemap;
+				return _widgets;
 			}
 			set
 			{
-				_sitemap = value;
-				RaisePropertyChanged(() => Sitemap);
+				_widgets = value;
+				RaisePropertyChanged(() => Widgets);
 			}
 		}
 
@@ -53,7 +53,12 @@ namespace WearableSmarthomeRemote.WatchCore
 		async void Update()
 		{
 			var sitemap = await _openHab.GetSitemapWithName();
-			Sitemap = sitemap.name;
+
+			Widgets = new List<WidgetCellViewModel>();
+			foreach (Widget widget in sitemap.homepage.widgets)
+			{
+				Widgets.Add(new WidgetCellViewModel(widget.label));
+			}
 		}
 	}
 }

@@ -9,9 +9,10 @@
         android:layout_height="wrap_content"
         android:text="All Items"
         local:MvxBind="Click NextPageCommand" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sitemap"
-        local:MvxBind="Text Sitemap" />
+    <Mvx.MvxListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        local:MvxBind="ItemsSource Widgets"
+        local:MvxItemTemplate="@layout/listitem_widget"
+        android:id="@+id/WidgetListView" />
 </LinearLayout>

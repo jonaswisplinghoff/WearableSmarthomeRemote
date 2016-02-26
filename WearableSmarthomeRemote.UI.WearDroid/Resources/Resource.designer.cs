@@ -504,6 +504,9 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			// aapt resource value: 0x7f0d0002
 			public const int MvxBindingTagUnique = 2131558402;
 			
+			// aapt resource value: 0x7f0d0021
+			public const int WidgetListView = 2131558433;
+			
 			// aapt resource value: 0x7f0d0015
 			public const int alertTitle = 2131558421;
 			
@@ -579,8 +582,8 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			// aapt resource value: 0x7f0d0012
 			public const int start = 2131558418;
 			
-			// aapt resource value: 0x7f0d0022
-			public const int text = 2131558434;
+			// aapt resource value: 0x7f0d0023
+			public const int text = 2131558435;
 			
 			// aapt resource value: 0x7f0d001c
 			public const int textView1 = 2131558428;
@@ -588,8 +591,8 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			// aapt resource value: 0x7f0d001d
 			public const int textView2 = 2131558429;
 			
-			// aapt resource value: 0x7f0d0021
-			public const int title = 2131558433;
+			// aapt resource value: 0x7f0d0022
+			public const int title = 2131558434;
 			
 			// aapt resource value: 0x7f0d001f
 			public const int toggleButton1 = 2131558431;
@@ -663,13 +666,16 @@ namespace WearableSmarthomeRemote.UI.WearDroid
 			public const int ListItem_Switch = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int View_ItemList = 2130968582;
+			public const int ListItem_Widget = 2130968582;
 			
 			// aapt resource value: 0x7f040007
-			public const int View_SmarthomeRemote = 2130968583;
+			public const int View_ItemList = 2130968583;
 			
 			// aapt resource value: 0x7f040008
-			public const int watch_card_content = 2130968584;
+			public const int View_SmarthomeRemote = 2130968584;
+			
+			// aapt resource value: 0x7f040009
+			public const int watch_card_content = 2130968585;
 			
 			static Layout()
 			{

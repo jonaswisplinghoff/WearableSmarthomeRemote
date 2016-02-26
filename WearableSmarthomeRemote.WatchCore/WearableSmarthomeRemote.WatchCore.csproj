@@ -37,6 +37,7 @@
     <Compile Include="ViewModels\SwitchItemCellViewModel.cs" />
     <Compile Include="ViewModels\ItemListViewModel.cs" />
     <Compile Include="ViewModels\SmarthomeRemoteViewModel.cs" />
+    <Compile Include="ViewModels\WidgetCellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">

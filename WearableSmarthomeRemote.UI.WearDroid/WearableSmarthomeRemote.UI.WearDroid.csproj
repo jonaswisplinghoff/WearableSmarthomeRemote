@@ -113,6 +113,7 @@
     <AndroidResource Include="Resources\layout\ListItem_Color.axml" />
     <AndroidResource Include="Resources\layout\ListItem_State.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Switch.axml" />
+    <AndroidResource Include="Resources\layout\ListItem_Widget.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
