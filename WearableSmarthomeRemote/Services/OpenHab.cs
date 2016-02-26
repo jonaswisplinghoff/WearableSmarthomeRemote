@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net;
-using System.IO;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Newtonsoft.Json;
@@ -29,7 +27,7 @@ namespace WearableSmarthomeRemote.Core
 				if (response.IsSuccessStatusCode)
 				{
 					var content = await response.Content.ReadAsStringAsync();
-					// var spareResponse = "[{"link":"http://192.168.128.102:8080/rest/items/Temp","state":"4","stateDescription":{"pattern":"%.2f Â°C","readOnly":false,"options":[]},"type":"NumberItem","name":"Temp","label":"Temperature","category":"temperature","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Humid","state":"58","stateDescription":{"pattern":"%.2f","readOnly":false,"options":[]},"type":"NumberItem","name":"Humid","label":"Humidity","category":"humidity","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Toggle_1","state":"ON","type":"SwitchItem","name":"Toggle_1","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Toggle_2","state":"ON","type":"SwitchItem","name":"Toggle_2","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Toggle_3","state":"ON","type":"SwitchItem","name":"Toggle_3","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Color_1","state":"360,94,100","type":"ColorItem","name":"Color_1","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Color_2","state":"125,96,85","type":"ColorItem","name":"Color_2","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Color_3","state":"237,96,100","type":"ColorItem","name":"Color_3","tags":[],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_LCT001_a9ad83c1_1","state":"NULL","type":"GroupItem","name":"hue_LCT001_a9ad83c1_1","label":"Hue Lamp 1","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_LCT001_a9ad83c1_2","state":"NULL","type":"GroupItem","name":"hue_LCT001_a9ad83c1_2","label":"Hue Lamp 2","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_LCT001_a9ad83c1_4","state":"NULL","type":"GroupItem","name":"hue_LCT001_a9ad83c1_4","label":"Hue Lamp 3","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_bridge_a9ad83c1","state":"NULL","type":"GroupItem","name":"hue_bridge_a9ad83c1","label":"Hue Bridge","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/yahooweather_weather_cc578ce2","state":"NULL","type":"GroupItem","name":"yahooweather_weather_cc578ce2","label":"Wetterinformation","tags":["thing"],"groupNames":[]}]"
+					//var spareResponse = "[{"link":"http://192.168.128.102:8080/rest/items/Temp","state":"4","stateDescription":{"pattern":"%.2f Â°C","readOnly":false,"options":[]},"type":"NumberItem","name":"Temp","label":"Temperature","category":"temperature","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Humid","state":"58","stateDescription":{"pattern":"%.2f","readOnly":false,"options":[]},"type":"NumberItem","name":"Humid","label":"Humidity","category":"humidity","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Toggle_1","state":"ON","type":"SwitchItem","name":"Toggle_1","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Toggle_2","state":"ON","type":"SwitchItem","name":"Toggle_2","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Toggle_3","state":"ON","type":"SwitchItem","name":"Toggle_3","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Color_1","state":"360,94,100","type":"ColorItem","name":"Color_1","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Color_2","state":"125,96,85","type":"ColorItem","name":"Color_2","tags":[],"groupNames":[]},{"link":"http://192.168.128.102:8080/rest/items/Color_3","state":"237,96,100","type":"ColorItem","name":"Color_3","tags":[],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_LCT001_a9ad83c1_1","state":"NULL","type":"GroupItem","name":"hue_LCT001_a9ad83c1_1","label":"Hue Lamp 1","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_LCT001_a9ad83c1_2","state":"NULL","type":"GroupItem","name":"hue_LCT001_a9ad83c1_2","label":"Hue Lamp 2","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_LCT001_a9ad83c1_4","state":"NULL","type":"GroupItem","name":"hue_LCT001_a9ad83c1_4","label":"Hue Lamp 3","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/hue_bridge_a9ad83c1","state":"NULL","type":"GroupItem","name":"hue_bridge_a9ad83c1","label":"Hue Bridge","tags":["thing"],"groupNames":[]},{"members":[],"link":"http://192.168.128.102:8080/rest/items/yahooweather_weather_cc578ce2","state":"NULL","type":"GroupItem","name":"yahooweather_weather_cc578ce2","label":"Wetterinformation","tags":["thing"],"groupNames":[]}]"
 					return JsonConvert.DeserializeObject<Item[]>(content);
 				}
 				else
@@ -46,7 +44,6 @@ namespace WearableSmarthomeRemote.Core
 			{
 				Debug.WriteLine(e.Message);
 			}
-
 			return new Item[0];
 		}
 
@@ -75,7 +72,6 @@ namespace WearableSmarthomeRemote.Core
 			{
 				Debug.WriteLine(e.Message);
 			}
-
 			return new Sitemap();
 		}
 

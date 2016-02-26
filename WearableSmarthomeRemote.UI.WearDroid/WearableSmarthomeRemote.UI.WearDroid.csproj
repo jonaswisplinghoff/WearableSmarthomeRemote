@@ -93,7 +93,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\SmarthomeRemoteView.cs" />
-    <Compile Include="Views\OverviewView.cs" />
+    <Compile Include="Views\ItemListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

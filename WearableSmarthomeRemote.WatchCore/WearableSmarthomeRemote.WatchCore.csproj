@@ -31,12 +31,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="ViewModels\HueRemoteViewModel.cs" />
-    <Compile Include="ViewModels\OverviewViewModel.cs" />
     <Compile Include="ViewModels\ColorItemCellViewModel.cs" />
     <Compile Include="ViewModels\ItemCellViewModel.cs" />
     <Compile Include="ViewModels\StateItemCellViewModel.cs" />
     <Compile Include="ViewModels\SwitchItemCellViewModel.cs" />
+    <Compile Include="ViewModels\ItemListViewModel.cs" />
+    <Compile Include="ViewModels\SmarthomeRemoteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
