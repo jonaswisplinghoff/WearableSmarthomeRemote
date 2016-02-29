@@ -8,7 +8,6 @@ namespace WearableSmarthomeRemote.Core
 		void SetSwitchState(string switchName, bool state);
 		Task<Item[]> GetItems();
 		Task<Sitemap> GetSitemapWithName(string name = "default");
-
 	}
 }
 

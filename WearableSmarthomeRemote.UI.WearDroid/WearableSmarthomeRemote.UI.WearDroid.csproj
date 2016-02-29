@@ -94,6 +94,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Views\SmarthomeRemoteView.cs" />
     <Compile Include="Views\ItemListView.cs" />
+    <Compile Include="Views\WidgetListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -114,6 +115,7 @@
     <AndroidResource Include="Resources\layout\ListItem_State.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Switch.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Widget.axml" />
+    <AndroidResource Include="Resources\layout\View_WidgetList.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -1,24 +1,40 @@
 ﻿using System;
-using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
-using System.Diagnostics;
 using System.Collections.Generic;
+using MvvmCross.Core.ViewModels;
 using WearableSmarthomeRemote.Core;
 using MvvmCross.Binding.Bindings;
+using System.Windows.Input;
+using System.Diagnostics;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
-	public class SmarthomeRemoteViewModel : MvxViewModel
+	public class WidgetListViewModel : MvxViewModel
 	{
+		private List<Widget> _widgetList;
+
 		private readonly IOpenHab _openHab;
-		public SmarthomeRemoteViewModel(IOpenHab openHab)
+		public WidgetListViewModel(IOpenHab openHab)
 		{
 			_openHab = openHab;
+		}
+
+		public void Init(WidgetListParameters parameters)
+		{
+			Debug.WriteLine(parameters.WidgetId);
 		}
 
 		public override void Start()
 		{
 			Update();
+		}
+
+		void Update()
+		{
+			/*Widgets = new List<WidgetCellViewModel>();
+			foreach (Widget widget in _widgetList)
+			{
+				Widgets.Add(new WidgetCellViewModel(widget));
+			}*/
 		}
 
 		private List<WidgetCellViewModel> _widgets;
@@ -35,21 +51,6 @@ namespace WearableSmarthomeRemote.WatchCore
 			}
 		}
 
-		private MvxCommand _nextPageCommand;
-		public ICommand NextPageCommand
-		{
-			get
-			{
-				_nextPageCommand = _nextPageCommand ?? new MvxCommand(() => NextPage());
-				return _nextPageCommand;
-			}
-		}
-
-		void NextPage()
-		{
-			this.ShowViewModel<ItemListViewModel>();
-		}
-
 		private MvxCommand<WidgetCellViewModel> _widgetSelectedCommand;
 		public ICommand WidgetSelectedCommand
 		{
@@ -62,18 +63,14 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		void WidgetSelected(WidgetCellViewModel widgetVM)
 		{
-			ShowViewModel<WidgetListViewModel>(new WidgetListParameters() { WidgetId = widgetVM.WidgetId });
-		}
+			Debug.WriteLine(widgetVM.WidgetName);
 
-		async void Update()
-		{
-			var sitemap = await _openHab.GetSitemapWithName();
-
-			Widgets = new List<WidgetCellViewModel>();
-			foreach (Widget widget in sitemap.homepage.widgets)
-			{
-				Widgets.Add(new WidgetCellViewModel(widget));
-			}
 		}
 	}
+
+	public class WidgetListParameters
+	{
+		public string WidgetId { get; set; }
+	}
 }
+

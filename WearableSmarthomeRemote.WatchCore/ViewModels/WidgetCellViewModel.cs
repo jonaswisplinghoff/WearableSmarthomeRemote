@@ -1,14 +1,17 @@
 using System;
 using MvvmCross.Core.ViewModels;
+using WearableSmarthomeRemote.Core;
 namespace WearableSmarthomeRemote.WatchCore
 {
 	public class WidgetCellViewModel : MvxViewModel
 	{
-		public WidgetCellViewModel(string name)
-		{
-			_widgetName = name;
-		}
+		private Widget _widget;
 
+		public WidgetCellViewModel(Widget widget)
+		{
+			_widget = widget;
+			_widgetName = widget.label;
+		}
 
 		private string _widgetName;
 		public string WidgetName
@@ -19,6 +22,11 @@ namespace WearableSmarthomeRemote.WatchCore
 				_widgetName = value;
 				RaisePropertyChanged(() => WidgetName);
 			}
+		}
+
+		public string WidgetId
+		{
+			get { return _widget.widgetId; }
 		}
 	}
 }
