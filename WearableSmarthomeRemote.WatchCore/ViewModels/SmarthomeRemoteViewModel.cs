@@ -62,7 +62,7 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		void WidgetSelected(WidgetCellViewModel widgetVM)
 		{
-			ShowViewModel<WidgetListViewModel>(new WidgetListParameters() { WidgetId = widgetVM.WidgetId });
+			ShowViewModel<WidgetListViewModel>(new WidgetListParameters() { WidgetId = widgetVM.Widget.widgetId });
 		}
 
 		async void Update()

@@ -15,6 +15,12 @@ namespace WearableSmarthomeRemote.WatchCore
 			_openHab = openHab;
 		}
 
+		private string _itemName = null;
+		public void Init(ItemListParameters parameters)
+		{
+			_itemName = parameters.Name;
+		}
+
 		public override void Start()
 		{
 			Update();
@@ -39,7 +45,16 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		async void Update()
 		{
-			var items = await _openHab.GetItems();
+			var items = new List<Item>();
+
+			if (_itemName == null)
+			{
+				items = await _openHab.GetItems();
+			}
+			else {
+				var item = await _openHab.GetItemWithName(_itemName);
+				items.Add(item);
+			}
 
 			var viewModels = new List<ItemCellViewModel>();
 			foreach (Item item in items)
@@ -62,7 +77,11 @@ namespace WearableSmarthomeRemote.WatchCore
 			}
 			Items = new List<ItemCellViewModel>(viewModels);
 		}
+	}
 
+	public class ItemListParameters
+	{
+		public string Name { get; set; }
 	}
 }
 

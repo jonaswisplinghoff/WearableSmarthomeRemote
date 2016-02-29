@@ -5,13 +5,14 @@ using WearableSmarthomeRemote.Core;
 using MvvmCross.Binding.Bindings;
 using System.Windows.Input;
 using System.Diagnostics;
+using MvvmCross.Binding.BindingContext;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
 	public class WidgetListViewModel : MvxViewModel
 	{
-		private List<Widget> _widgetList;
 
+		private string _widgetId;
 		private readonly IOpenHab _openHab;
 		public WidgetListViewModel(IOpenHab openHab)
 		{
@@ -21,6 +22,7 @@ namespace WearableSmarthomeRemote.WatchCore
 		public void Init(WidgetListParameters parameters)
 		{
 			Debug.WriteLine(parameters.WidgetId);
+			_widgetId = parameters.WidgetId;
 		}
 
 		public override void Start()
@@ -28,13 +30,39 @@ namespace WearableSmarthomeRemote.WatchCore
 			Update();
 		}
 
-		void Update()
+		async void Update()
 		{
-			/*Widgets = new List<WidgetCellViewModel>();
-			foreach (Widget widget in _widgetList)
+			var sitemap = await _openHab.GetSitemapWithName();
+
+			Widget result = null;
+			foreach (Widget widget in sitemap.homepage.widgets)
 			{
-				Widgets.Add(new WidgetCellViewModel(widget));
-			}*/
+
+				result = FindWidgetWithId(widget, _widgetId);
+				if (result != null)
+				{
+					break;
+				}
+			}
+
+			Widgets = new List<WidgetCellViewModel>();
+			foreach (Widget w in result.widgets)
+			{
+				Widgets.Add(new WidgetCellViewModel(w));
+			}
+		}
+
+		private Widget FindWidgetWithId(Widget widget, string id)
+		{
+			if (widget.widgetId == id)
+			{
+				return widget;
+			}
+			foreach (Widget w in widget.widgets)
+			{
+				FindWidgetWithId(w, id);
+			}
+			return null;
 		}
 
 		private List<WidgetCellViewModel> _widgets;
@@ -63,8 +91,11 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		void WidgetSelected(WidgetCellViewModel widgetVM)
 		{
-			Debug.WriteLine(widgetVM.WidgetName);
-
+			Debug.WriteLine(widgetVM.Widget.widgetId);
+			if (widgetVM.Widget.item != null)
+			{
+				ShowViewModel<ItemListViewModel>(new ItemListParameters() { Name = widgetVM.Widget.item.name });
+			}
 		}
 	}
 

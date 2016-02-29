@@ -5,11 +5,10 @@ namespace WearableSmarthomeRemote.WatchCore
 {
 	public class WidgetCellViewModel : MvxViewModel
 	{
-		private Widget _widget;
 
 		public WidgetCellViewModel(Widget widget)
 		{
-			_widget = widget;
+			Widget = widget;
 			_widgetName = widget.label;
 		}
 
@@ -24,9 +23,9 @@ namespace WearableSmarthomeRemote.WatchCore
 			}
 		}
 
-		public string WidgetId
+		public Widget Widget
 		{
-			get { return _widget.widgetId; }
+			get; set;
 		}
 	}
 }
