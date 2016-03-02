@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using WearableSmarthomeRemote.Core;
-using MvvmCross.Binding.Bindings;
 using System.Windows.Input;
 using System.Diagnostics;
-using MvvmCross.Binding.BindingContext;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
