@@ -11,7 +11,7 @@ namespace WearableSmarthomeRemote.Core
 {
 	public class OpenHab : IOpenHab
 	{
-		static string baseURL = "http://192.168.128.59:8080/";
+		static string baseURL = "http://192.168.128.140:8080/";
 		//static string baseURL = "http://10.0.2.2:8080/";
 		//static string baseURL = "http://127.0.0.1:8080/";
 

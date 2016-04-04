@@ -91,4 +91,12 @@
     <InterfaceDefinition Include="Interface.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.WatchApp.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\WearableSmarthomeRemote.UI.iOS.WatchKitExtension\RowController.cs">
+      <Link>RowController.cs</Link>
+    </Compile>
+    <Compile Include="..\WearableSmarthomeRemote.UI.iOS.WatchKitExtension\RowController.designer.cs">
+      <Link>RowController.designer.cs</Link>
+    </Compile>
+  </ItemGroup>
 </Project>
