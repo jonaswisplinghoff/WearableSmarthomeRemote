@@ -101,8 +101,8 @@
     <Compile Include="NotificationController.designer.cs">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="RowController.cs" />
-    <Compile Include="RowController.designer.cs" />
+    <Compile Include="WidgetCell.cs" />
+    <Compile Include="WidgetCell.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />

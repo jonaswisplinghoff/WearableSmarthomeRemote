@@ -16,33 +16,13 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		WatchKit.WKInterfaceButton RefreshButton { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		WatchKit.WKInterfaceLabel StatusLabel { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		WatchKit.WKInterfaceTable tableView { get; set; }
-
-		[Action ("OnButtonPress")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void OnButtonPress ();
+		WatchKit.WKInterfaceTable WidgetList { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (RefreshButton != null) {
-				RefreshButton.Dispose ();
-				RefreshButton = null;
-			}
-			if (StatusLabel != null) {
-				StatusLabel.Dispose ();
-				StatusLabel = null;
-			}
-			if (tableView != null) {
-				tableView.Dispose ();
-				tableView = null;
+			if (WidgetList != null) {
+				WidgetList.Dispose ();
+				WidgetList = null;
 			}
 		}
 	}

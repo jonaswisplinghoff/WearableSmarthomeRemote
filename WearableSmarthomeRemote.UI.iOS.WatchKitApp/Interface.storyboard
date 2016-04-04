@@ -10,31 +10,29 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label alignment="left" text="Label" id="0"/>
-                        <button width="1" alignment="left" title="Button" id="1">
-                            <connections>
-                                <action selector="OnButtonPress" destination="AgC-eL-Hgc" id="6"/>
-                            </connections>
-                        </button>
                         <table alignment="left" id="2">
                             <items>
-                                <tableRow id="3" customClass="RowController">
+                                <tableRow identifier="WidgetCell" id="3" customClass="WidgetCell">
                                     <group key="rootItem" width="134" height="38" alignment="left" id="4">
                                         <items>
                                             <label alignment="left" text="Label" id="20M-Cq-Lu4"/>
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="RowLabel" destination="20M-Cq-Lu4" id="FhQ-Uo-avB"/>
+                                        <outlet property="WidgetLabel" destination="20M-Cq-Lu4" id="fc3-k6-i3E"/>
                                     </connections>
+                                </tableRow>
+                                <tableRow identifier="StateCell" id="aba-yq-fiP">
+                                    <group key="rootItem" width="1" alignment="left" id="cma-J1-K0L"/>
+                                </tableRow>
+                                <tableRow identifier="SwitchCell" id="1Ub-NW-mIM">
+                                    <group key="rootItem" width="1" alignment="left" id="38l-J0-1k8"/>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
-                        <outlet property="RefreshButton" destination="1" id="name-outlet-1"/>
-                        <outlet property="StatusLabel" destination="0" id="name-outlet-0"/>
-                        <outlet property="tableView" destination="2" id="name-outlet-2"/>
+                        <outlet property="WidgetList" destination="2" id="name-outlet-2"/>
                     </connections>
                 </controller>
             </objects>
@@ -60,9 +58,7 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
                     </items>
-                    <notificationCategory key="notificationCategory" id="JfB-70-Muf">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                    </notificationCategory>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>

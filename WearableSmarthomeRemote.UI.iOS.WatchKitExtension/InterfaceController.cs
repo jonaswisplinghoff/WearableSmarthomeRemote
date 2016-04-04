@@ -32,11 +32,13 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			rows.Add ("qwer");
 			rows.Add ("dfjlgnü");
 
-			tableView.SetNumberOfRows (rows.Count, "default");
+			WidgetList.SetNumberOfRows (rows.Count, "WidgetCell");
 
 			for (var i = 0; i < rows.Count; i++) {
-				var elementRow = (RowController)tableView.GetRowController (i);
-				elementRow.RowLabel.SetText (rows [i]);
+				var widgetCell = (WidgetCell)WidgetList.GetRowController (i);
+				if (widgetCell != null) {
+					widgetCell.WidgetLabel.SetText(rows[i]);
+				}
 			}
 		}
 
@@ -44,14 +46,6 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		{
 			// This method is called when the watch view controller is no longer visible to the user.
 			Console.WriteLine ("{0} did deactivate", this);
-		}
-
-		int clickCount = 0;
-
-		partial void OnButtonPress ()
-		{
-			var msg = String.Format("Clicked {0} times", ++clickCount);
-			StatusLabel.SetText(msg);
 		}
 	}
 }

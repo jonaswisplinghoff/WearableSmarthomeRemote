@@ -3,9 +3,9 @@ using Foundation;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	public partial class RowController : NSObject
+	public partial class WidgetCell : NSObject
 	{
-		public RowController ()
+		public WidgetCell ()
 		{
 		}
 	}
