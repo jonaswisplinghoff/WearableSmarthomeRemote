@@ -4,6 +4,7 @@ using WatchKit;
 using Foundation;
 using System.Diagnostics;
 using System.Collections.Generic;
+using UIKit;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
@@ -34,7 +35,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 
 			WidgetList.SetNumberOfRows (rows.Count, "Default");
 
-			var rowTypes = new [] { "WidgetCell", "WidgetCell", "SwitchCell", "SwitchCell" };
+			var rowTypes = new [] { "WidgetCell", "WidgetCell", "SwitchCell", "ColorCell" };
 			WidgetList.SetRowTypes (rowTypes);
 
 			for (var i = 0; i < rows.Count; i++) {
@@ -47,6 +48,12 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
 						widgetCell.WidgetSwitch.SetTitle (rows [i]);
+					}
+				} else if (rowTypes [i] == "ColorCell") {
+					var widgetCell = (ColorCellRowController)WidgetList.GetRowController (i);
+					if (widgetCell != null) {
+						widgetCell.WidgetLabel.SetText (rows [i]);
+						widgetCell.WidgetColor.SetBackgroundColor(UIColor.Red);
 					}
 				}
 			}

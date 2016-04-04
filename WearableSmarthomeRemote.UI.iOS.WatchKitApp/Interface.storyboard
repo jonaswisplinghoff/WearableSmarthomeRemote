@@ -35,6 +35,17 @@
                                         <outlet property="WidgetSwitch" destination="vLx-L7-cZ3" id="Mdc-bz-d1r"/>
                                     </connections>
                                 </tableRow>
+                                <tableRow identifier="ColorCell" id="kww-qG-XqI" customClass="ColorCellRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="YNi-bY-3Sn">
+                                        <items>
+                                            <label height="26.5" alignment="left" text="Label" id="cOb-y5-7At"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="WidgetColor" destination="YNi-bY-3Sn" id="xGL-1d-wAj"/>
+                                        <outlet property="WidgetLabel" destination="cOb-y5-7At" id="4Sh-2P-d2R"/>
+                                    </connections>
+                                </tableRow>
                             </items>
                         </table>
                     </items>
