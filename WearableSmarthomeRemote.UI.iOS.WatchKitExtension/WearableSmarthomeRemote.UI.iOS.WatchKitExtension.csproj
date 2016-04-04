@@ -107,6 +107,8 @@
     <Compile Include="SwitchCellRowController.designer.cs" />
     <Compile Include="ColorCellRowController.cs" />
     <Compile Include="ColorCellRowController.designer.cs" />
+    <Compile Include="StateCellRowController.cs" />
+    <Compile Include="StateCellRowController.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />

@@ -35,7 +35,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 
 			WidgetList.SetNumberOfRows (rows.Count, "Default");
 
-			var rowTypes = new [] { "WidgetCell", "WidgetCell", "SwitchCell", "ColorCell" };
+			var rowTypes = new [] { "WidgetCell", "StateCell", "SwitchCell", "ColorCell" };
 			WidgetList.SetRowTypes (rowTypes);
 
 			for (var i = 0; i < rows.Count; i++) {
@@ -43,6 +43,16 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 					var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
 						widgetCell.WidgetLabel.SetText (rows [i]);
+					}
+				} else if (rowTypes [i] == "StateCell") {
+					var widgetCell = (StateCellRowController)WidgetList.GetRowController (i);
+					if (widgetCell != null) {
+						widgetCell.WidgetLabel.SetText (rows [i]);
+					}
+				} else if (rowTypes [i] == "SwitchCell") {
+					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);
+					if (widgetCell != null) {
+						widgetCell.WidgetSwitch.SetTitle (rows [i]);
 					}
 				} else if (rowTypes [i] == "SwitchCell") {
 					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);

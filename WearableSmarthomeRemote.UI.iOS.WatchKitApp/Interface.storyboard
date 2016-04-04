@@ -22,8 +22,15 @@
                                         <outlet property="WidgetLabel" destination="20M-Cq-Lu4" id="fc3-k6-i3E"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="StateCell" id="aba-yq-fiP">
-                                    <group key="rootItem" width="1" alignment="left" id="cma-J1-K0L"/>
+                                <tableRow identifier="StateCell" id="aba-yq-fiP" customClass="StateCellRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="cma-J1-K0L">
+                                        <items>
+                                            <label alignment="left" text="Label" id="fEb-jv-drl"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="WidgetLabel" destination="fEb-jv-drl" id="36L-J1-aZd"/>
+                                    </connections>
                                 </tableRow>
                                 <tableRow identifier="SwitchCell" id="1Ub-NW-mIM" customClass="SwitchCellRowController">
                                     <group key="rootItem" width="1" alignment="left" id="38l-J0-1k8">
