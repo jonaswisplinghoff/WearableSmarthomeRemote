@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	[Register ("WidgetCell")]
-	partial class WidgetCell
+	[Register ("WidgetCellRowController")]
+	partial class WidgetCellRowController
 	{
 		[Outlet]
 		public WatchKit.WKInterfaceLabel WidgetLabel { get; set; }

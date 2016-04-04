@@ -12,7 +12,7 @@
                     <items>
                         <table alignment="left" id="2">
                             <items>
-                                <tableRow identifier="WidgetCell" id="3" customClass="WidgetCell">
+                                <tableRow identifier="WidgetCell" id="3" customClass="WidgetCellRowController">
                                     <group key="rootItem" width="134" height="38" alignment="left" id="4">
                                         <items>
                                             <label alignment="left" text="Label" id="20M-Cq-Lu4"/>
