@@ -32,12 +32,22 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			rows.Add ("qwer");
 			rows.Add ("dfjlgnü");
 
-			WidgetList.SetNumberOfRows (rows.Count, "WidgetCell");
+			WidgetList.SetNumberOfRows (rows.Count, "Default");
+
+			var rowTypes = new [] { "WidgetCell", "WidgetCell", "SwitchCell", "SwitchCell" };
+			WidgetList.SetRowTypes (rowTypes);
 
 			for (var i = 0; i < rows.Count; i++) {
-				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
-				if (widgetCell != null) {
-					widgetCell.WidgetLabel.SetText(rows[i]);
+				if (rowTypes [i] == "WidgetCell") {
+					var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
+					if (widgetCell != null) {
+						widgetCell.WidgetLabel.SetText (rows [i]);
+					}
+				} else if (rowTypes [i] == "SwitchCell") {
+					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);
+					if (widgetCell != null) {
+						widgetCell.WidgetSwitch.SetTitle (rows [i]);
+					}
 				}
 			}
 		}

@@ -25,8 +25,15 @@
                                 <tableRow identifier="StateCell" id="aba-yq-fiP">
                                     <group key="rootItem" width="1" alignment="left" id="cma-J1-K0L"/>
                                 </tableRow>
-                                <tableRow identifier="SwitchCell" id="1Ub-NW-mIM">
-                                    <group key="rootItem" width="1" alignment="left" id="38l-J0-1k8"/>
+                                <tableRow identifier="SwitchCell" id="1Ub-NW-mIM" customClass="SwitchCellRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="38l-J0-1k8">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Switch" id="vLx-L7-cZ3"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="WidgetSwitch" destination="vLx-L7-cZ3" id="Mdc-bz-d1r"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
