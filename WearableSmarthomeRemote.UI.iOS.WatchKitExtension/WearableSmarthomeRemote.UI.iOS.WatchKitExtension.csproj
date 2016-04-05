@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="ViewController\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -101,14 +102,14 @@
     <Compile Include="NotificationController.designer.cs">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="WidgetCellRowController.cs" />
-    <Compile Include="WidgetCellRowController.designer.cs" />
-    <Compile Include="SwitchCellRowController.cs" />
-    <Compile Include="SwitchCellRowController.designer.cs" />
-    <Compile Include="ColorCellRowController.cs" />
-    <Compile Include="ColorCellRowController.designer.cs" />
-    <Compile Include="StateCellRowController.cs" />
-    <Compile Include="StateCellRowController.designer.cs" />
+    <Compile Include="ViewController\ColorCellRowController.cs" />
+    <Compile Include="ViewController\ColorCellRowController.designer.cs" />
+    <Compile Include="ViewController\StateCellRowController.cs" />
+    <Compile Include="ViewController\StateCellRowController.designer.cs" />
+    <Compile Include="ViewController\SwitchCellRowController.cs" />
+    <Compile Include="ViewController\SwitchCellRowController.designer.cs" />
+    <Compile Include="ViewController\WidgetCellRowController.cs" />
+    <Compile Include="ViewController\WidgetCellRowController.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />
