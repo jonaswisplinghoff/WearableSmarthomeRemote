@@ -24,30 +24,39 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			Console.WriteLine ("{0} awake with context", this);
 		}
 
-		public override void WillActivate ()
+		public override async void WillActivate ()
 		{
 			// This method is called when the watch view controller is about to be visible to the user.
 			Console.WriteLine ("{0} will activate", this);
 
-			//TODO: WidgetList.addBinding(...)
+			//TODO: this.Bind(WidgetList).To((vm) => vm.Widgets).Apply();
 
+			var oh = new OpenHab ();
+			var sitemap = await oh.GetSitemapWithName();
+
+			var widgets = new List<WidgetCellViewModel>();
+			foreach (Widget widget in sitemap.homepage.widgets)
+			{
+				widgets.Add(new WidgetCellViewModel(widget));
+			}
 			var rows = new List<string>();
 
-			rows.Add ("asd");
-			rows.Add ("fdig");
-			rows.Add ("dog");
-			rows.Add ("adjn");
+			foreach (var w in widgets) {
+				rows.Add (w.WidgetName);
+			}
 
-			var rowTypes = new [] { "WidgetItem", "StateItem", "SwitchItem", "ColorItem" };
-
-			WidgetList.SetRowTypes (rowTypes);
+			WidgetList.SetNumberOfRows (rows.Count, "WidgetItem");
+			//var rowTypes = new [] { "WidgetItem", "StateItem", "SwitchItem", "ColorItem" };
+			//WidgetList.SetRowTypes (rowTypes);
 
 			for (var i = 0; i < WidgetList.NumberOfRows; i++) {
+				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
+				if (widgetCell != null) {
+					widgetCell.WidgetLabel.SetText (rows [i]);
+				}
+				/*
 				if (rowTypes [i] == "WidgetItem") {
-					var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
-					if (widgetCell != null) {
-						widgetCell.WidgetLabel.SetText (rows [i]);
-					}
+					
 				} else if (rowTypes [i] == "StateItem") {
 					var widgetCell = (StateCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
@@ -64,7 +73,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 						widgetCell.WidgetLabel.SetText (rows [i]);
 						widgetCell.WidgetColor.SetBackgroundColor(UIColor.Red);
 					}
-				}
+				}*/
 			}
 		}
 
