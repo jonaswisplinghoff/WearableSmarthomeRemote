@@ -13,13 +13,21 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 	partial class StateCellRowController
 	{
 		[Outlet]
-		public WatchKit.WKInterfaceLabel WidgetLabel { get; private set; }
+		public WatchKit.WKInterfaceLabel ItemNameLabel { get; set; }
+
+		[Outlet]
+		public WatchKit.WKInterfaceLabel ItemStateLabel { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (WidgetLabel != null) {
-				WidgetLabel.Dispose ();
-				WidgetLabel = null;
+			if (ItemNameLabel != null) {
+				ItemNameLabel.Dispose ();
+				ItemNameLabel = null;
+			}
+
+			if (ItemStateLabel != null) {
+				ItemStateLabel.Dispose ();
+				ItemStateLabel = null;
 			}
 		}
 	}

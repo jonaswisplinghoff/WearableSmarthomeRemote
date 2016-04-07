@@ -27,7 +27,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// This method is called when the watch view controller is about to be visible to the user.
 			Console.WriteLine ("{0} will activate", this);
 
-			//TODO: this.Bind(WidgetList).To((vm) => vm.Widgets).Apply();
+			//TODO: this.Bind(ItemList).To((vm) => vm.Items).Apply();
 
 			var oh = new OpenHab ();
 
@@ -57,29 +57,25 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				}
 			}
 
-			var rows = new List<string>();
-
-			foreach (var i in viewModels) {
-				rows.Add (i.ItemName);
-			}
-
 			ItemList.SetRowTypes (rowTypes.ToArray());
 
 			for (var i = 0; i < ItemList.NumberOfRows; i++) {
 				if (rowTypes [i] == "StateItem") {
 					var widgetCell = (StateCellRowController)ItemList.GetRowController (i);
 					if (widgetCell != null) {
-						widgetCell.WidgetLabel.SetText (rows [i]);
+						widgetCell.ItemNameLabel.SetText (viewModels[i].ItemName);
+						widgetCell.ItemStateLabel.SetText (((StateItemCellViewModel)viewModels[i]).State);
 					}
 				} else if (rowTypes [i] == "SwitchItem") {
 					var widgetCell = (SwitchCellRowController)ItemList.GetRowController (i);
 					if (widgetCell != null) {
-						widgetCell.WidgetSwitch.SetTitle (rows [i]);
+						widgetCell.WidgetSwitch.SetTitle (viewModels[i].ItemName);
+						widgetCell.WidgetSwitch.SetOn (((SwitchItemCellViewModel)viewModels [i]).On);
 					}
 				} else if (rowTypes [i] == "ColorItem") {
 					var widgetCell = (ColorCellRowController)ItemList.GetRowController (i);
 					if (widgetCell != null) {
-						widgetCell.WidgetLabel.SetText (rows [i]);
+						widgetCell.WidgetLabel.SetText (viewModels[i].ItemName);
 						widgetCell.WidgetColor.SetBackgroundColor(UIColor.Red);
 					}
 				}

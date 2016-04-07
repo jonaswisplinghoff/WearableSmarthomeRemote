@@ -46,34 +46,12 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			}
 
 			WidgetList.SetNumberOfRows (rows.Count, "WidgetItem");
-			//var rowTypes = new [] { "WidgetItem", "StateItem", "SwitchItem", "ColorItem" };
-			//WidgetList.SetRowTypes (rowTypes);
 
 			for (var i = 0; i < WidgetList.NumberOfRows; i++) {
 				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
 				if (widgetCell != null) {
 					widgetCell.WidgetLabel.SetText (rows [i]);
 				}
-				/*
-				if (rowTypes [i] == "WidgetItem") {
-					
-				} else if (rowTypes [i] == "StateItem") {
-					var widgetCell = (StateCellRowController)WidgetList.GetRowController (i);
-					if (widgetCell != null) {
-						widgetCell.WidgetLabel.SetText (rows [i]);
-					}
-				} else if (rowTypes [i] == "SwitchItem") {
-					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);
-					if (widgetCell != null) {
-						widgetCell.WidgetSwitch.SetTitle (rows [i]);
-					}
-				} else if (rowTypes [i] == "ColorItem") {
-					var widgetCell = (ColorCellRowController)WidgetList.GetRowController (i);
-					if (widgetCell != null) {
-						widgetCell.WidgetLabel.SetText (rows [i]);
-						widgetCell.WidgetColor.SetBackgroundColor(UIColor.Red);
-					}
-				}*/
 			}
 		}
 
