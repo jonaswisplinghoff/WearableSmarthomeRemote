@@ -132,6 +132,10 @@
     <Compile Include="ViewController\SwitchCellRowController.designer.cs" />
     <Compile Include="ViewController\WidgetCellRowController.cs" />
     <Compile Include="ViewController\WidgetCellRowController.designer.cs" />
+    <Compile Include="ItemListInterfaceController.cs" />
+    <Compile Include="ItemListInterfaceController.designer.cs">
+      <DependentUpon>ItemListInterfaceController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />
