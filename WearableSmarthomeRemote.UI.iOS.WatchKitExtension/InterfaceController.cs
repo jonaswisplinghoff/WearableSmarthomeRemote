@@ -5,6 +5,8 @@ using Foundation;
 using System.Diagnostics;
 using System.Collections.Generic;
 using UIKit;
+using WearableSmarthomeRemote.Core;
+using WearableSmarthomeRemote.WatchCore;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
@@ -27,39 +29,36 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// This method is called when the watch view controller is about to be visible to the user.
 			Console.WriteLine ("{0} will activate", this);
 
+			//TODO: WidgetList.addBinding(...)
+
 			var rows = new List<string>();
+
 			rows.Add ("asd");
-			rows.Add ("dgh");
-			rows.Add ("qwer");
-			rows.Add ("dfjlgnü");
+			rows.Add ("fdig");
+			rows.Add ("dog");
+			rows.Add ("adjn");
 
-			WidgetList.SetNumberOfRows (rows.Count, "Default");
+			var rowTypes = new [] { "WidgetItem", "StateItem", "SwitchItem", "ColorItem" };
 
-			var rowTypes = new [] { "WidgetCell", "StateCell", "SwitchCell", "ColorCell" };
 			WidgetList.SetRowTypes (rowTypes);
 
-			for (var i = 0; i < rows.Count; i++) {
-				if (rowTypes [i] == "WidgetCell") {
+			for (var i = 0; i < WidgetList.NumberOfRows; i++) {
+				if (rowTypes [i] == "WidgetItem") {
 					var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
 						widgetCell.WidgetLabel.SetText (rows [i]);
 					}
-				} else if (rowTypes [i] == "StateCell") {
+				} else if (rowTypes [i] == "StateItem") {
 					var widgetCell = (StateCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
 						widgetCell.WidgetLabel.SetText (rows [i]);
 					}
-				} else if (rowTypes [i] == "SwitchCell") {
+				} else if (rowTypes [i] == "SwitchItem") {
 					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
 						widgetCell.WidgetSwitch.SetTitle (rows [i]);
 					}
-				} else if (rowTypes [i] == "SwitchCell") {
-					var widgetCell = (SwitchCellRowController)WidgetList.GetRowController (i);
-					if (widgetCell != null) {
-						widgetCell.WidgetSwitch.SetTitle (rows [i]);
-					}
-				} else if (rowTypes [i] == "ColorCell") {
+				} else if (rowTypes [i] == "ColorItem") {
 					var widgetCell = (ColorCellRowController)WidgetList.GetRowController (i);
 					if (widgetCell != null) {
 						widgetCell.WidgetLabel.SetText (rows [i]);

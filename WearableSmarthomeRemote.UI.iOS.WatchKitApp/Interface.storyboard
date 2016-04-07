@@ -12,7 +12,7 @@
                     <items>
                         <table alignment="left" id="2">
                             <items>
-                                <tableRow identifier="WidgetCell" id="3" customClass="WidgetCellRowController">
+                                <tableRow identifier="WidgetItem" id="3" customClass="WidgetCellRowController">
                                     <group key="rootItem" width="134" height="38" alignment="left" id="4">
                                         <items>
                                             <label alignment="left" text="Label" id="20M-Cq-Lu4"/>
@@ -22,7 +22,7 @@
                                         <outlet property="WidgetLabel" destination="20M-Cq-Lu4" id="fc3-k6-i3E"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="StateCell" id="aba-yq-fiP" customClass="StateCellRowController">
+                                <tableRow identifier="StateItem" id="aba-yq-fiP" customClass="StateCellRowController">
                                     <group key="rootItem" width="1" alignment="left" id="cma-J1-K0L">
                                         <items>
                                             <label alignment="left" text="Label" id="fEb-jv-drl"/>
@@ -32,7 +32,7 @@
                                         <outlet property="WidgetLabel" destination="fEb-jv-drl" id="36L-J1-aZd"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="SwitchCell" id="1Ub-NW-mIM" customClass="SwitchCellRowController">
+                                <tableRow identifier="SwitchItem" id="1Ub-NW-mIM" customClass="SwitchCellRowController">
                                     <group key="rootItem" width="1" alignment="left" id="38l-J0-1k8">
                                         <items>
                                             <switch width="1" alignment="left" value="YES" title="Switch" id="vLx-L7-cZ3"/>
@@ -42,7 +42,7 @@
                                         <outlet property="WidgetSwitch" destination="vLx-L7-cZ3" id="Mdc-bz-d1r"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="ColorCell" id="kww-qG-XqI" customClass="ColorCellRowController">
+                                <tableRow identifier="ColorItem" id="kww-qG-XqI" customClass="ColorCellRowController">
                                     <group key="rootItem" width="1" alignment="left" id="YNi-bY-3Sn">
                                         <items>
                                             <label height="26.5" alignment="left" text="Label" id="cOb-y5-7At"/>
@@ -61,7 +61,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="2" y="-6"/>
+            <point key="canvasLocation" x="0.0" y="-58.25"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -90,14 +90,14 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="231" y="0.0"/>
+            <point key="canvasLocation" x="0.0" y="540"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
                 <controller id="gdX-wl-uQE" customClass="NotificationController"/>
             </objects>
-            <point key="canvasLocation" x="462" y="0.0"/>
+            <point key="canvasLocation" x="231" y="540"/>
         </scene>
     </scenes>
 </document>
