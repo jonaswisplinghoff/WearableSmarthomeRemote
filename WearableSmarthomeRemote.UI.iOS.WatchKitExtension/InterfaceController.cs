@@ -60,8 +60,10 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		public override NSObject GetContextForSegue (string segueIdentifier, WKInterfaceTable table, nint rowIndex)
 		{
 			if (segueIdentifier == "showItems") {
-				//var widget = ((WidgetCellViewModel)Widgets [(int)rowIndex]).Widget;
-				//return new NSString (widget.widgets[0].item.name);
+				
+			} else if (segueIdentifier == "showWidgets"){
+				var widget = ((WidgetCellViewModel)Widgets [(int)rowIndex]).Widget;
+				return new NSString (widget.widgetId);
 			}
 			return null;
 		}

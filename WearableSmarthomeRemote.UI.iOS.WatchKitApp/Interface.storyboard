@@ -10,6 +10,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
+                        <button width="1" alignment="left" title="Show all" id="0Dp-1G-5gb">
+                            <connections>
+                                <segue destination="ih1-h6-GYO" kind="push" identifier="showItems" id="RUZ-Qe-PhO"/>
+                            </connections>
+                        </button>
                         <table alignment="left" id="2">
                             <items>
                                 <tableRow identifier="WidgetItem" id="3" customClass="WidgetCellRowController">
@@ -18,7 +23,7 @@
                                             <label alignment="left" text="Label" id="20M-Cq-Lu4"/>
                                         </items>
                                         <connections>
-                                            <segue destination="ih1-h6-GYO" kind="push" identifier="showItems" id="aIz-uK-Qzo"/>
+                                            <segue destination="r1g-KC-MSv" kind="push" identifier="showWidgets" id="U0V-8D-JjB"/>
                                         </connections>
                                     </group>
                                     <connections>
@@ -85,7 +90,37 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="263" y="-65"/>
+            <point key="canvasLocation" x="562" y="-68"/>
+        </scene>
+        <!--Widget List Interface Controller-->
+        <scene sceneID="EHq-Ph-C90">
+            <objects>
+                <controller id="r1g-KC-MSv" customClass="WidgetListInterfaceController">
+                    <items>
+                        <table alignment="left" id="fbv-bY-vqx">
+                            <items>
+                                <tableRow identifier="WidgetItem" id="MKm-D4-xZr" customClass="WidgetCellRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="Fwa-qG-pbA">
+                                        <items>
+                                            <label alignment="left" text="Label" id="C9r-75-kjP"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="ih1-h6-GYO" kind="push" identifier="showItems" id="ia1-7S-wWD"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="WidgetLabel" destination="C9r-75-kjP" id="BeT-Va-6CX"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="WidgetList" destination="fbv-bY-vqx" id="hWt-Zq-cnF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="265" y="96"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -124,4 +159,7 @@
             <point key="canvasLocation" x="231" y="540"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RUZ-Qe-PhO"/>
+    </inferredMetricsTieBreakers>
 </document>
