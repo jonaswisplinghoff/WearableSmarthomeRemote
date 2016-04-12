@@ -16,26 +16,19 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		{
 		}
 
-		public override void Awake(NSObject context)
+		List<WidgetCellViewModel> Widgets = new List<WidgetCellViewModel>();
+
+		public override async void Awake(NSObject context)
 		{
 			base.Awake(context);
 
 			// Configure interface objects here.
 			Console.WriteLine("{0} awake with context", this);
-		}
-
-		List<WidgetCellViewModel> Widgets;
-
-		public override async void WillActivate()
-		{
-			// This method is called when the watch view controller is about to be visible to the user.
-			Console.WriteLine("{0} will activate", this);
 
 			//TODO: this.Bind(WidgetList).To((vm) => vm.Widgets).Apply();
 
 			var oh = new OpenHab();
 			var sitemap = await oh.GetSitemapWithName();
-			Widgets = new List<WidgetCellViewModel>();
 			foreach (Widget widget in sitemap.homepage.widgets)
 			{
 				Widgets.Add(new WidgetCellViewModel(widget));
@@ -58,6 +51,12 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 					widgetCell.WidgetLabel.SetText(rows[i]);
 				}
 			}
+		}
+
+		public override void WillActivate()
+		{
+			// This method is called when the watch view controller is about to be visible to the user.
+			Console.WriteLine("{0} will activate", this);
 		}
 
 		public override NSObject GetContextForSegue(string segueIdentifier, WKInterfaceTable table, nint rowIndex)

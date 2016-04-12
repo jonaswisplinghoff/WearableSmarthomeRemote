@@ -4,8 +4,8 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Newtonsoft.Json;
-using ModernHttpClient;
 using System.Collections.Generic;
+using ModernHttpClient;
 
 namespace WearableSmarthomeRemote.Core
 {
