@@ -12,28 +12,28 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
 	public partial class InterfaceController : WKInterfaceController
 	{
-		public InterfaceController (IntPtr handle) : base (handle)
+		public InterfaceController(IntPtr handle) : base(handle)
 		{
 		}
 
-		public override void Awake (NSObject context)
+		public override void Awake(NSObject context)
 		{
-			base.Awake (context);
+			base.Awake(context);
 
 			// Configure interface objects here.
-			Console.WriteLine ("{0} awake with context", this);
+			Console.WriteLine("{0} awake with context", this);
 		}
 
 		List<WidgetCellViewModel> Widgets;
 
-		public override async void WillActivate ()
+		public override async void WillActivate()
 		{
 			// This method is called when the watch view controller is about to be visible to the user.
-			Console.WriteLine ("{0} will activate", this);
+			Console.WriteLine("{0} will activate", this);
 
 			//TODO: this.Bind(WidgetList).To((vm) => vm.Widgets).Apply();
 
-			var oh = new OpenHab ();
+			var oh = new OpenHab();
 			var sitemap = await oh.GetSitemapWithName();
 			Widgets = new List<WidgetCellViewModel>();
 			foreach (Widget widget in sitemap.homepage.widgets)
@@ -41,37 +41,43 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				Widgets.Add(new WidgetCellViewModel(widget));
 			}
 
-			List<string> rows = new List<string>();
+			var rows = new List<string>();
 
-			foreach (var w in Widgets) {
-				rows.Add (w.WidgetName);
+			foreach (var w in Widgets)
+			{
+				rows.Add(w.WidgetName);
 			}
 
-			WidgetList.SetNumberOfRows (rows.Count, "WidgetItem");
+			WidgetList.SetNumberOfRows(rows.Count, "WidgetItem");
 
-			for (var i = 0; i < WidgetList.NumberOfRows; i++) {
-				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
-				if (widgetCell != null) {
-					widgetCell.WidgetLabel.SetText (rows [i]);
+			for (var i = 0; i < WidgetList.NumberOfRows; i++)
+			{
+				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController(i);
+				if (widgetCell != null)
+				{
+					widgetCell.WidgetLabel.SetText(rows[i]);
 				}
 			}
 		}
 
-		public override NSObject GetContextForSegue (string segueIdentifier, WKInterfaceTable table, nint rowIndex)
+		public override NSObject GetContextForSegue(string segueIdentifier, WKInterfaceTable table, nint rowIndex)
 		{
-			if (segueIdentifier == "showItems") {
-				
-			} else if (segueIdentifier == "showWidgets"){
-				var widget = ((WidgetCellViewModel)Widgets [(int)rowIndex]).Widget;
-				return new NSString (widget.widgetId);
+			if (segueIdentifier == "showItems")
+			{
+
+			}
+			else if (segueIdentifier == "showWidgets")
+			{
+				var widget = ((WidgetCellViewModel)Widgets[(int)rowIndex]).Widget;
+				return new NSString(widget.widgetId);
 			}
 			return null;
 		}
 
-		public override void DidDeactivate ()
+		public override void DidDeactivate()
 		{
 			// This method is called when the watch view controller is no longer visible to the user.
-			Console.WriteLine ("{0} did deactivate", this);
+			Console.WriteLine("{0} did deactivate", this);
 		}
 	}
 }
