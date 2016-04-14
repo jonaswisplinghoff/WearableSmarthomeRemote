@@ -2,9 +2,7 @@
 
 using WatchKit;
 using Foundation;
-using System.Diagnostics;
 using System.Collections.Generic;
-using UIKit;
 using WearableSmarthomeRemote.Core;
 using WearableSmarthomeRemote.WatchCore;
 
@@ -61,11 +59,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 
 		public override NSObject GetContextForSegue(string segueIdentifier, WKInterfaceTable table, nint rowIndex)
 		{
-			if (segueIdentifier == "showItems")
-			{
-
-			}
-			else if (segueIdentifier == "showWidgets")
+			if (segueIdentifier == "showWidgets")
 			{
 				var widget = ((WidgetCellViewModel)Widgets[(int)rowIndex]).Widget;
 				return new NSString(widget.widgetId);
