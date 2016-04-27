@@ -121,9 +121,9 @@
     <Compile Include="GlanceController.designer.cs">
       <DependentUpon>GlanceController.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfaceController.cs" />
-    <Compile Include="InterfaceController.designer.cs">
-      <DependentUpon>InterfaceController.cs</DependentUpon>
+    <Compile Include="SmarthomeRemoteView.cs" />
+    <Compile Include="SmarthomeRemoteView.designer.cs">
+      <DependentUpon>SmarthomeRemoteView.cs</DependentUpon>
     </Compile>
     <Compile Include="NotificationController.cs" />
     <Compile Include="NotificationController.designer.cs">
@@ -145,6 +145,11 @@
     <Compile Include="WidgetListInterfaceController.designer.cs">
       <DependentUpon>WidgetListInterfaceController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setup.cs" />
+    <Compile Include="StartupInterfaceController.cs" />
+    <Compile Include="StartupInterfaceController.designer.cs">
+      <DependentUpon>StartupInterfaceController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />
@@ -163,6 +168,10 @@
     <ProjectReference Include="..\WearableSmarthomeRemote\WearableSmarthomeRemote.core.csproj">
       <Project>{3D005060-B116-4F81-91D6-44D64F9B91AC}</Project>
       <Name>WearableSmarthomeRemote.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmCross.watchOS\MvvmCross.watchOS.csproj">
+      <Project>{B8842A39-0356-4941-B26B-2C157E6FE891}</Project>
+      <Name>MvvmCross.watchOS</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

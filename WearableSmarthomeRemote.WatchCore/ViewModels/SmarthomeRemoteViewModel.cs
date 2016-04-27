@@ -11,11 +11,26 @@ namespace WearableSmarthomeRemote.WatchCore
 		public SmarthomeRemoteViewModel(IOpenHab openHab)
 		{
 			_openHab = openHab;
+			_heading = "Läuft!";
 		}
 
 		public override void Start()
 		{
 			Update();
+		}
+
+		private string _heading;
+		public string Heading
+		{
+			get
+			{
+				return _heading;
+			}
+			set
+			{
+				_heading = value;
+				RaisePropertyChanged(() => Heading);
+			}
 		}
 
 		private List<WidgetCellViewModel> _widgets;

@@ -21,6 +21,7 @@ namespace WearableSmarthomeRemote.WatchCore
 			{
 				_openHab.SetSwitchState(ItemName, value);
 				_on = value;
+				base.State = value ? "ON" : "OFF";
 				RaisePropertyChanged(() => On);
 			}
 		}

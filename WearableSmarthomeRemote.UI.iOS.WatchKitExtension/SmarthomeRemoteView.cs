@@ -5,50 +5,36 @@ using Foundation;
 using System.Collections.Generic;
 using WearableSmarthomeRemote.Core;
 using WearableSmarthomeRemote.WatchCore;
+using MvvmCross.watchOS;
+using MvvmCross.Platform;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Binding.BindingContext;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	public partial class InterfaceController : WKInterfaceController
+	[MvxFromStoryboard]
+	public partial class SmarthomeRemoteView : MvxInterfaceController<SmarthomeRemoteViewModel>
 	{
-		public InterfaceController(IntPtr handle) : base(handle)
+
+		public SmarthomeRemoteView(IntPtr handle) : base(handle)
 		{
 		}
 
 		List<WidgetCellViewModel> Widgets = new List<WidgetCellViewModel>();
 
-		public override async void Awake(NSObject context)
+		public override void Awake(NSObject context)
 		{
 			base.Awake(context);
 
 			// Configure interface objects here.
 			Console.WriteLine("{0} awake with context", this);
 
-			//TODO: this.Bind(WidgetList).To((vm) => vm.Widgets).Apply();
+			this.AdaptForBinding();
 
-			var oh = new OpenHab();
-			var sitemap = await oh.GetSitemapWithName();
-			foreach (Widget widget in sitemap.homepage.widgets)
-			{
-				Widgets.Add(new WidgetCellViewModel(widget));
-			}
-
-			var rows = new List<string>();
-
-			foreach (var w in Widgets)
-			{
-				rows.Add(w.WidgetName);
-			}
-
-			WidgetList.SetNumberOfRows(rows.Count, "WidgetItem");
-
-			for (var i = 0; i < WidgetList.NumberOfRows; i++)
-			{
-				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController(i);
-				if (widgetCell != null)
-				{
-					widgetCell.WidgetLabel.SetText(rows[i]);
-				}
-			}
+			//this.CreateBinding(HeadingLabel).To((SmarthomeRemoteViewModel vm) => vm.Heading).Apply();
+			var set = this.CreateBindingSet<SmarthomeRemoteView, SmarthomeRemoteViewModel>();
+			set.Bind(HeadingLabel).For("HeadingLabel").To(vm => vm.Heading);
+			set.Apply();
 		}
 
 		public override void WillActivate()
