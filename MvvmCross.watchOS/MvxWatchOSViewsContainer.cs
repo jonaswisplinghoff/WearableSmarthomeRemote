@@ -15,6 +15,12 @@
 	{
 		public MvxViewModelRequest CurrentRequest { get; private set; }
 
+		public virtual Type GetViewTypeFromViewModelRequest(MvxViewModelRequest request)
+		{
+			this.CurrentRequest = request;
+			return this.GetViewType(request.ViewModelType);
+		}
+
 		public virtual IMvxWatchOSView CreateView(MvxViewModelRequest request)
 		{
 			try

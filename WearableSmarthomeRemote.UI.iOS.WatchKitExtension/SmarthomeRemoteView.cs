@@ -15,6 +15,10 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 	[MvxFromStoryboard]
 	public partial class SmarthomeRemoteView : MvxInterfaceController<SmarthomeRemoteViewModel>
 	{
+		public SmarthomeRemoteView()
+		{
+			this.AdaptForBinding();
+		}
 
 		public SmarthomeRemoteView(IntPtr handle) : base(handle)
 		{
@@ -29,7 +33,6 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// Configure interface objects here.
 			Console.WriteLine("{0} awake with context", this);
 
-			this.AdaptForBinding();
 
 			//this.CreateBinding(HeadingLabel).To((SmarthomeRemoteViewModel vm) => vm.Heading).Apply();
 			var set = this.CreateBindingSet<SmarthomeRemoteView, SmarthomeRemoteViewModel>();

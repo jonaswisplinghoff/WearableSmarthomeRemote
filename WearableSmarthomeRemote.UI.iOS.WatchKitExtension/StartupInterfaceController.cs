@@ -12,20 +12,23 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 	{
 		protected StartupInterfaceController(IntPtr handle) : base(handle)
 		{
+			// Note: this .ctor should not contain any initialization logic.
 		}
 
 		public override void Awake(NSObject context)
 		{
 			base.Awake(context);
 
-			// Configure interface objects here.
-			Console.WriteLine("{0} awake with context", this);
-
-			var setup = new Setup(this);
+			var presenter = new MvxWatchOSViewPresenter(this);
+			var setup = new Setup(this, presenter);
 			setup.Initialize();
 
 			var appStartViewModel = Mvx.Resolve<IMvxAppStart>();
 			appStartViewModel.Start();
+
+
+			// Configure interface objects here.
+			Console.WriteLine("{0} awake with context", this);
 		}
 
 		public override void WillActivate()

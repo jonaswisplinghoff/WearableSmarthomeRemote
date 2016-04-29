@@ -28,10 +28,12 @@ namespace MvvmCross.watchOS
 		: MvxSetup
 	{
 		private MvxInterfaceController _controller;
+		private IMvxWatchOSViewPresenter _presenter;
 
-		protected MvxWatchOSSetup(MvxInterfaceController controller)
+		protected MvxWatchOSSetup(MvxInterfaceController controller, MvxWatchOSViewPresenter presenter)
 		{
 			this._controller = controller;
+			this._presenter = presenter;
 		}
 
 		protected override IMvxTrace CreateDebugTrace()
@@ -92,7 +94,6 @@ namespace MvvmCross.watchOS
 			return new MvxWatchOSSystem();
 		}
 
-		private IMvxWatchOSViewPresenter _presenter;
 		protected IMvxWatchOSViewPresenter Presenter
 		{
 			get

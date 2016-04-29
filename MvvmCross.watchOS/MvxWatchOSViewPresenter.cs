@@ -1,10 +1,13 @@
 ﻿using UIKit;
 using WatchKit;
+using System.Linq;
 
 namespace MvvmCross.watchOS
 {
+	using System.Collections.Generic;
 	using MvvmCross.Core.ViewModels;
 	using MvvmCross.Core.Views;
+	using MvvmCross.Platform;
 	using MvvmCross.Platform.Exceptions;
 	using MvvmCross.Platform.Platform;
 
@@ -14,21 +17,20 @@ namespace MvvmCross.watchOS
 		: MvxBaseWatchOSViewPresenter
 	{
 
-		private MvxInterfaceController _currentInterfaceController;
+		private List<MvxInterfaceController> _interfaceControllers = new List<MvxInterfaceController>();
 
 		public MvxWatchOSViewPresenter(MvxInterfaceController controller)
 		{
-			_currentInterfaceController = controller;
+			_interfaceControllers.Add(controller);
 		}
 
 		public override void Show(MvxViewModelRequest request)
 		{
-			var view = this.CreateInterfaceControllerFor(request);
+			var viewType = Mvx.Resolve<IMvxWatchOSViewCreator>().GetViewTypeFromViewModelRequest(request);
+			//var view = this.CreateInterfaceControllerFor(request);
 
-#warning Need to reinsert ClearTop type functionality here
-			//if (request.ClearTop)
-			//    ClearBackStack();
-			this.Show(view);
+			var modelName = viewType.ToString();
+			this.Show(modelName);
 		}
 
 		public override void ChangePresentation(MvxPresentationHint hint)
@@ -42,39 +44,36 @@ namespace MvvmCross.watchOS
 			}
 		}
 
-		public virtual void Show(IMvxWatchOSView view)
+		public virtual void Show(string viewPath)
 		{
-			var interfaceController = view as MvxInterfaceController;
+			/*var interfaceController = view as MvxInterfaceController;
 			if (interfaceController == null)
-				throw new MvxException("Passed in IMvxWatchOSView is not a WKInterfaceController");
+				throw new MvxException("Passed in IMvxWatchOSView is not a WKInterfaceController");*/
+			var viewName = viewPath.Split('.').Last();
 
-			var viewName = view.Request.GetType().ToString();
-
-			_currentInterfaceController.PushController("SmarthomeRemoteView", "");
-
-			_currentInterfaceController = interfaceController;
+			_interfaceControllers.Last().PushController(viewName, "");
 		}
 
 		public virtual void CloseModalViewController()
 		{
-			this._currentInterfaceController.PopController();
+			_interfaceControllers.Last().PopController();
 		}
 
 		public virtual void Close(IMvxViewModel toClose)
 		{
-			/*var topViewController = this.MasterNavigationController.TopViewController;
+			var topInterfaceController = this._interfaceControllers.Last();
 
-			if (topViewController == null)
 			{
-				MvxTrace.Warning("Don't know how to close this viewmodel - no topmost");
+				if (topInterfaceController == null)
+					MvxTrace.Warning("Don't know how to close this viewmodel - no topmost");
 				return;
 			}
 
-			var topView = topViewController as IMvxWatchOSView;
+			var topView = topInterfaceController as IMvxWatchOSView;
 			if (topView == null)
 			{
 				MvxTrace.Warning(
-							   "Don't know how to close this viewmodel - topmost is not a touchview");
+							   "Don't know how to close this viewmodel - topmost is not a watchOSView");
 				return;
 			}
 
@@ -86,7 +85,7 @@ namespace MvvmCross.watchOS
 				return;
 			}
 
-			this.MasterNavigationController.PopViewController(true);*/
+			topInterfaceController.PopController();
 		}
 	}
 }
