@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Bindings\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,7 +91,7 @@
     <Compile Include="MvxWatchOSViewPresenter.cs" />
     <Compile Include="MvxBaseWatchOSViewPresenter.cs" />
     <Compile Include="MvxCanCreateWatchOSViewExtensionMethods.cs" />
-    <Compile Include="WKInterfaceLabelTargetBinding.cs" />
+    <Compile Include="Bindings\MvxWKInterfaceLabelTargetBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

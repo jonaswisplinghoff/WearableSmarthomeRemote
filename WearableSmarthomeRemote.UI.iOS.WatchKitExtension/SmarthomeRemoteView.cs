@@ -9,14 +9,25 @@ using MvvmCross.watchOS;
 using MvvmCross.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platform.IoC;
+using MvvmCross.Platform.Core;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	[MvxFromStoryboard]
 	public partial class SmarthomeRemoteView : MvxInterfaceController<SmarthomeRemoteViewModel>
 	{
 		public SmarthomeRemoteView()
 		{
+			if (!MvxWatchOSSetup.IsInitialized())
+			{
+				var presenter = new MvxWatchOSViewPresenter(this);
+				var setup = new Setup(this, presenter);
+				setup.Initialize();
+
+				var appStartViewModel = Mvx.Resolve<IMvxAppStart>();
+				appStartViewModel.Start();
+			}
+
 			this.AdaptForBinding();
 		}
 

@@ -146,10 +146,6 @@
       <DependentUpon>WidgetListInterfaceController.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup.cs" />
-    <Compile Include="StartupInterfaceController.cs" />
-    <Compile Include="StartupInterfaceController.designer.cs">
-      <DependentUpon>StartupInterfaceController.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />

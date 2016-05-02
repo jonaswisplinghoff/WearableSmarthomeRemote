@@ -2,12 +2,12 @@
 using MvvmCross.Binding;
 using MvvmCross.Binding.Bindings.Target;
 using WatchKit;
-namespace MvvmCross.watchOS
+namespace MvvmCross.watchOS.Binding
 {
-	public class WKInterfaceLabelTargetBinding : MvxTargetBinding
+	public class MvxWKInterfaceLabelTargetBinding : MvxTargetBinding
 	{
 
-		public WKInterfaceLabelTargetBinding(WKInterfaceLabel target)
+		public MvxWKInterfaceLabelTargetBinding(WKInterfaceLabel target)
 			: base(target)
 		{
 

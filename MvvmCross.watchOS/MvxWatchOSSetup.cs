@@ -23,6 +23,8 @@ namespace MvvmCross.watchOS
 	using MvvmCross.iOS.Views.Presenters;
 
 	using UIKit;
+	using MvvmCross.Platform.Core;
+	using MvvmCross.Platform.IoC;
 
 	public abstract class MvxWatchOSSetup
 		: MvxSetup
@@ -173,6 +175,11 @@ namespace MvvmCross.watchOS
 		protected override IMvxNameMapping CreateViewToViewModelNaming()
 		{
 			return new MvxPostfixAwareViewToViewModelNameMapping("View", "ViewController");
+		}
+
+		public static bool IsInitialized()
+		{
+			return MvxSingleton<IMvxIoCProvider>.Instance != null;
 		}
 	}
 }
