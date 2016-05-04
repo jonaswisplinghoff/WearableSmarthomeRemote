@@ -13,7 +13,7 @@
                         <label alignment="left" text="Heading" id="Rwj-pj-lid"/>
                         <button width="1" alignment="left" title="Show all" id="0Dp-1G-5gb">
                             <connections>
-                                <segue destination="ih1-h6-GYO" kind="push" identifier="showItems" id="RUZ-Qe-PhO"/>
+                                <action selector="ShowAllButtonPressed" destination="AgC-eL-Hgc" id="qq9-KW-wGL"/>
                             </connections>
                         </button>
                         <table alignment="left" id="2">
@@ -36,16 +36,17 @@
                     </items>
                     <connections>
                         <outlet property="HeadingLabel" destination="Rwj-pj-lid" id="Z4O-vI-TfB"/>
+                        <outlet property="ShowAllButton" destination="0Dp-1G-5gb" id="aD7-fs-vZE"/>
                         <outlet property="WidgetList" destination="2" id="name-outlet-2"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="0.0" y="-58.25"/>
         </scene>
-        <!--Item List Interface Controller-->
+        <!--ItemListView-->
         <scene sceneID="qil-PP-bLy">
             <objects>
-                <controller id="ih1-h6-GYO" customClass="ItemListInterfaceController">
+                <controller identifier="ItemListView" id="ih1-h6-GYO" customClass="ItemListView">
                     <items>
                         <table alignment="left" id="lsv-Pc-J77">
                             <items>
@@ -94,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="562" y="-68"/>
         </scene>
-        <!--Widget List Interface Controller-->
+        <!--WidgetListView-->
         <scene sceneID="EHq-Ph-C90">
             <objects>
-                <controller id="r1g-KC-MSv" customClass="WidgetListInterfaceController">
+                <controller identifier="WidgetListView" id="r1g-KC-MSv" customClass="WidgetListInterfaceController">
                     <items>
                         <table alignment="left" id="fbv-bY-vqx">
                             <items>
@@ -161,7 +162,4 @@
             <point key="canvasLocation" x="231" y="540"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="RUZ-Qe-PhO"/>
-    </inferredMetricsTieBreakers>
 </document>

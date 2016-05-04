@@ -9,17 +9,18 @@ using System.CodeDom.Compiler;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	[Register ("WidgetCellRowController")]
-	partial class WidgetCellRowController
+	[Register("ItemListView")]
+	partial class ItemListView
 	{
 		[Outlet]
-		public WatchKit.WKInterfaceLabel WidgetLabel { get; set; }
-		
-		void ReleaseDesignerOutlets ()
+		WatchKit.WKInterfaceTable ItemList { get; set; }
+
+		void ReleaseDesignerOutlets()
 		{
-			if (WidgetLabel != null) {
-				WidgetLabel.Dispose ();
-				WidgetLabel = null;
+			if (ItemList != null)
+			{
+				ItemList.Dispose();
+				ItemList = null;
 			}
 		}
 	}

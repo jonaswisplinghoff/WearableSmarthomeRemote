@@ -55,7 +55,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			WidgetList.SetNumberOfRows (rows.Count, "WidgetItem");
 
 			for (var i = 0; i < WidgetList.NumberOfRows; i++) {
-				var widgetCell = (WidgetCellRowController)WidgetList.GetRowController (i);
+				var widgetCell = (WidgetCellView)WidgetList.GetRowController (i);
 				if (widgetCell != null) {
 					widgetCell.WidgetLabel.SetText (rows [i]);
 				}

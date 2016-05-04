@@ -45,10 +45,7 @@ namespace MvvmCross.watchOS
 
 		protected override IMvxPluginManager CreatePluginManager()
 		{
-			var toReturn = new MvxLoaderPluginManager();
-			var registry = new MvxLoaderPluginRegistry(".watchOS", toReturn.Finders);
-			this.AddPluginsLoaders(registry);
-			return toReturn;
+			return new MvxPluginManager();
 		}
 
 		protected virtual void AddPluginsLoaders(MvxLoaderPluginRegistry loaders)

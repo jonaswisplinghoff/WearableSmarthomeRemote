@@ -11,6 +11,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.Core;
+using System.Diagnostics;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
@@ -44,11 +45,17 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// Configure interface objects here.
 			Console.WriteLine("{0} awake with context", this);
 
-
 			//this.CreateBinding(HeadingLabel).To((SmarthomeRemoteViewModel vm) => vm.Heading).Apply();
 			var set = this.CreateBindingSet<SmarthomeRemoteView, SmarthomeRemoteViewModel>();
 			set.Bind(HeadingLabel).For("HeadingLabel").To(vm => vm.Heading);
+			set.Bind(this).For("ShowAllButtonPressed").To(vm => vm.NextPageCommand);
 			set.Apply();
+		}
+
+		public event EventHandler ShowAllButtonPressedEvent = delegate { };
+		partial void ShowAllButtonPressed()
+		{
+			ShowAllButtonPressedEvent(this, new EventArgs());
 		}
 
 		public override void WillActivate()
