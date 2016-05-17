@@ -11,7 +11,6 @@ namespace WearableSmarthomeRemote.WatchCore
 		public SmarthomeRemoteViewModel(IOpenHab openHab)
 		{
 			_openHab = openHab;
-			_heading = "Läuft!";
 		}
 
 		public override void Start()
@@ -80,6 +79,8 @@ namespace WearableSmarthomeRemote.WatchCore
 		async void Update()
 		{
 			var sitemap = await _openHab.GetSitemapWithName();
+
+			Heading = sitemap.label;
 
 			Widgets = new List<WidgetCellViewModel>();
 			foreach (Widget widget in sitemap.homepage.widgets)
