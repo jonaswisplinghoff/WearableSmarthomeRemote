@@ -11,8 +11,8 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
 	public class Setup : MvxWatchOSSetup
 	{
-		public Setup(MvxInterfaceController controller, MvxWatchOSViewPresenter presenter)
-			: base(controller, presenter)
+		public Setup(MvxInterfaceController controller)
+			: base(controller)
 		{
 		}
 

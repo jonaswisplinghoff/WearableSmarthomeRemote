@@ -1,6 +1,7 @@
 ﻿using UIKit;
 using WatchKit;
 using System.Linq;
+using Foundation;
 
 namespace MvvmCross.watchOS
 {
@@ -51,7 +52,7 @@ namespace MvvmCross.watchOS
 				throw new MvxException("Passed in IMvxWatchOSView is not a WKInterfaceController");*/
 			var viewName = viewPath.Split('.').Last();
 
-			_interfaceControllers.Last().PushController(viewName, "");
+			_interfaceControllers.Last().PushController(viewName, (NSObject)null);
 		}
 
 		public virtual void CloseModalViewController()

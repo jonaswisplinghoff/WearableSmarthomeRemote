@@ -32,10 +32,9 @@ namespace MvvmCross.watchOS
 		private MvxInterfaceController _controller;
 		private IMvxWatchOSViewPresenter _presenter;
 
-		protected MvxWatchOSSetup(MvxInterfaceController controller, MvxWatchOSViewPresenter presenter)
+		protected MvxWatchOSSetup(MvxInterfaceController controller)
 		{
 			this._controller = controller;
-			this._presenter = presenter;
 		}
 
 		protected override IMvxTrace CreateDebugTrace()
