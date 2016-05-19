@@ -25,6 +25,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		{
 			registry.RegisterCustomBindingFactory<WKInterfaceLabel>("HeadingLabel", label => new MvxWKInterfaceLabelTargetBinding(label));
 			registry.RegisterCustomBindingFactory<SmarthomeRemoteView>("ShowAllButtonPressed", controller => new MvxWKInterfaceControllerMethodTargetBinding(controller));
+			registry.RegisterCustomBindingFactory<WKInterfaceTable>("WidgetList", list => new MvxWKInterfaceTableTargetBinding(list));
 			base.FillTargetFactories(registry);
 		}
 	}

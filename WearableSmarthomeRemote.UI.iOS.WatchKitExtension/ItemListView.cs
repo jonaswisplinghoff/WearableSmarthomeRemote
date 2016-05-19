@@ -6,6 +6,7 @@ using WearableSmarthomeRemote.Core;
 using System.Collections.Generic;
 using WearableSmarthomeRemote.WatchCore;
 using MvvmCross.watchOS;
+using MvvmCross.Binding.BindingContext;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
@@ -25,6 +26,9 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			//TODO: this.Bind(ItemList).To((vm) => vm.Items).Apply();
 			this.AdaptForBinding();
 
+			var set = this.CreateBindingSet<ItemListView, ItemListViewModel>();
+
+			set.Apply();
 
 			var oh = new OpenHab();
 

@@ -18,7 +18,7 @@
                         </button>
                         <table alignment="left" id="2">
                             <items>
-                                <tableRow identifier="WidgetItem" id="3" customClass="WidgetCellRowController">
+                                <tableRow identifier="WidgetItem" id="3" customClass="WidgetCellView">
                                     <group key="rootItem" width="134" height="38" alignment="left" id="4">
                                         <items>
                                             <label alignment="left" text="Label" id="20M-Cq-Lu4"/>

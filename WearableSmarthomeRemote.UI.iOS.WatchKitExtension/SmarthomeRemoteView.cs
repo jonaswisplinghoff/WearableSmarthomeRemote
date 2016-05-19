@@ -43,10 +43,10 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// Configure interface objects here.
 			Console.WriteLine("{0} awake with context", this);
 
-			//this.CreateBinding(HeadingLabel).To((SmarthomeRemoteViewModel vm) => vm.Heading).Apply();
 			var set = this.CreateBindingSet<SmarthomeRemoteView, SmarthomeRemoteViewModel>();
 			set.Bind(HeadingLabel).For("HeadingLabel").To(vm => vm.Heading);
 			set.Bind(this).For("ShowAllButtonPressed").To(vm => vm.NextPageCommand);
+			set.Bind(this.WidgetList).For("WidgetList").To(vm => vm.Widgets);
 			set.Apply();
 		}
 
