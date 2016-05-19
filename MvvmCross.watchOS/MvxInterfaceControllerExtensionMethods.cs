@@ -11,7 +11,6 @@ namespace MvvmCross.watchOS
 	{
 		public static void OnViewCreate(this IMvxWatchOSView watchosView)
 		{
-			//var view = iosView as IMvxView<TViewModel>;
 			watchosView.OnViewCreate(watchosView.LoadViewModel);
 		}
 
