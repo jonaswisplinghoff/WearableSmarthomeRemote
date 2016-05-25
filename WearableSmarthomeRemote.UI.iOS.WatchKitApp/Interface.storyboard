@@ -13,7 +13,7 @@
                         <label alignment="left" text="Heading" id="Rwj-pj-lid"/>
                         <button width="1" alignment="left" title="Show all" id="0Dp-1G-5gb">
                             <connections>
-                                <action selector="ShowAllButtonPressed" destination="AgC-eL-Hgc" id="qq9-KW-wGL"/>
+                                <action selector="OnShowAllButtonPressed" destination="AgC-eL-Hgc" id="fcm-qS-rNZ"/>
                             </connections>
                         </button>
                         <table alignment="left" id="2">

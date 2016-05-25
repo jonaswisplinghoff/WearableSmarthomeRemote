@@ -43,15 +43,18 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 
 			var set = this.CreateBindingSet<SmarthomeRemoteView, SmarthomeRemoteViewModel>();
 			set.Bind(HeadingLabel).For("LabelText").To(vm => vm.Heading);
-			set.Bind(this).For(v => v.ShowAllButtonPressedEvent).To(vm => vm.NextPageCommand);
+			set.Bind(this).For(v => v.ShowAllButtonPressed).To(vm => vm.NextPageCommand);
 			set.Bind(this.WidgetList).For("WidgetList").To(vm => vm.Widgets);
 			set.Apply();
 		}
 
-		public event EventHandler ShowAllButtonPressedEvent = delegate { };
-		partial void ShowAllButtonPressed()
+
+
+		public event EventHandler ShowAllButtonPressed = delegate { };
+		partial void OnShowAllButtonPressed()
 		{
-			ShowAllButtonPressedEvent(this, new EventArgs());
+			ShowAllButtonPressed(this, new EventArgs());
+
 		}
 
 		public override void WillActivate()
