@@ -23,9 +23,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			{
 				var setup = new Setup(this);
 				setup.Initialize();
-
-				this.Request = new MvxViewModelRequest<SmarthomeRemoteViewModel>(new MvxBundle(null), null,
-																				 MvxRequestedBy.Unknown);
+				this.Request = new MvxViewModelRequest<SmarthomeRemoteViewModel>(new MvxBundle(null), null, MvxRequestedBy.Unknown);
 			}
 			this.AdaptForBinding();
 		}
@@ -44,8 +42,8 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			Console.WriteLine("{0} awake with context", this);
 
 			var set = this.CreateBindingSet<SmarthomeRemoteView, SmarthomeRemoteViewModel>();
-			set.Bind(HeadingLabel).For("HeadingLabel").To(vm => vm.Heading);
-			set.Bind(this).For("ShowAllButtonPressed").To(vm => vm.NextPageCommand);
+			set.Bind(HeadingLabel).For("LabelText").To(vm => vm.Heading);
+			set.Bind(this).For(v => v.ShowAllButtonPressedEvent).To(vm => vm.NextPageCommand);
 			set.Bind(this.WidgetList).For("WidgetList").To(vm => vm.Widgets);
 			set.Apply();
 		}

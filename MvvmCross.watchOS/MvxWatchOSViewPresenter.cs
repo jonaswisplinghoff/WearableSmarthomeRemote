@@ -28,10 +28,9 @@ namespace MvvmCross.watchOS
 		public override void Show(MvxViewModelRequest request)
 		{
 			var viewType = Mvx.Resolve<IMvxWatchOSViewCreator>().GetViewTypeFromViewModelRequest(request);
-			//var view = this.CreateInterfaceControllerFor(request);
-
-			var modelName = viewType.ToString();
-			this.Show(modelName);
+			var modelPath = viewType.ToString();
+			var viewName = modelPath.Split('.').Last();
+			this.Show(viewName);
 		}
 
 		public override void ChangePresentation(MvxPresentationHint hint)
@@ -45,13 +44,8 @@ namespace MvvmCross.watchOS
 			}
 		}
 
-		public virtual void Show(string viewPath)
+		public virtual void Show(string viewName)
 		{
-			/*var interfaceController = view as MvxInterfaceController;
-			if (interfaceController == null)
-				throw new MvxException("Passed in IMvxWatchOSView is not a WKInterfaceController");*/
-			var viewName = viewPath.Split('.').Last();
-
 			_interfaceControllers.Last().PushController(viewName, (NSObject)null);
 		}
 
@@ -64,9 +58,9 @@ namespace MvvmCross.watchOS
 		{
 			var topInterfaceController = this._interfaceControllers.Last();
 
+			if (topInterfaceController == null)
 			{
-				if (topInterfaceController == null)
-					MvxTrace.Warning("Don't know how to close this viewmodel - no topmost");
+				MvxTrace.Warning("Don't know how to close this viewmodel - no topmost");
 				return;
 			}
 
