@@ -135,7 +135,7 @@ namespace MvvmCross.watchOS
 
 		protected virtual MvxBindingBuilder CreateBindingBuilder()
 		{
-			var bindingBuilder = new MvxIosBindingBuilder();
+			var bindingBuilder = new MvxWatchOSBindingBuilder();
 			return bindingBuilder;
 		}
 

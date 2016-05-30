@@ -51,7 +51,7 @@
                                     <group key="rootItem" width="1" alignment="left" id="SN1-Wx-XOe">
                                         <items>
                                             <label alignment="left" text="ItemName" id="fEb-jv-drl"/>
-                                            <label alignment="left" text="State" id="9cg-F1-Cn9">
+                                            <label alignment="right" text="State" id="9cg-F1-Cn9">
                                                 <fontDescription key="font" type="system" pointSize="19"/>
                                             </label>
                                         </items>

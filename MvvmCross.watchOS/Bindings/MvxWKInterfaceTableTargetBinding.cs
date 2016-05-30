@@ -4,6 +4,7 @@ using MvvmCross.Binding.Bindings.Target;
 using WatchKit;
 using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform.Platform;
 
 namespace MvvmCross.watchOS.Binding
 {
@@ -12,7 +13,11 @@ namespace MvvmCross.watchOS.Binding
 		public MvxWKInterfaceTableTargetBinding(WKInterfaceTable target)
 			: base(target)
 		{
-
+			if (target == null)
+			{
+				MvxBindingTrace.Trace(MvxTraceLevel.Error,
+									  "Error - WKInterfaceTable is null in MvxWKInterfaceTableTargetBinding");
+			}
 		}
 
 		public override void SetValue(object value)
