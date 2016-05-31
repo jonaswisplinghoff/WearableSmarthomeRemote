@@ -5,7 +5,6 @@ using WatchKit;
 using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Platform;
-using WearableSmarthomeRemote.UI.iOS.WatchKitExtension;
 
 namespace MvvmCross.watchOS.Binding
 {
