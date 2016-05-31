@@ -82,11 +82,13 @@ namespace WearableSmarthomeRemote.WatchCore
 
 			Heading = sitemap.label;
 
-			Widgets = new List<WidgetCellViewModel>();
+			var v = new List<WidgetCellViewModel>();
 			foreach (Widget widget in sitemap.homepage.widgets)
 			{
-				Widgets.Add(new WidgetCellViewModel(widget));
+				v.Add(new WidgetCellViewModel(widget));
 			}
+
+			Widgets = v;
 		}
 	}
 }

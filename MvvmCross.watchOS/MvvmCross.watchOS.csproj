@@ -92,10 +92,10 @@
     <Compile Include="MvxBaseWatchOSViewPresenter.cs" />
     <Compile Include="MvxCanCreateWatchOSViewExtensionMethods.cs" />
     <Compile Include="Bindings\MvxWKInterfaceLabelTextTargetBinding.cs" />
-    <Compile Include="Bindings\MvxWKInterfaceTableTargetBinding.cs" />
     <Compile Include="MvxRowController.cs" />
     <Compile Include="MvxWatchOSBindingBuilder.cs" />
     <Compile Include="MvxUnifiedTypesValueConverter.cs" />
+    <Compile Include="Bindings\MvxWKInterfaceTableTargetBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
