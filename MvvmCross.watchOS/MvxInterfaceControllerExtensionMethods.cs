@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 namespace MvvmCross.watchOS
 {
 	using MvvmCross.Core.ViewModels;

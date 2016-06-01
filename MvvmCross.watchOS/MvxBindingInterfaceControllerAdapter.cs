@@ -4,7 +4,6 @@
 
 	using MvvmCross.Binding.BindingContext;
 	using MvvmCross.Platform.Platform;
-	using MvvmCross.Platform.iOS.Views;
 
 	public class MvxBindingInterfaceControllerAdapter : MvxBaseInterfaceControllerAdapter
 	{

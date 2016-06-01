@@ -99,7 +99,7 @@
                     <items>
                         <table alignment="left" id="fbv-bY-vqx">
                             <items>
-                                <tableRow identifier="WidgetItem" id="MKm-D4-xZr" customClass="WidgetCellRowController">
+                                <tableRow identifier="WidgetItem" id="MKm-D4-xZr" customClass="WidgetCellView">
                                     <group key="rootItem" width="1" alignment="left" id="Fwa-qG-pbA">
                                         <items>
                                             <label alignment="left" text="Label" id="C9r-75-kjP"/>
