@@ -32,8 +32,6 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		{
 		}
 
-		List<WidgetCellViewModel> Widgets = new List<WidgetCellViewModel>();
-
 		public override void Awake(NSObject context)
 		{
 			base.Awake(context);
@@ -45,6 +43,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			set.Bind(HeadingLabel).To(vm => vm.Heading);
 			set.Bind(this).For(v => v.ShowAllButtonPressed).To(vm => vm.NextPageCommand);
 			set.Bind(this.WidgetList).For("WidgetList").To(vm => vm.Widgets);
+			set.Bind(this).For(v => v.TableCellPressed).To(vm => vm.WidgetSelectedCommand);
 			set.Apply();
 		}
 
@@ -54,20 +53,26 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			ShowAllButtonPressed(this, new EventArgs());
 		}
 
+		public event EventHandler<TableCellPressedEventArgs> TableCellPressed = delegate { };
+		public override void DidSelectRow(WKInterfaceTable table, nint rowIndex)
+		{
+			base.DidSelectRow(table, rowIndex);
+			Debug.WriteLine(rowIndex);
+
+			var args = new TableCellPressedEventArgs();
+			args.Widget = this.ViewModel.Widgets[(int)rowIndex]; ;
+
+			EventHandler<TableCellPressedEventArgs> handler = TableCellPressed;
+			if (handler != null)
+			{
+				handler(this, args);
+			}
+		}
+
 		public override void WillActivate()
 		{
 			// This method is called when the watch view controller is about to be visible to the user.
 			Console.WriteLine("{0} will activate", this);
-		}
-
-		public override NSObject GetContextForSegue(string segueIdentifier, WKInterfaceTable table, nint rowIndex)
-		{
-			if (segueIdentifier == "showWidgets")
-			{
-				var widget = ((WidgetCellViewModel)Widgets[(int)rowIndex]).Widget;
-				return new NSString(widget.widgetId);
-			}
-			return null;
 		}
 
 		public override void DidDeactivate()
@@ -75,6 +80,11 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// This method is called when the watch view controller is no longer visible to the user.
 			Console.WriteLine("{0} did deactivate", this);
 		}
+	}
+
+	public class TableCellPressedEventArgs : EventArgs
+	{
+		public WidgetCellViewModel Widget { get; set; }
 	}
 }
 

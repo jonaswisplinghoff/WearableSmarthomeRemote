@@ -5,7 +5,6 @@ namespace WearableSmarthomeRemote.WatchCore
 {
 	public class WidgetCellViewModel : MvxViewModel
 	{
-
 		public WidgetCellViewModel(Widget widget)
 		{
 			Widget = widget;
