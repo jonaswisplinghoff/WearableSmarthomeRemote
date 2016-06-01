@@ -11,16 +11,14 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 	{
 		public WidgetCellView()
 		{
+			this.BindingContext = new MvxBindingContext();
 		}
 
-		public override void SetupBinding()
+		public override void SetupBindingWithViewModel(MvxViewModel viewModel)
 		{
-			//this.Request = new MvxViewModelRequest<WidgetCellViewModel>(new MvxBundle(null), null, MvxRequestedBy.Unknown);
+			this.ViewModel = viewModel;
 			this.OnViewCreate();
 
-
-
-			//TODO: viewModel erst später binden
 			var set = this.CreateBindingSet<WidgetCellView, WidgetCellViewModel>();
 			set.Bind(WidgetLabel).To(vm => vm.WidgetName);
 			set.Apply();

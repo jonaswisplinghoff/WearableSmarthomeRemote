@@ -24,7 +24,7 @@ namespace MvvmCross.watchOS
 			set { this.BindingContext.DataContext = value; }
 		}
 
-		public abstract void SetupBinding();
+		public abstract void SetupBindingWithViewModel(MvxViewModel viewModel);
 	}
 }
 

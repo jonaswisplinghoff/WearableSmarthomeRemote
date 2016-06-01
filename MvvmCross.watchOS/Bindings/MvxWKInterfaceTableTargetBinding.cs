@@ -41,11 +41,7 @@ namespace MvvmCross.watchOS.Binding
 			for (var i = 0; i < list.Count; i++)
 			{
 				var view = table.GetRowController(i) as MvxRowController;
-
-				view.BindingContext = new MvxBindingContext();
-				view.ViewModel = list.ElementAt(i);
-
-				view.SetupBinding();
+				view.SetupBindingWithViewModel(list.ElementAt(i));
 			}
 		}
 	}
