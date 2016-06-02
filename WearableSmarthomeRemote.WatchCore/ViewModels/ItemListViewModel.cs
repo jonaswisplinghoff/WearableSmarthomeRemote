@@ -63,15 +63,15 @@ namespace WearableSmarthomeRemote.WatchCore
 				switch (item.type)
 				{
 					case "SwitchItem":
-						viewModels.Add(new SwitchItemCellViewModel(_openHab, item.name, item.state));
+						viewModels.Add(new SwitchCellViewModel(_openHab, item.name, item.state));
 						break;
 					case "GroupItem":
 						break;
 					case "ColorItem":
-						viewModels.Add(new ColorItemCellViewModel(item.name, item.state));
+						viewModels.Add(new ColorCellViewModel(item.name, item.state));
 						break;
 					default:
-						viewModels.Add(new StateItemCellViewModel(item.name, item.state));
+						viewModels.Add(new StateCellViewModel(item.name, item.state));
 						break;
 				}
 			}

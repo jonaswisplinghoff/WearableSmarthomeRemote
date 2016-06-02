@@ -4,10 +4,10 @@ using WearableSmarthomeRemote.Core;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
-	public class SwitchItemCellViewModel : ItemCellViewModel
+	public class SwitchCellViewModel : ItemCellViewModel
 	{
 		protected readonly IOpenHab _openHab;
-		public SwitchItemCellViewModel(IOpenHab openHab, string name, string state) : base(name, state)
+		public SwitchCellViewModel(IOpenHab openHab, string name, string state) : base(name, state)
 		{
 			_openHab = openHab;
 			_on = state == "ON";

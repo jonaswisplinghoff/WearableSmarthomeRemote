@@ -8,6 +8,11 @@ namespace MvvmCross.watchOS
 {
 	public abstract class MvxRowController : NSObject, IMvxWatchOSView
 	{
+		protected MvxRowController()
+		{
+			this.BindingContext = new MvxBindingContext();
+		}
+
 		public MvxViewModelRequest Request { get; set; }
 
 		public IMvxBindingContext BindingContext { get; set; }

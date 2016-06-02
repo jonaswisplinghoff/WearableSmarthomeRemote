@@ -4,9 +4,9 @@ using WearableSmarthomeRemote.Core;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
-	public class StateItemCellViewModel : ItemCellViewModel
+	public class StateCellViewModel : ItemCellViewModel
 	{
-		public StateItemCellViewModel(string name, string state) : base(name, state)
+		public StateCellViewModel(string name, string state) : base(name, state)
 		{
 
 		}

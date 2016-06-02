@@ -50,17 +50,17 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				switch (item.type)
 				{
 					case "SwitchItem":
-						viewModels.Add(new SwitchItemCellViewModel(oh, item.name, item.state));
+						viewModels.Add(new SwitchCellViewModel(oh, item.name, item.state));
 						rowTypes.Add("SwitchCellView");
 						break;
 					case "GroupItem":
 						break;
 					case "ColorItem":
-						viewModels.Add(new ColorItemCellViewModel(item.name, item.state));
+						viewModels.Add(new ColorCellViewModel(item.name, item.state));
 						rowTypes.Add("ColorCellView");
 						break;
 					default:
-						viewModels.Add(new StateItemCellViewModel(item.name, item.state));
+						viewModels.Add(new StateCellViewModel(item.name, item.state));
 						rowTypes.Add("StateCellView");
 						break;
 				}
@@ -76,7 +76,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 					if (widgetCell != null)
 					{
 						widgetCell.ItemNameLabel.SetText(viewModels[i].ItemName);
-						widgetCell.ItemStateLabel.SetText(((StateItemCellViewModel)viewModels[i]).State);
+						widgetCell.ItemStateLabel.SetText(((StateCellViewModel)viewModels[i]).State);
 					}
 				}
 				else if (rowTypes[i] == "SwitchCellView")
@@ -85,7 +85,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 					if (widgetCell != null)
 					{
 						widgetCell.WidgetSwitch.SetTitle(viewModels[i].ItemName);
-						widgetCell.WidgetSwitch.SetOn(((SwitchItemCellViewModel)viewModels[i]).On);
+						widgetCell.WidgetSwitch.SetOn(((SwitchCellViewModel)viewModels[i]).On);
 					}
 				}
 				else if (rowTypes[i] == "ColorCellView")

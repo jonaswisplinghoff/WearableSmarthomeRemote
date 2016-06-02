@@ -3,9 +3,9 @@ using MvvmCross.Platform.UI;
 
 namespace WearableSmarthomeRemote.WatchCore
 {
-	public class ColorItemCellViewModel : ItemCellViewModel
+	public class ColorCellViewModel : ItemCellViewModel
 	{
-		public ColorItemCellViewModel(string name, string state) : base(name, state)
+		public ColorCellViewModel(string name, string state) : base(name, state)
 		{
 			var colors = state.Replace(" ", "").Split(',');
 
