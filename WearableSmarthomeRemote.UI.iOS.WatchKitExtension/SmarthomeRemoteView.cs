@@ -2,15 +2,10 @@
 
 using WatchKit;
 using Foundation;
-using System.Collections.Generic;
-using WearableSmarthomeRemote.Core;
 using WearableSmarthomeRemote.WatchCore;
 using MvvmCross.watchOS;
-using MvvmCross.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Platform.IoC;
-using MvvmCross.Platform.Core;
 using System.Diagnostics;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension

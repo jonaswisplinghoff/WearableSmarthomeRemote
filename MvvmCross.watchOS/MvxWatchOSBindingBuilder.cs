@@ -43,7 +43,8 @@ namespace MvvmCross.watchOS
 
 			registry.RegisterCustomBindingFactory<WKInterfaceLabel>("Text",
 																	view => new MvxWKInterfaceLabelTextTargetBinding(view));
-
+			registry.RegisterCustomBindingFactory<WKInterfaceSwitch>("Title",
+																	 view => new MvxWKInterfaceSwitchTextTargetBinding(view));
 			this._fillRegistryAction?.Invoke(registry);
 		}
 

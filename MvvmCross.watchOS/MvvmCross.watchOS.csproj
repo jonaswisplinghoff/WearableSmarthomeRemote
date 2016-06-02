@@ -96,6 +96,7 @@
     <Compile Include="MvxWatchOSBindingBuilder.cs" />
     <Compile Include="MvxUnifiedTypesValueConverter.cs" />
     <Compile Include="Bindings\MvxWKInterfaceTableTargetBinding.cs" />
+    <Compile Include="Bindings\MvxWKInterfaceSwitchTextTargetBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

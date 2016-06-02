@@ -15,7 +15,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 
 			var set = this.CreateBindingSet<SwitchCellView, SwitchCellViewModel>();
 			//set.Bind(this.WidgetSwitch).For(v => v.SetOn).To(vm => vm.On);
-			//set.Bind(this.WidgetSwitch).For(v => v.SetTitle).To(vm => vm.ItemName);
+			set.Bind(this.WidgetSwitch).For("Title").To(vm => vm.ItemName);
 			set.Apply();
 		}
 	}
