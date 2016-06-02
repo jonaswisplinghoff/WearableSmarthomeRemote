@@ -129,12 +129,12 @@
     <Compile Include="NotificationController.designer.cs">
       <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewController\ColorCellRowController.cs" />
-    <Compile Include="ViewController\ColorCellRowController.designer.cs" />
-    <Compile Include="ViewController\StateCellRowController.cs" />
-    <Compile Include="ViewController\StateCellRowController.designer.cs" />
-    <Compile Include="ViewController\SwitchCellRowController.cs" />
-    <Compile Include="ViewController\SwitchCellRowController.designer.cs" />
+    <Compile Include="ViewController\ColorCellView.cs" />
+    <Compile Include="ViewController\ColorCellView.designer.cs" />
+    <Compile Include="ViewController\StateCellView.cs" />
+    <Compile Include="ViewController\StateCellView.designer.cs" />
+    <Compile Include="ViewController\SwitchCellView.cs" />
+    <Compile Include="ViewController\SwitchCellView.designer.cs" />
     <Compile Include="ViewController\WidgetCellView.cs" />
     <Compile Include="ViewController\WidgetCellView.designer.cs" />
     <Compile Include="ItemListView.cs" />

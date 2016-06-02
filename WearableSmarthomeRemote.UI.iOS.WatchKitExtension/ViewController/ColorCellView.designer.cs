@@ -9,24 +9,26 @@ using System.CodeDom.Compiler;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	[Register ("ColorCellRowController")]
-	partial class ColorCellRowController
+	[Register("ColorCellView")]
+	partial class ColorCellView
 	{
 		[Outlet]
 		public WatchKit.WKInterfaceGroup WidgetColor { get; private set; }
 
 		[Outlet]
 		public WatchKit.WKInterfaceLabel WidgetLabel { get; private set; }
-		
-		void ReleaseDesignerOutlets ()
+
+		void ReleaseDesignerOutlets()
 		{
-			if (WidgetColor != null) {
-				WidgetColor.Dispose ();
+			if (WidgetColor != null)
+			{
+				WidgetColor.Dispose();
 				WidgetColor = null;
 			}
 
-			if (WidgetLabel != null) {
-				WidgetLabel.Dispose ();
+			if (WidgetLabel != null)
+			{
+				WidgetLabel.Dispose();
 				WidgetLabel = null;
 			}
 		}

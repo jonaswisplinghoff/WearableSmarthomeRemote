@@ -47,7 +47,7 @@
                     <items>
                         <table alignment="left" id="lsv-Pc-J77">
                             <items>
-                                <tableRow identifier="StateItem" id="Q2f-Dg-b16" customClass="StateCellRowController">
+                                <tableRow identifier="StateItem" id="Q2f-Dg-b16" customClass="StateCellView">
                                     <group key="rootItem" width="1" alignment="left" id="SN1-Wx-XOe">
                                         <items>
                                             <label alignment="left" text="ItemName" id="fEb-jv-drl"/>
@@ -61,7 +61,7 @@
                                         <outlet property="ItemStateLabel" destination="9cg-F1-Cn9" id="ggr-3Q-akx"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="SwitchItem" id="AAs-R9-SDD" customClass="SwitchCellRowController">
+                                <tableRow identifier="SwitchItem" id="AAs-R9-SDD" customClass="SwitchCellView">
                                     <group key="rootItem" width="1" alignment="left" id="3DD-Zq-fMI">
                                         <items>
                                             <switch width="1" alignment="left" value="YES" title="ItemName" id="vLx-L7-cZ3"/>
@@ -71,7 +71,7 @@
                                         <outlet property="WidgetSwitch" destination="vLx-L7-cZ3" id="sbR-Fl-zFM"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="ColorItem" id="VXR-nY-rzG" customClass="ColorCellRowController">
+                                <tableRow identifier="ColorItem" id="VXR-nY-rzG" customClass="ColorCellView">
                                     <group key="rootItem" width="1" alignment="left" id="hxy-S2-D3O">
                                         <items>
                                             <label height="26.5" alignment="left" text="ItemName" id="cOb-y5-7At"/>

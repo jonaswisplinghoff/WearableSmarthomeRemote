@@ -72,7 +72,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			{
 				if (rowTypes[i] == "StateItem")
 				{
-					var widgetCell = (StateCellRowController)ItemList.GetRowController(i);
+					var widgetCell = (StateCellView)ItemList.GetRowController(i);
 					if (widgetCell != null)
 					{
 						widgetCell.ItemNameLabel.SetText(viewModels[i].ItemName);
@@ -81,7 +81,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				}
 				else if (rowTypes[i] == "SwitchItem")
 				{
-					var widgetCell = (SwitchCellRowController)ItemList.GetRowController(i);
+					var widgetCell = (SwitchCellView)ItemList.GetRowController(i);
 					if (widgetCell != null)
 					{
 						widgetCell.WidgetSwitch.SetTitle(viewModels[i].ItemName);
@@ -90,7 +90,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				}
 				else if (rowTypes[i] == "ColorItem")
 				{
-					var widgetCell = (ColorCellRowController)ItemList.GetRowController(i);
+					var widgetCell = (ColorCellView)ItemList.GetRowController(i);
 					if (widgetCell != null)
 					{
 						widgetCell.WidgetLabel.SetText(viewModels[i].ItemName);

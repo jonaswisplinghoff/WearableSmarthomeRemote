@@ -3,9 +3,9 @@ using Foundation;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	public partial class ColorCellRowController : NSObject
+	public partial class StateCellView : NSObject
 	{
-		public ColorCellRowController ()
+		public StateCellView()
 		{
 		}
 	}
