@@ -46,8 +46,8 @@ namespace MvvmCross.watchOS.Binding
 				var types = new List<string>();
 				foreach (TViewModel vm in list)
 				{
-					//TODO: receive Identifiers
-					types.Add("StateCellView");
+					var viewIdentifier = (vm.GetType().Name).Replace("Model", "");
+					types.Add(viewIdentifier);
 				};
 				table.SetRowTypes(types.ToArray());
 			}
