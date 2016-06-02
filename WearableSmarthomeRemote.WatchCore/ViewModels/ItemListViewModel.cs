@@ -75,7 +75,7 @@ namespace WearableSmarthomeRemote.WatchCore
 						break;
 				}
 			}
-			Items = new List<ItemCellViewModel>(viewModels);
+			Items = viewModels;
 		}
 	}
 
