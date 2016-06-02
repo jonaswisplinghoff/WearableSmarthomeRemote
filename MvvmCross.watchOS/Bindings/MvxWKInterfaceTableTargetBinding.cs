@@ -31,7 +31,6 @@ namespace MvvmCross.watchOS.Binding
 
 		public override void SetValue(object value)
 		{
-
 			var table = Target as WKInterfaceTable;
 			var list = value as List<TViewModel>;
 			if (table == null || list == null)
