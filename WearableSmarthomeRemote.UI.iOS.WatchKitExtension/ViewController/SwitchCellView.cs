@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Core.ViewModels;
@@ -17,6 +18,11 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			//set.Bind(this.WidgetSwitch).For(v => v.SetOn).To(vm => vm.On);
 			set.Bind(this.WidgetSwitch).For("Title").To(vm => vm.ItemName);
 			set.Apply();
+		}
+
+		partial void OnSwitchStateChanged(bool value)
+		{
+			Debug.WriteLine(value);
 		}
 	}
 }

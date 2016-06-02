@@ -64,7 +64,11 @@
                                 <tableRow identifier="SwitchCellView" id="AAs-R9-SDD" customClass="SwitchCellView">
                                     <group key="rootItem" width="1" alignment="left" id="3DD-Zq-fMI">
                                         <items>
-                                            <switch width="1" alignment="left" value="YES" title="ItemName" id="vLx-L7-cZ3"/>
+                                            <switch width="1" alignment="left" value="YES" title="ItemName" id="vLx-L7-cZ3">
+                                                <connections>
+                                                    <action selector="OnSwitchStateChanged:" destination="AAs-R9-SDD" id="hDN-O0-q9g"/>
+                                                </connections>
+                                            </switch>
                                         </items>
                                     </group>
                                     <connections>
