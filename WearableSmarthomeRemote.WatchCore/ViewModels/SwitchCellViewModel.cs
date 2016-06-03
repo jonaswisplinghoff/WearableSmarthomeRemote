@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using WearableSmarthomeRemote.Core;
 
@@ -24,6 +25,21 @@ namespace WearableSmarthomeRemote.WatchCore
 				base.State = value ? "ON" : "OFF";
 				RaisePropertyChanged(() => On);
 			}
+		}
+
+		private MvxCommand<bool> _switchStateChangedCommand;
+		public ICommand SwitchStateChangedCommand
+		{
+			get
+			{
+				_switchStateChangedCommand = _switchStateChangedCommand ?? new MvxCommand<bool>(UpdateSwitchState);
+				return _switchStateChangedCommand;
+			}
+		}
+
+		void UpdateSwitchState(bool value)
+		{
+			this._on = value;
 		}
 	}
 }

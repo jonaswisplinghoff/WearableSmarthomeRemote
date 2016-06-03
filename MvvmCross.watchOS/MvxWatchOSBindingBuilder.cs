@@ -45,6 +45,8 @@ namespace MvvmCross.watchOS
 																	view => new MvxWKInterfaceLabelTextTargetBinding(view));
 			registry.RegisterCustomBindingFactory<WKInterfaceSwitch>("Title",
 																	 view => new MvxWKInterfaceSwitchTextTargetBinding(view));
+			registry.RegisterCustomBindingFactory<WKInterfaceSwitch>("On",
+																	 view => new MvxWKInterfaceSwitchValueTargetBinding(view));
 			this._fillRegistryAction?.Invoke(registry);
 		}
 
@@ -71,6 +73,7 @@ namespace MvvmCross.watchOS
 			base.FillDefaultBindingNames(registry);
 
 			registry.AddOrOverwrite(typeof(WKInterfaceLabel), "Text");
+			registry.AddOrOverwrite(typeof(WKInterfaceSwitch), "On");
 
 			this._fillBindingNamesAction?.Invoke(registry);
 		}

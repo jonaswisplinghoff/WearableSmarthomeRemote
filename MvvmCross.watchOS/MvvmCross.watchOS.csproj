@@ -97,6 +97,7 @@
     <Compile Include="MvxUnifiedTypesValueConverter.cs" />
     <Compile Include="Bindings\MvxWKInterfaceTableTargetBinding.cs" />
     <Compile Include="Bindings\MvxWKInterfaceSwitchTextTargetBinding.cs" />
+    <Compile Include="Bindings\MvxWKInterfaceSwitchValueTargetBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
