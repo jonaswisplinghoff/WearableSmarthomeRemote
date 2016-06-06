@@ -13,12 +13,9 @@ namespace MvvmCross.watchOS.Binding
 {
 	public class MvxWKInterfaceTableTargetBinding<TViewModel> : MvxTargetBinding where TViewModel : MvxViewModel
 	{
-		string _identifier;
-
-		public MvxWKInterfaceTableTargetBinding(WKInterfaceTable target, string identifier = "default")
-			: base(target)
+		public MvxWKInterfaceTableTargetBinding(WKInterfaceTable target)
+					: base(target)
 		{
-			this._identifier = identifier;
 			if (target == null)
 			{
 				MvxBindingTrace.Trace(MvxTraceLevel.Error, "Error - WKInterfaceTable is null in MvxWKInterfaceTableTargetBinding");
@@ -38,25 +35,25 @@ namespace MvvmCross.watchOS.Binding
 				return;
 			}
 
-			if (_identifier != "default")
+			var rowIdentifiers = new List<string>();
+			foreach (TViewModel vm in list)
 			{
-				table.SetNumberOfRows(list.Count, _identifier);
-			}
-			else {
-				var types = new List<string>();
-				foreach (TViewModel vm in list)
-				{
-					var viewIdentifier = (vm.GetType().Name).Replace("Model", "");
-					types.Add(viewIdentifier);
-				};
-				table.SetRowTypes(types.ToArray());
-			}
+				var viewModelName = vm.GetType().Name;
+				var rowId = IdentifierFromViewModelName(viewModelName);
+				rowIdentifiers.Add(rowId);
+			};
+			table.SetRowTypes(rowIdentifiers.ToArray());
 
 			for (var i = 0; i < list.Count; i++)
 			{
 				var view = table.GetRowController(i) as MvxRowController;
-				view.SetupBindingWithViewModel(list.ElementAt(i));
+				view.SetupBindingWithViewModel(list[i]);
 			}
+		}
+
+		private string IdentifierFromViewModelName(string vmName)
+		{
+			return vmName.Replace("Model", "");
 		}
 	}
 }

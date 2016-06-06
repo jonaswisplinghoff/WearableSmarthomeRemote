@@ -24,8 +24,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
 		{
 			registry.RegisterCustomBindingFactory<WKInterfaceTable>("WidgetList",
-																	list => new MvxWKInterfaceTableTargetBinding<WidgetCellViewModel>(list,
-																																	  "WidgetCellView"));
+																	list => new MvxWKInterfaceTableTargetBinding<WidgetCellViewModel>(list));
 			registry.RegisterCustomBindingFactory<WKInterfaceTable>("ItemList",
 																	list => new MvxWKInterfaceTableTargetBinding<ItemCellViewModel>(list));
 
