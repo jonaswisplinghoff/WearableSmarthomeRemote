@@ -11,14 +11,14 @@ using System.Diagnostics;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	public partial class WidgetListInterfaceController : MvxInterfaceController<WidgetListViewModel>
+	public partial class WidgetListView : MvxInterfaceController<WidgetListViewModel>
 	{
-		public WidgetListInterfaceController()
+		public WidgetListView()
 		{
 			this.AdaptForBinding();
 		}
 
-		public WidgetListInterfaceController(IntPtr handle) : base(handle)
+		public WidgetListView(IntPtr handle) : base(handle)
 		{
 		}
 
@@ -29,7 +29,7 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			// Configure interface objects here.
 			Console.WriteLine("{0} awake with context: {1}", this, context);
 
-			var set = this.CreateBindingSet<WidgetListInterfaceController, WidgetListViewModel>();
+			var set = this.CreateBindingSet<WidgetListView, WidgetListViewModel>();
 			set.Bind(this.WidgetList).For("WidgetList").To(vm => vm.Widgets);
 			set.Bind(this.TableCellPressed).To(vm => vm.WidgetSelectedCommand);
 			set.Apply();
@@ -50,20 +50,5 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				handler(this, args);
 			}
 		}
-
-		public override void WillActivate()
-		{
-			// This method is called when the watch view controller is about to be visible to the user.
-			Console.WriteLine("{0} will activate", this);
-
-		}
-
-		public override void DidDeactivate()
-		{
-			// This method is called when the watch view controller is no longer visible to the user.
-			Console.WriteLine("{0} did deactivate", this);
-		}
 	}
 }
-
-

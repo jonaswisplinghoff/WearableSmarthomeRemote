@@ -117,17 +117,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlanceController.cs" />
-    <Compile Include="GlanceController.designer.cs">
-      <DependentUpon>GlanceController.cs</DependentUpon>
-    </Compile>
     <Compile Include="SmarthomeRemoteView.cs" />
     <Compile Include="SmarthomeRemoteView.designer.cs">
       <DependentUpon>SmarthomeRemoteView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationController.cs" />
-    <Compile Include="NotificationController.designer.cs">
-      <DependentUpon>NotificationController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController\ColorCellView.cs" />
     <Compile Include="ViewController\ColorCellView.designer.cs" />
@@ -141,9 +133,9 @@
     <Compile Include="ItemListView.designer.cs">
       <DependentUpon>ItemListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="WidgetListInterfaceController.cs" />
-    <Compile Include="WidgetListInterfaceController.designer.cs">
-      <DependentUpon>WidgetListInterfaceController.cs</DependentUpon>
+    <Compile Include="WidgetListView.cs" />
+    <Compile Include="WidgetListView.designer.cs">
+      <DependentUpon>WidgetListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup.cs" />
   </ItemGroup>

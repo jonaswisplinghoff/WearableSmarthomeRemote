@@ -63,18 +63,6 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 				handler(this, args);
 			}
 		}
-
-		public override void WillActivate()
-		{
-			// This method is called when the watch view controller is about to be visible to the user.
-			Console.WriteLine("{0} will activate", this);
-		}
-
-		public override void DidDeactivate()
-		{
-			// This method is called when the watch view controller is no longer visible to the user.
-			Console.WriteLine("{0} did deactivate", this);
-		}
 	}
 
 	public class TableCellPressedEventArgs : EventArgs

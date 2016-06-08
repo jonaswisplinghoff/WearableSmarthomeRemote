@@ -99,7 +99,7 @@
         <!--WidgetListView-->
         <scene sceneID="EHq-Ph-C90">
             <objects>
-                <controller identifier="WidgetListView" id="r1g-KC-MSv" customClass="WidgetListInterfaceController">
+                <controller identifier="WidgetListView" id="r1g-KC-MSv" customClass="WidgetListView">
                     <items>
                         <table alignment="left" id="fbv-bY-vqx">
                             <items>
@@ -146,7 +146,9 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
                     </items>
-                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                    </notificationCategory>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
