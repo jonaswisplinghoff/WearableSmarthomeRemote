@@ -5,96 +5,63 @@ using Foundation;
 using WearableSmarthomeRemote.Core;
 using System.Collections.Generic;
 using WearableSmarthomeRemote.WatchCore;
+using MvvmCross.watchOS;
+using MvvmCross.Binding.BindingContext;
+using System.Diagnostics;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
-	public partial class WidgetListInterfaceController : WKInterfaceController
+	public partial class WidgetListInterfaceController : MvxInterfaceController<WidgetListViewModel>
 	{
-		public WidgetListInterfaceController (IntPtr handle) : base (handle)
+		public WidgetListInterfaceController()
+		{
+			this.AdaptForBinding();
+		}
+
+		public WidgetListInterfaceController(IntPtr handle) : base(handle)
 		{
 		}
 
-		List<WidgetCellViewModel> Widgets;
-
-		public override async void Awake (NSObject context)
+		public override void Awake(NSObject context)
 		{
-			base.Awake (context);
+			base.Awake(context);
 
 			// Configure interface objects here.
-			Console.WriteLine ("{0} awake with context: {1}", this, context);
+			Console.WriteLine("{0} awake with context: {1}", this, context);
 
-			var _widgetId = (NSString)context;
+			var set = this.CreateBindingSet<WidgetListInterfaceController, WidgetListViewModel>();
+			set.Bind(this.WidgetList).For("WidgetList").To(vm => vm.Widgets);
+			set.Bind(this.TableCellPressed).To(vm => vm.WidgetSelectedCommand);
+			set.Apply();
+		}
 
-			//TODO: this.Bind(WidgetList).To((vm) => vm.Items).Apply();
+		public event EventHandler<TableCellPressedEventArgs> TableCellPressed = delegate { };
+		public override void DidSelectRow(WKInterfaceTable table, nint rowIndex)
+		{
+			base.DidSelectRow(table, rowIndex);
+			Debug.WriteLine(rowIndex);
 
-			var oh = new OpenHab ();
-			var sitemap = await oh.GetSitemapWithName();
+			var args = new TableCellPressedEventArgs();
+			args.Widget = this.ViewModel.Widgets[(int)rowIndex]; ;
 
-			Widget result = null;
-			foreach (Widget widget in sitemap.homepage.widgets)
+			EventHandler<TableCellPressedEventArgs> handler = TableCellPressed;
+			if (handler != null)
 			{
-				result = FindWidgetWithId(widget, _widgetId);
-				if (result != null)
-				{
-					break;
-				}
-			}
-
-			Widgets = new List<WidgetCellViewModel>();
-			foreach (Widget w in result.widgets)
-			{
-				Widgets.Add(new WidgetCellViewModel(w));
-			}
-
-			List<string> rows = new List<string>();
-
-			foreach (var w in Widgets) {
-				rows.Add (w.WidgetName);
-			}
-
-			WidgetList.SetNumberOfRows (rows.Count, "WidgetItem");
-
-			for (var i = 0; i < WidgetList.NumberOfRows; i++) {
-				var widgetCell = (WidgetCellView)WidgetList.GetRowController (i);
-				if (widgetCell != null) {
-					widgetCell.WidgetLabel.SetText (rows [i]);
-				}
+				handler(this, args);
 			}
 		}
 
-		public override void WillActivate ()
+		public override void WillActivate()
 		{
 			// This method is called when the watch view controller is about to be visible to the user.
-			Console.WriteLine ("{0} will activate", this);
+			Console.WriteLine("{0} will activate", this);
 
 		}
 
-		public override void DidDeactivate ()
+		public override void DidDeactivate()
 		{
 			// This method is called when the watch view controller is no longer visible to the user.
-			Console.WriteLine ("{0} did deactivate", this);
-		}
-
-		public override NSObject GetContextForSegue (string segueIdentifier, WKInterfaceTable table, nint rowIndex)
-		{
-			if (segueIdentifier == "showItems") {
-				var widget = ((WidgetCellViewModel)Widgets [(int)rowIndex]).Widget;
-				return new NSString (widget.item.name);
-			}
-			return null;
-		}
-
-		private Widget FindWidgetWithId(Widget widget, string id)
-		{
-			if (widget.widgetId == id)
-			{
-				return widget;
-			}
-			foreach (Widget w in widget.widgets)
-			{
-				FindWidgetWithId(w, id);
-			}
-			return null;
+			Console.WriteLine("{0} did deactivate", this);
 		}
 	}
 }
