@@ -15,10 +15,6 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			this.AdaptForBinding();
 		}
 
-		public ItemListView(IntPtr handle) : base(handle)
-		{
-		}
-
 		public override void Awake(NSObject context)
 		{
 			base.Awake(context);

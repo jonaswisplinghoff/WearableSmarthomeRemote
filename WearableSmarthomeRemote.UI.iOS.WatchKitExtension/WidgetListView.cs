@@ -1,9 +1,6 @@
 ﻿using System;
 using WatchKit;
-using UIKit;
 using Foundation;
-using WearableSmarthomeRemote.Core;
-using System.Collections.Generic;
 using WearableSmarthomeRemote.WatchCore;
 using MvvmCross.watchOS;
 using MvvmCross.Binding.BindingContext;
@@ -16,10 +13,6 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 		public WidgetListView()
 		{
 			this.AdaptForBinding();
-		}
-
-		public WidgetListView(IntPtr handle) : base(handle)
-		{
 		}
 
 		public override void Awake(NSObject context)

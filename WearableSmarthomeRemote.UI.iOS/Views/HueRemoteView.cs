@@ -30,11 +30,5 @@ namespace WearableSmarthomeRemote.UI.iOS
 
 			ItemList.ReloadData();
 		}
-
-		public override void DidReceiveMemoryWarning()
-		{
-			base.DidReceiveMemoryWarning();
-			// Release any cached data, images, etc that aren't in use.
-		}
 	}
 }

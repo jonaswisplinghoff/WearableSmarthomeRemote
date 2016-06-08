@@ -94,7 +94,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="562" y="-68"/>
+            <point key="canvasLocation" x="464" y="-59"/>
         </scene>
         <!--WidgetListView-->
         <scene sceneID="EHq-Ph-C90">
@@ -108,9 +108,6 @@
                                         <items>
                                             <label alignment="left" text="Label" id="C9r-75-kjP"/>
                                         </items>
-                                        <connections>
-                                            <segue destination="ih1-h6-GYO" kind="push" identifier="showItems" id="ia1-7S-wWD"/>
-                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="WidgetLabel" destination="C9r-75-kjP" id="BeT-Va-6CX"/>
@@ -124,45 +121,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="265" y="96"/>
-        </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="BOz-TT-tkC">
-            <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
-                    <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
-                    </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                </glanceController>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="263"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" id="JfB-70-Muf">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                    </notificationCategory>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="540"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="KIl-fV-djm">
-            <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
-            </objects>
-            <point key="canvasLocation" x="231" y="540"/>
+            <point key="canvasLocation" x="229" y="-59"/>
         </scene>
     </scenes>
 </document>
