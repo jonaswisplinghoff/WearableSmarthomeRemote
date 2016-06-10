@@ -6,7 +6,7 @@ using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Droid.Views;
 using WearableSmarthomeRemote.WatchCore;
 
-namespace WearableSmarthomeRemote.UI.WearDroid
+namespace WearableSmarthomeRemote.UI.DroidWear
 {
 	[Activity(Label = "ItemListView")]
 	public class ItemListView : MvxActivity

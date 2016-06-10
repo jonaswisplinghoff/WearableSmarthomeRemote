@@ -3,7 +3,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
 using WearableSmarthomeRemote.WatchCore;
 
-namespace WearableSmarthomeRemote.UI.WearDroid
+namespace WearableSmarthomeRemote.UI.DroidWear
 {
 	public class Setup : MvxAndroidSetup
 	{

@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using MvvmCross.Droid.Views;
 
-namespace WearableSmarthomeRemote.UI.WearDroid
+namespace WearableSmarthomeRemote.UI.DroidWear
 {
 	[Activity(Label = "SmarthomeRemoteView", MainLauncher = true)]
 	public class SmarthomeRemoteView : MvxActivity

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.UI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.WatchCore", "WearableSmarthomeRemote.WatchCore\WearableSmarthomeRemote.WatchCore.csproj", "{7D6A36D2-9BF1-4855-BF03-038F4880759F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.UI.WearDroid", "WearableSmarthomeRemote.UI.WearDroid\WearableSmarthomeRemote.UI.WearDroid.csproj", "{F51B2906-E5C7-457D-BFD9-D451A2C0CCB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.UI.DroidWear", "WearableSmarthomeRemote.UI.DroidWear\WearableSmarthomeRemote.UI.DroidWear.csproj", "{F51B2906-E5C7-457D-BFD9-D451A2C0CCB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearableSmarthomeRemote.MobileCore", "WearableSmarthomeRemote.MobileCore\WearableSmarthomeRemote.MobileCore.csproj", "{65826E6F-A4DF-4613-BF3E-54C1F834CA66}"
 EndProject
