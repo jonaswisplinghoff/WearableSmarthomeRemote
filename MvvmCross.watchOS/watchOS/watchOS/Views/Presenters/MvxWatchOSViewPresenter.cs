@@ -21,7 +21,7 @@
 
 		public override void Show(MvxViewModelRequest request)
 		{
-			var viewType = Mvx.Resolve<IMvxWatchOSViewCreator>().GetViewTypeFromViewModelRequest(request);
+			var viewType = Mvx.Resolve<IMvxWatchOSViewTranslator>().GetViewTypeFromViewModelRequest(request);
 			var modelPath = viewType.ToString();
 			var viewName = modelPath.Split('.').Last();
 			this.Show(viewName);

@@ -51,20 +51,12 @@
 
 		protected sealed override IMvxViewsContainer CreateViewsContainer()
 		{
-			var container = this.CreateWatchOSViewsContainer();
-			this.RegisterWatchOSViewCreator(container);
-			return container;
-		}
+			var container = new MvxWatchOSViewsContainer();
 
-		protected virtual IMvxWatchOSViewsContainer CreateWatchOSViewsContainer()
-		{
-			return new MvxWatchOSViewsContainer();
-		}
-
-		protected virtual void RegisterWatchOSViewCreator(IMvxWatchOSViewsContainer container)
-		{
-			Mvx.RegisterSingleton<IMvxWatchOSViewCreator>(container);
+			Mvx.RegisterSingleton<IMvxWatchOSViewTranslator>(container);
 			Mvx.RegisterSingleton<IMvxCurrentRequest>(container);
+
+			return container;
 		}
 
 		protected override IMvxViewDispatcher CreateViewDispatcher()

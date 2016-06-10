@@ -84,10 +84,9 @@
     <Compile Include="Platform\watchOS\Views\IMvxEventSourceInterfaceController.cs" />
     <Compile Include="watchOS\watchOS\Views\IMvxCanCreateWatchOSView.cs" />
     <Compile Include="watchOS\watchOS\Views\IMvxWatchOSView.cs" />
-    <Compile Include="watchOS\watchOS\Views\IMvxWatchOSViewCreator.cs" />
+    <Compile Include="watchOS\watchOS\Views\IMvxWatchOSViewTranslator.cs" />
     <Compile Include="watchOS\watchOS\Views\IMvxWatchOSViewsContainer.cs" />
     <Compile Include="watchOS\watchOS\Views\MvxBindingInterfaceControllerAdapter.cs" />
-    <Compile Include="watchOS\watchOS\Views\MvxCanCreateWatchOSViewExtensionMethods.cs" />
     <Compile Include="watchOS\watchOS\Views\MvxFromStoryboardAttribute.cs" />
     <Compile Include="watchOS\watchOS\Views\MvxInterfacControllerAdaptingExtension.cs" />
     <Compile Include="watchOS\watchOS\Views\MvxInterfaceController.cs" />

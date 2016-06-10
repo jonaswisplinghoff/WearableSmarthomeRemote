@@ -4,7 +4,7 @@
 
 	public interface IMvxWatchOSViewsContainer
 		: IMvxViewsContainer
-		  , IMvxWatchOSViewCreator
+		  , IMvxWatchOSViewTranslator
 	{ }
 }
 
