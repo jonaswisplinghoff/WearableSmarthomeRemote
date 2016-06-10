@@ -1,12 +1,12 @@
-﻿using System;
-using Foundation;
-using WearableSmarthomeRemote.WatchCore;
-using MvvmCross.watchOS;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
+	using System;
+	using Foundation;
+	using MvvmCross.Binding.BindingContext;
+	using MvvmCross.Core.ViewModels;
+	using MvvmCross.watchOS.Views;
+	using WearableSmarthomeRemote.WatchCore;
+
 	public partial class ItemListView : MvxInterfaceController<ItemListViewModel>
 	{
 		public ItemListView()

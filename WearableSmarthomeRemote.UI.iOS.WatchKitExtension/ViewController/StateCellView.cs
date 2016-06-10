@@ -1,12 +1,10 @@
-﻿using System;
-using Foundation;
-using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.watchOS;
-using WearableSmarthomeRemote.WatchCore;
-
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
+	using MvvmCross.Binding.BindingContext;
+	using MvvmCross.Core.ViewModels;
+	using MvvmCross.watchOS.Views;
+	using WearableSmarthomeRemote.WatchCore;
+
 	public partial class StateCellView : MvxRowController
 	{
 		public override void SetupBindingWithViewModel(MvxViewModel viewModel)

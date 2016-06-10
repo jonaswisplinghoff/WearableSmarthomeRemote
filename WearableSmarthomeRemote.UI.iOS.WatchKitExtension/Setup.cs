@@ -1,12 +1,13 @@
-﻿using MvvmCross.Core.ViewModels;
-using MvvmCross.watchOS;
-using WearableSmarthomeRemote.WatchCore;
-using MvvmCross.Binding.Bindings.Target.Construction;
-using WatchKit;
-using MvvmCross.watchOS.Binding;
-
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
+	using MvvmCross.Binding.Bindings.Target.Construction;
+	using MvvmCross.Binding.watchOS.Target;
+	using MvvmCross.Core.ViewModels;
+	using MvvmCross.watchOS.Platform;
+	using MvvmCross.watchOS.Views;
+	using WatchKit;
+	using WearableSmarthomeRemote.WatchCore;
+
 	public class Setup : MvxWatchOSSetup
 	{
 		public Setup(MvxInterfaceController controller)

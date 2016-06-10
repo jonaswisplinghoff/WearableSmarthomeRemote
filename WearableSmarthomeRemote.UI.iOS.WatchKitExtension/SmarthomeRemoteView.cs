@@ -7,6 +7,8 @@ using MvvmCross.watchOS;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using System.Diagnostics;
+using MvvmCross.watchOS.Views;
+using MvvmCross.watchOS.Platform;
 
 namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {

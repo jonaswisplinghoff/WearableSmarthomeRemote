@@ -1,13 +1,13 @@
-﻿using System;
-using WatchKit;
-using Foundation;
-using WearableSmarthomeRemote.WatchCore;
-using MvvmCross.watchOS;
-using MvvmCross.Binding.BindingContext;
-using System.Diagnostics;
-
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 {
+	using System;
+	using System.Diagnostics;
+	using Foundation;
+	using MvvmCross.Binding.BindingContext;
+	using MvvmCross.watchOS.Views;
+	using WatchKit;
+	using WearableSmarthomeRemote.WatchCore;
+
 	public partial class WidgetListView : MvxInterfaceController<WidgetListViewModel>
 	{
 		public WidgetListView()
