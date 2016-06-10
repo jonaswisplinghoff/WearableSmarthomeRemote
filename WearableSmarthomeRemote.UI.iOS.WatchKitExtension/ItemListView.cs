@@ -5,7 +5,7 @@
 	using MvvmCross.Binding.BindingContext;
 	using MvvmCross.Core.ViewModels;
 	using MvvmCross.watchOS.Views;
-	using WearableSmarthomeRemote.WatchCore;
+	using WatchCore;
 
 	public partial class ItemListView : MvxInterfaceController<ItemListViewModel>
 	{

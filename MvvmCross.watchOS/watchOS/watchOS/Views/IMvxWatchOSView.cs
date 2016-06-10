@@ -1,6 +1,5 @@
 ﻿namespace MvvmCross.watchOS.Views
 {
-	using System;
 	using MvvmCross.Binding.BindingContext;
 	using MvvmCross.Core.ViewModels;
 	using MvvmCross.Core.Views;

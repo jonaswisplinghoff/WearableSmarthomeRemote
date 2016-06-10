@@ -1,8 +1,8 @@
 ﻿namespace MvvmCross.watchOS.Views
 {
 	using Foundation;
-	using MvvmCross.Binding.BindingContext;
-	using MvvmCross.Core.ViewModels;
+	using Binding.BindingContext;
+	using Core.ViewModels;
 
 	public abstract class MvxRowController : NSObject, IMvxWatchOSView
 	{

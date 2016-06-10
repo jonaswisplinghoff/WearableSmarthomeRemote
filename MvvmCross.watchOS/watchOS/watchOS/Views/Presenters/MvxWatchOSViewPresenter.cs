@@ -24,7 +24,8 @@
 			var viewType = Mvx.Resolve<IMvxWatchOSViewTranslator>().GetViewTypeFromViewModelRequest(request);
 			var modelPath = viewType.ToString();
 			var viewName = modelPath.Split('.').Last();
-			this.Show(viewName);
+
+			_interfaceControllers.Last().PushController(viewName, (NSObject)null);
 		}
 
 		public override void ChangePresentation(MvxPresentationHint hint)
@@ -36,11 +37,6 @@
 				this.Close((hint as MvxClosePresentationHint).ViewModelToClose);
 				return;
 			}
-		}
-
-		public virtual void Show(string viewName)
-		{
-			_interfaceControllers.Last().PushController(viewName, (NSObject)null);
 		}
 
 		public virtual void CloseModalViewController()

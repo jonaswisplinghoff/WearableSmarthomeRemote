@@ -19,7 +19,6 @@
 	using MvvmCross.Platform.Platform;
 	using MvvmCross.Platform.Plugins;
 	using MvvmCross.Platform.watchOS.Platform;
-	using MvvmCross.Platform.watchOS.Views;
 	using MvvmCross.watchOS.Views;
 	using MvvmCross.watchOS.Views.Presenters;
 
@@ -159,7 +158,7 @@
 
 		protected override IMvxNameMapping CreateViewToViewModelNaming()
 		{
-			return new MvxPostfixAwareViewToViewModelNameMapping("View", "ViewController");
+			return new MvxPostfixAwareViewToViewModelNameMapping("View", "ViewModel");
 		}
 
 		public static bool IsInitialized()
