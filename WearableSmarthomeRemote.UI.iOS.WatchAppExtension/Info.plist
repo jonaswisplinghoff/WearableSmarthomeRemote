@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDisplayName</key>
+	<string>WearableSmarthomeRemote.UI.iOS.WatchAppExtension</string>
 	<key>CFBundleName</key>
-	<string>WearableSmarthomeRemote.UI.iOS.WatchKitExtension</string>
+	<string>WearableSmarthomeRemote.UI.iOS.WatchAppExtension</string>
 	<key>CFBundleIdentifier</key>
-	<string>de.jonaswisplinghoff.wearablesmarthomeremote-ui-ios.watchkitextension</string>
+	<string>de.jonaswisplinghoff.wearablesmarthomeremote-ui-ios.watchkitapp.watchkitextension</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleShortVersionString</key>
@@ -13,7 +15,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>MinimumOSVersion</key>
-	<string>8.3</string>
+	<string>2.2</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -26,10 +28,5 @@
 	</dict>
 	<key>RemoteInterfacePrincipleClass</key>
 	<string>InterfaceController</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-	    <key>NSAllowsArbitraryLoads</key>
-	    <true/>
-	</dict>
 </dict>
 </plist>

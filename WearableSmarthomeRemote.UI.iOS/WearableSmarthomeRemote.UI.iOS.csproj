@@ -170,10 +170,10 @@
       <Project>{3D005060-B116-4F81-91D6-44D64F9B91AC}</Project>
       <Name>WearableSmarthomeRemote.core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WearableSmarthomeRemote.UI.iOS.WatchKitExtension\WearableSmarthomeRemote.UI.iOS.WatchKitExtension.csproj">
-      <Project>{F5025A44-3911-4C69-90F4-C5BC0B5AD411}</Project>
-      <Name>WearableSmarthomeRemote.UI.iOS.WatchKitExtension</Name>
-      <IsAppExtension>True</IsAppExtension>
+    <ProjectReference Include="..\WearableSmarthomeRemote.UI.iOS.WatchApp\WearableSmarthomeRemote.UI.iOS.WatchApp.csproj">
+      <IsWatchApp>true</IsWatchApp>
+      <Project>{36F7E45F-2142-4242-ABFB-B45723FD1F3A}</Project>
+      <Name>WearableSmarthomeRemote.UI.iOS.WatchApp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

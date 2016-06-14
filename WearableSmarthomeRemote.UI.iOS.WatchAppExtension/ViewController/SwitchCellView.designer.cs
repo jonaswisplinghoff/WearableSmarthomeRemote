@@ -7,21 +7,22 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+namespace WearableSmarthomeRemote.UI.iOS.WatchAppExtension
 {
-	[Register ("SwitchCellView")]
+	[Register("SwitchCellView")]
 	partial class SwitchCellView
 	{
 		[Outlet]
 		public WatchKit.WKInterfaceSwitch WidgetSwitch { get; private set; }
 
-		[Action ("OnSwitchStateChanged:")]
-		partial void OnSwitchStateChanged (System.Boolean value);
-		
-		void ReleaseDesignerOutlets ()
+		[Action("OnSwitchStateChanged:")]
+		partial void OnSwitchStateChanged(System.Boolean value);
+
+		void ReleaseDesignerOutlets()
 		{
-			if (WidgetSwitch != null) {
-				WidgetSwitch.Dispose ();
+			if (WidgetSwitch != null)
+			{
+				WidgetSwitch.Dispose();
 				WidgetSwitch = null;
 			}
 		}

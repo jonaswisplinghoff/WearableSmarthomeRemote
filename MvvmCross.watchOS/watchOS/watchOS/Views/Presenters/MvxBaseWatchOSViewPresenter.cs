@@ -20,11 +20,6 @@
 			MvxTrace.Warning("Hint ignored {0}", hint.GetType().Name);
 		}
 
-		public virtual bool PresentModalViewController(UIViewController viewController, bool animated)
-		{
-			return false;
-		}
-
 		public virtual void NativeModalViewControllerDisappearedOnItsOwn()
 		{
 		}

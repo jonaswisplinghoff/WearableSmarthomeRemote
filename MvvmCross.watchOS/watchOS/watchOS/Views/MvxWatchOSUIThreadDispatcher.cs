@@ -22,7 +22,8 @@
 			if (this._uiSynchronizationContext == SynchronizationContext.Current)
 				action();
 			else
-				UIApplication.SharedApplication.BeginInvokeOnMainThread(() => ExceptionMaskedAction(action));
+				//				UIApplication.SharedApplication.BeginInvokeOnMainThread(() => ExceptionMaskedAction(action));
+				action();
 			return true;
 		}
 	}

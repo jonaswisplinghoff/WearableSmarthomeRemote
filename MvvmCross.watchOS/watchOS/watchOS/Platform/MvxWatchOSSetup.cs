@@ -15,7 +15,6 @@
 	using MvvmCross.Platform.Converters;
 	using MvvmCross.Platform.Core;
 	using MvvmCross.Platform.IoC;
-	using MvvmCross.Platform.iOS.Views;
 	using MvvmCross.Platform.Platform;
 	using MvvmCross.Platform.Plugins;
 	using MvvmCross.Platform.watchOS.Platform;
@@ -98,7 +97,6 @@
 		{
 			var presenter = this.Presenter;
 			Mvx.RegisterSingleton(presenter);
-			Mvx.RegisterSingleton<IMvxIosModalHost>(presenter);
 		}
 
 		protected override void InitializeLastChance()

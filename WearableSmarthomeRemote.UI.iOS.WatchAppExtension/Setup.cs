@@ -1,4 +1,4 @@
-﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchAppExtension
 {
 	using MvvmCross.Binding.Bindings.Target.Construction;
 	using MvvmCross.Binding.watchOS.Target;

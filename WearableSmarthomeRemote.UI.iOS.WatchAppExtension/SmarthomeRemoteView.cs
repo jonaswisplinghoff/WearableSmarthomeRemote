@@ -10,7 +10,7 @@ using System.Diagnostics;
 using MvvmCross.watchOS.Views;
 using MvvmCross.watchOS.Platform;
 
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+namespace WearableSmarthomeRemote.UI.iOS.WatchAppExtension
 {
 	public partial class SmarthomeRemoteView : MvxInterfaceController<SmarthomeRemoteViewModel>
 	{

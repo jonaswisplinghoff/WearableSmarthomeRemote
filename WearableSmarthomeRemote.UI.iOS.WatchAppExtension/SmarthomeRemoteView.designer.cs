@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+namespace WearableSmarthomeRemote.UI.iOS.WatchAppExtension
 {
 	[Register("SmarthomeRemoteView")]
 	partial class SmarthomeRemoteView

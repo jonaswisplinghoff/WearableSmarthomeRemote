@@ -1,4 +1,4 @@
-﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchAppExtension
 {
 	using System;
 	using System.Diagnostics;

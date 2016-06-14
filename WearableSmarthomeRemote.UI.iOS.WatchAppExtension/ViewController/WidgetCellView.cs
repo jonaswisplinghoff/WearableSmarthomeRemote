@@ -1,19 +1,18 @@
-﻿namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
+﻿namespace WearableSmarthomeRemote.UI.iOS.WatchAppExtension
 {
 	using MvvmCross.Binding.BindingContext;
 	using MvvmCross.Core.ViewModels;
 	using MvvmCross.watchOS.Views;
 	using WearableSmarthomeRemote.WatchCore;
 
-	public partial class StateCellView : MvxRowController
+	public partial class WidgetCellView : MvxRowController
 	{
 		public override void SetupBindingWithViewModel(MvxViewModel viewModel)
 		{
 			this.ViewModel = viewModel;
 
-			var set = this.CreateBindingSet<StateCellView, StateCellViewModel>();
-			set.Bind(ItemNameLabel).To(vm => vm.ItemName);
-			set.Bind(ItemStateLabel).To(vm => vm.State);
+			var set = this.CreateBindingSet<WidgetCellView, WidgetCellViewModel>();
+			set.Bind(WidgetLabel).To(vm => vm.WidgetName);
 			set.Apply();
 		}
 	}
