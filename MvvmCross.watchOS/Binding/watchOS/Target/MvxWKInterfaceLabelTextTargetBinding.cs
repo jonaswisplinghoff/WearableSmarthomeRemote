@@ -11,7 +11,10 @@
 		public MvxWKInterfaceLabelTextTargetBinding(WKInterfaceLabel target)
 			: base(target)
 		{
-			MvxBindingTrace.Trace(MvxTraceLevel.Error, "Error - WKInterfaceLabel is null in MvxWKInterfaceLabelTargetBinding");
+			if (target == null)
+			{
+				MvxBindingTrace.Trace(MvxTraceLevel.Error, "Error - WKInterfaceLabel is null in MvxWKInterfaceLabelTargetBinding");
+			}
 		}
 
 		public override void SetValue(object value)

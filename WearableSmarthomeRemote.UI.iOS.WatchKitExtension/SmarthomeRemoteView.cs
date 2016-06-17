@@ -20,8 +20,8 @@ namespace WearableSmarthomeRemote.UI.iOS.WatchKitExtension
 			{
 				var setup = new Setup(this);
 				setup.Initialize();
-				this.Request = new MvxViewModelRequest<SmarthomeRemoteViewModel>(new MvxBundle(null), null, MvxRequestedBy.Unknown);
 			}
+			this.Request = new MvxViewModelRequest<SmarthomeRemoteViewModel>(new MvxBundle(null), null, MvxRequestedBy.Unknown);
 			this.AdaptForBinding();
 		}
 

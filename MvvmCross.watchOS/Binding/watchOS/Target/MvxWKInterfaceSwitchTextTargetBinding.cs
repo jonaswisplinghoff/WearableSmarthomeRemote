@@ -12,9 +12,11 @@
 		public MvxWKInterfaceSwitchTextTargetBinding(WKInterfaceSwitch target)
 			: base(target)
 		{
-			MvxBindingTrace.Trace(MvxTraceLevel.Error, "Error - WKInterfaceSwitch is null in MvxWKInterfaceSwitchTextTargetBinding");
+			if (target == null)
+			{
+				MvxBindingTrace.Trace(MvxTraceLevel.Error, "Error - WKInterfaceSwitch is null in MvxWKInterfaceSwitchTextTargetBinding");
+			}
 		}
-
 		public override void SetValue(object value)
 		{
 			var target = Target as WKInterfaceSwitch;
