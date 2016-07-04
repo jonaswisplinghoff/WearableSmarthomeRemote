@@ -10,10 +10,7 @@
 		public override void SetupBindingWithViewModel(MvxViewModel viewModel)
 		{
 			this.ViewModel = viewModel;
-
-			var set = this.CreateBindingSet<WidgetCellView, WidgetCellViewModel>();
-			set.Bind(WidgetLabel).To(vm => vm.WidgetName);
-			set.Apply();
+			this.CreateBinding(WidgetLabel).To((WidgetCellViewModel vm) => vm.WidgetName).Apply();
 		}
 	}
 }

@@ -166,10 +166,6 @@
       <Project>{65826E6F-A4DF-4613-BF3E-54C1F834CA66}</Project>
       <Name>WearableSmarthomeRemote.MobileCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WearableSmarthomeRemote\WearableSmarthomeRemote.core.csproj">
-      <Project>{3D005060-B116-4F81-91D6-44D64F9B91AC}</Project>
-      <Name>WearableSmarthomeRemote.core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WearableSmarthomeRemote.UI.iOS.WatchKitExtension\WearableSmarthomeRemote.UI.iOS.WatchKitExtension.csproj">
       <Project>{F5025A44-3911-4C69-90F4-C5BC0B5AD411}</Project>
       <Name>WearableSmarthomeRemote.UI.iOS.WatchKitExtension</Name>

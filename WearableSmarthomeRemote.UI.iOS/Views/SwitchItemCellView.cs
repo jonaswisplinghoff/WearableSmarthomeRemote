@@ -4,7 +4,6 @@ using Foundation;
 using UIKit;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Binding.BindingContext;
-using WearableSmarthomeRemote.Core;
 using WearableSmarthomeRemote.MobileCore;
 
 namespace WearableSmarthomeRemote.UI.iOS

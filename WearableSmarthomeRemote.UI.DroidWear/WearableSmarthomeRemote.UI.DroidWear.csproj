@@ -126,10 +126,6 @@
       <Project>{7D6A36D2-9BF1-4855-BF03-038F4880759F}</Project>
       <Name>WearableSmarthomeRemote.WatchCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WearableSmarthomeRemote\WearableSmarthomeRemote.core.csproj">
-      <Project>{3D005060-B116-4F81-91D6-44D64F9B91AC}</Project>
-      <Name>WearableSmarthomeRemote.core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
