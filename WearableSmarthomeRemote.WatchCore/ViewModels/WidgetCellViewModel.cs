@@ -8,7 +8,7 @@ namespace WearableSmarthomeRemote.WatchCore
 		public WidgetCellViewModel(Widget widget)
 		{
 			Widget = widget;
-			_widgetName = widget.label;
+			_widgetName = widget.Label;
 		}
 
 		private string _widgetName;

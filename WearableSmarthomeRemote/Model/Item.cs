@@ -5,12 +5,12 @@ namespace WearableSmarthomeRemote.Core
 {
 	public class Item
 	{
-		public string link { get; set; }
-		public string state { get; set; }
-		public string type { get; set; }
-		public string name { get; set; }
-		public string label { get; set; }
-		public List<string> tags { get; set; }
-		public List<string> groupNames { get; set; }
+		public string Link { get; set; }
+		public string State { get; set; }
+		public string Type { get; set; }
+		public string Name { get; set; }
+		public string Label { get; set; }
+		public List<string> Tags { get; set; }
+		public List<string> GroupNames { get; set; }
 	}
 }

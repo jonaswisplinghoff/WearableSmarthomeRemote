@@ -32,7 +32,7 @@ namespace WearableSmarthomeRemote.WatchCore
 			var sitemap = await _openHab.GetSitemapWithName();
 
 			Widget result = null;
-			foreach (Widget widget in sitemap.homepage.widgets)
+			foreach (Widget widget in sitemap.Homepage.Widgets)
 			{
 
 				result = FindWidgetWithId(widget, _widgetId);
@@ -43,7 +43,7 @@ namespace WearableSmarthomeRemote.WatchCore
 			}
 
 			Widgets = new List<WidgetCellViewModel>();
-			foreach (Widget w in result.widgets)
+			foreach (Widget w in result.Widgets)
 			{
 				Widgets.Add(new WidgetCellViewModel(w));
 			}
@@ -51,11 +51,11 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		private Widget FindWidgetWithId(Widget widget, string id)
 		{
-			if (widget.widgetId == id)
+			if (widget.WidgetId == id)
 			{
 				return widget;
 			}
-			foreach (Widget w in widget.widgets)
+			foreach (Widget w in widget.Widgets)
 			{
 				FindWidgetWithId(w, id);
 			}
@@ -88,10 +88,10 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		void WidgetSelected(WidgetCellViewModel widgetVM)
 		{
-			Debug.WriteLine(widgetVM.Widget.widgetId);
-			if (widgetVM.Widget.item != null)
+			Debug.WriteLine(widgetVM.Widget.WidgetId);
+			if (widgetVM.Widget.Item != null)
 			{
-				ShowViewModel<ItemListViewModel>(new ItemListParameters() { Name = widgetVM.Widget.item.name });
+				ShowViewModel<ItemListViewModel>(new ItemListParameters() { Name = widgetVM.Widget.Item.Name });
 			}
 		}
 	}

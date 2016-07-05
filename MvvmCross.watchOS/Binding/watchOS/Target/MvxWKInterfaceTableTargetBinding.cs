@@ -27,14 +27,14 @@
 		public override void SetValue(object value)
 		{
 			var table = Target as WKInterfaceTable;
-			var list = value as List<TViewModel>;
-			if (table == null || list == null)
+			var vms = value as List<TViewModel>;
+			if (table == null || vms == null)
 			{
 				return;
 			}
 
 			var rowIdentifiers = new List<string>();
-			foreach (TViewModel vm in list)
+			foreach (TViewModel vm in vms)
 			{
 				var viewModelName = vm.GetType().Name;
 				var rowId = IdentifierFromViewModelName(viewModelName);
@@ -42,10 +42,10 @@
 			};
 			table.SetRowTypes(rowIdentifiers.ToArray());
 
-			for (var i = 0; i < list.Count; i++)
+			for (var i = 0; i < vms.Count; i++)
 			{
 				var view = table.GetRowController(i) as MvxRowController;
-				view.SetupBindingWithViewModel(list[i]);
+				view.SetupBindingWithViewModel(vms[i]);
 			}
 		}
 

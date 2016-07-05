@@ -51,7 +51,7 @@ namespace WearableSmarthomeRemote.WatchCore
 		{
 			get
 			{
-				_nextPageCommand = _nextPageCommand ?? new MvxCommand(() => NextPage());
+				_nextPageCommand = _nextPageCommand ?? new MvxCommand(NextPage);
 				return _nextPageCommand;
 			}
 		}
@@ -73,17 +73,17 @@ namespace WearableSmarthomeRemote.WatchCore
 
 		void WidgetSelected(WidgetCellViewModel widgetVM)
 		{
-			ShowViewModel<WidgetListViewModel>(new WidgetListParameters() { WidgetId = widgetVM.Widget.widgetId });
+			ShowViewModel<WidgetListViewModel>(new WidgetListParameters() { WidgetId = widgetVM.Widget.WidgetId });
 		}
 
 		async void Update()
 		{
 			var sitemap = await _openHab.GetSitemapWithName();
 
-			Heading = sitemap.label;
+			Heading = sitemap.Label;
 
 			var v = new List<WidgetCellViewModel>();
-			foreach (Widget widget in sitemap.homepage.widgets)
+			foreach (Widget widget in sitemap.Homepage.Widgets)
 			{
 				v.Add(new WidgetCellViewModel(widget));
 			}

@@ -51,18 +51,18 @@ namespace WearableSmarthomeRemote.MobileCore
 			var viewModels = new List<ItemCellViewModel>();
 			foreach (Item item in items)
 			{
-				switch (item.type)
+				switch (item.Type)
 				{
 					case "SwitchItem":
-						viewModels.Add(new SwitchItemCellViewModel(_openHab, item.name, item.state));
+						viewModels.Add(new SwitchItemCellViewModel(_openHab, item.Name, item.State));
 						break;
 					case "GroupItem":
 						break;
 					case "ColorItem":
-						viewModels.Add(new ColorItemCellViewModel(item.name, item.state));
+						viewModels.Add(new ColorItemCellViewModel(item.Name, item.State));
 						break;
 					default:
-						viewModels.Add(new StateItemCellViewModel(item.name, item.state));
+						viewModels.Add(new StateItemCellViewModel(item.Name, item.State));
 						break;
 				}
 			}

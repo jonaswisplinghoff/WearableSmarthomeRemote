@@ -5,11 +5,11 @@ namespace WearableSmarthomeRemote.Core
 {
 	public class Homepage
 	{
-		public string id { get; set; }
-		public string title { get; set; }
-		public string link { get; set; }
-		public bool leaf { get; set; }
-		public List<Widget> widgets { get; set; }
+		public string Id { get; set; }
+		public string Title { get; set; }
+		public string Link { get; set; }
+		public bool Leaf { get; set; }
+		public List<Widget> Widgets { get; set; }
 	}
 }
 
