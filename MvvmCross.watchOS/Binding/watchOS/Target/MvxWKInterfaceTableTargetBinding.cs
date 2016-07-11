@@ -39,7 +39,7 @@
 				var viewModelName = vm.GetType().Name;
 				var rowId = IdentifierFromViewModelName(viewModelName);
 				rowIdentifiers.Add(rowId);
-			};
+			}
 			table.SetRowTypes(rowIdentifiers.ToArray());
 
 			for (var i = 0; i < vms.Count; i++)
